@@ -1,0 +1,3 @@
+[submodule "game-system"]
+	path = game-system
+	url = ssh://gitolite@139.129.223.20/game-system
