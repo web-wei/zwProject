@@ -1,0 +1,13 @@
+<div class="safe_code">
+    <div class="inputWrap">
+        <span class="require-icon"></span>
+        <input type="text" maxlength="4" placeholder="输入验证码" name="codeinput" ng-keyup="checkCode()">
+    </div>
+    <div class="codeimg" ng-click="changeCode()">
+        <img ng-src="data:image/png;base64,{{imgurl}}" title="看不清，换一张">
+    </div>
+    <div class="codecheck" ng-show="checkres">
+        <span class="iconfont checkright" ng-show="rightCode">&#xe61a;</span>
+        <span class="iconfont checkerr" ng-hide="rightCode">&#xe603;</span>
+    </div>
+</div>

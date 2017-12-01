@@ -1,0 +1,192 @@
+<!--home页头部---------------------------------------------------->
+  <section class="auction_header"> 
+   <div class="home_banner_advImg"> 
+    <img src="http://res.tigerz.nz/imgs/auctionresult.jpg" alt="Houses For Sale in New Zealand"> 
+   </div> 
+   <!--首页导航栏--> 
+   <nav> 
+    <a href="/home_cn" title="Houses For Sale in New Zealand"><h1 title="Houses For Sale in New Zealand">新西兰出售房屋<img src="http://res.tigerz.nz/imgs/logo2.png" alt="Houses For Sale in New Zealand" title="Houses For Sale in New Zealand"></h1></a> 
+    <div class="home_addr"> 
+     <span class="home_map_icon"></span>
+        <span class="home_current_city" addr-select-show ng-bind="allValue.currentSelectCityCn">奥克兰</span>
+        <!--<addr-choicecn city-json="cityJson"></addr-choicecn>-->
+        <ul class="home_addr_choice">
+            <li ng-repeat="item in cityJson.all" ng-bind="item.cn" ng-click="allValue.changCityFn(item)"></li>
+            <!--<li ng-repeat="item in cityJson.all" ng-bind="item.cn" on-city></li>-->
+        </ul>
+     </ul> 
+    </div> 
+    <!--搜索框的div--> 
+    <div class="home_search_bar"> 
+     <div class="home_search">
+         <div class="home_search_box">
+             <input type="text" placeholder="请输入地址" ng-change="allValue.searchBar()" ng-model="allValue.currentValue" ng-focus="allValue.focusEvent()" ng-blur="allValue.blurEvent()">
+         </div>
+      <span class="home_search_icon"><a ng-href="{{allValue.searchBtn()}}"><span></span></a></span>
+     </div> 
+     <div class="home_search_sub" ng-hide="allValue.subFlag"> 
+      <!--没有找到相应的房源-----------------------------> 
+      <p class="home_search_error">找不到相应的数据</p> 
+      <!--模糊查询房源-----------------------------------> 
+      <ul class="home_search_simple" ng-mouseover="allValue.overEvent()" ng-mouseleave="allValue.leaveEvent()"> 
+       <li ng-repeat="item in allValue.searchData"><a ng-href="{{allValue.jugePage(item)}}" ng-mousedown="allValue.historyClick(item)" title="{{item.name}},{{item.fatherName}},{{allValue.jugeLevel(item.level,item.isSale)}}"><span ng-bind="item.name+','"></span><span ng-bind="item.fatherName"></span><span ng-bind="allValue.jugeLevel(item.level,item.isSale)"></span></a></li> 
+      </ul> 
+      <!--搜索历史纪录-------------------------------------> 
+      <ul class="home_search_history" ng-mouseover="allValue.overEvent()" ng-mouseleave="allValue.leaveEvent()"> 
+       <li ng-repeat="item in allValue.searchHistoryData track by $index"><a ng-href="{{allValue.jugePage(item)}}" title="{{item.name}},{{item.fatherName}},{{allValue.jugeLevel(item.level,item.isSale)}}"><span ng-bind="item.name+','"></span><span ng-bind="item.fatherName"></span><span ng-bind="allValue.jugeLevel(item.level,item.isSale)"></span></a></li> 
+      </ul> 
+     </div> 
+    </div>
+       <nav-itemcn class="home_nav" city="allValue.currentSelectCity"></nav-itemcn>
+    <!--<ul class="home_nav"> -->
+     <!--<li><a href="/search_cn?name=Auckland City&amp;level=2&amp;page=0&amp;sort=default&amp;isAllHouse=false" class="home_buyicon" style="font-weight: bold;">买房</a></li>-->
+     <!--<li><a href="/search_cn?name=Auckland City&amp;level=2&amp;page=0&amp;sort=default&amp;isAllHouse=false" class="home_mapicon" style="font-weight: bold;"-->
+     <!--&gt;地图</a></li>-->
+     <!--<li><a href="/house-price-estimate_cn?city=Auckland" class="home_estimateicon" style="font-weight: bold;width: .9rem;">估价</a></li>-->
+     <!--<li><a href="/auction-results_cn?city=Auckland" class="home_auction" style="font-weight: bold;width: .9rem;">拍卖</a></li>-->
+    <!--</ul> -->
+
+     <p class="home_language_wrap">
+         <span class="home_language"><a href="/auction-results_cn?city={{allValue.currentSelectCity}}" style="color:#FFD800;">中文</a></span>
+         <i> / </i>
+         <span class="home_language"><a href="/auction-results?city={{allValue.currentSelectCity}}">English</a></span>
+     </p>
+
+   </nav> 
+   <!--收索框上的介绍--> 
+   <section class="home_nav_title"> 
+    <h2>拍卖历史结果</h2> 
+    <p>新西兰最完整、最准确的房产数据 </p> 
+   </section> 
+  </section> 
+  <!--近十二个月的涨幅--------------------------------------------------> 
+  <section class="home_last_info">
+   <div class="hld_intro"> 
+    <p class="hld_title">过去12个月的价格指数：</p> 
+    <span class="hld_line"></span> 
+    <div class="hld_wrap"> 
+     <ul class="hld_static"> 
+      <li ng-repeat="item in allValue.statics.priceIncreaseList track by $index"><span ng-bind="item.area + ': '"></span><span class="hld_data_green" ng-bind="item.value"></span><span class="hld_data_green">%</span></li> 
+     </ul> 
+    </div> 
+   </div> 
+  </section> 
+  <!--拍卖纪录---------------------------------------------> 
+  <section class="auction_choose"> 
+   <div class="auction_select clearfix"> 
+    <div class="search_select_city"> 
+     <p class="select_city_show" ng-bind="allValue.currentCity">关闭城市</p> 
+     <div class="search_select_cityItem"> 
+      <p ng-repeat="selectCity in allValue.select.city" ng-bind="selectCity" ng-mousedown="allValue.cityClick(selectCity)"></p> 
+     </div> 
+     <span class="select_city_tri"></span> 
+    </div> 
+    <div class="search_select_area"> 
+     <p class="select_area_show" ng-bind="allValue.currentArea">关闭城市</p> 
+     <div class="search_select_areaItem"> 
+      <p ng-repeat="selectCity in allValue.areas" ng-bind="selectCity" ng-mousedown="allValue.areaClick(selectCity)"></p> 
+     </div> 
+     <span class="select_area_tri"></span> 
+     <p class="select_alert">请先选择城市！</p> 
+    </div> 
+    <div class="search_select_agency"> 
+     <p class="select_agency_show" ng-bind="allValue.currentAgency">关闭城市</p> 
+     <div class="search_select_agencyItem"> 
+      <p ng-repeat="selectCity in allValue.agencys" ng-bind="selectCity" ng-mousedown="allValue.agencyClick(selectCity)"></p> 
+     </div> 
+     <span class="select_agency_tri"></span> 
+    </div> 
+    <div class="search_select_status"> 
+     <p class="select_status_show" ng-bind="allValue.currentStatus">关闭城市</p> 
+     <div class="search_select_statusItem"> 
+      <p ng-repeat="selectCity in allValue.statuses" ng-bind="selectCity" ng-mousedown="allValue.statusClick(selectCity)"></p> 
+     </div> 
+     <span class="select_status_tri"></span> 
+    </div> 
+   </div> 
+   <div class="auction_list"> 
+    <ul> 
+     <li ng-repeat="lh in allValue.auctionListData"> <a href="{{allValue.auctionJage(lh)}}" target="_blank">
+       <div class="auction_list_imgWrap">
+           <div class="auction_img">
+               <img error-src="http://res.tigerz.nz/imgs/scollicon.jpg" ng-src="{{imgDomain+lh.houseMainImagePath}}" alt="lh.addressDetail">
+           </div>
+        <div ng-class="{'Sold':'auction_list_soldMarker','Not sold':'auction_list_notSoldMarker'}[lh.status]">
+         <span class="al_marker" ng-bind="lh.status">售卖</span> 
+        </div> 
+       </div> 
+       <div class="auction_list_detail"> 
+        <p class="auction_list_address"><span ng-bind="lh.addressRegion">奥克兰</span>,<span ng-bind="lh.addressCity">中区</span></p> 
+        <p class="auction_list_road"><span ng-bind="lh.streetAddress"></span>,<span ng-bind="lh.addressLocality"></span></p> 
+        <p class="auction_list_info"> <span class="info_bed"></span> <span ng-bind="lh.bedroom || '-'"></span> <span class="info_bath"></span> <span ng-bind="lh.bathroom || '-'"></span> </p> 
+        <p class="auction_list_time"><span>拍卖详情：</span>&nbsp;<span ng-bind="lh.auction_date">Friday 28th Feb</span></p> 
+       </div> 
+       <div class="auction_list_cv"> 
+        <p><span>政府估值：</span>&nbsp;&nbsp;<span ng-bind="(lh.latestCapitalValue | currency:number:0)||'N/A'">$77777</span></p> 
+        <p><span>土地面积：</span>&nbsp;&nbsp;<span ng-bind="lh.shareData">99999</span></p>
+        <p><span>类型：</span>&nbsp;&nbsp;<span ng-bind="lh.houseType">babjdakj</span></p> 
+       </div> 
+       <div class="auction_list_angency"> 
+        <p class="auction_list_price" ng-show="{{lh.priceShow}}"> <span>售卖：</span><br> <span ng-bind="lh.price">$100,000</span> </p> 
+        <!--<div class="auction_list_angencyLogo"> -->
+         <!--<img ng-src="{{imgDomain}}{{lh.logoImageUrlPath}}" alt="">-->
+        <!--</div> -->
+       </div>
+     </a> </li>
+    </ul> 
+   </div> 
+   <div class="tcdPageCode tcdPageCode1"></div>
+      <div class="auction_mask">
+          <img src="http://res.tigerz.nz/imgs/default.svg" alt="">
+      </div>
+  </section> 
+  <!--footer部分-----------------------------------------------------> 
+  <div id="auction_footer"> 
+   <city-suburb city-json="cityJson" current-city="allValue.currentSelectCity"></city-suburb>
+   <div class="clearfix"></div> 
+   <footer-itemcn></footer-itemcn>
+  </div> 
+  <!--解决报错--------------------------------------------------------> 
+  <div> 
+   <div class="dai_item"></div> 
+   <div class="dai_item"></div> 
+   <div class="dai_item"></div> 
+   <div class="dai_item"></div> 
+   <div class="dai_item"></div> 
+   <div class="dai_item"></div> 
+   <div class="dai_item"></div> 
+   <div class="dai_item"></div> 
+  </div> 
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?98b74b7f3ddb1c502ca10f723fc80ab1";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script> 
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-90714030-1', 'auto');
+    ga('send', 'pageview');
+</script> 
+  <script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https'){
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else{
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script> 
+ 

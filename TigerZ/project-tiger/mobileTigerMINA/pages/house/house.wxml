@@ -1,0 +1,410 @@
+<!--house.wxml-->
+<view class="container">
+  <view class="house">
+      <view class="house_expand">
+          <navigator class="back" open-type="navigateBack"></navigator>
+          <view class="shouCang"><span></span></view>
+          <view class="share"><span></span></view>
+          <view class="map">
+            <image src="{{mapImg}}"></image>
+          </view>
+      </view>
+      <view class="house_main">
+        <!-- 中位价部分 -->
+        <view class="price">
+          <view class="price_top">
+            <span></span>
+            <view>{{elePriceArea}}</view>
+          </view>
+        </view>
+        <view class="divide"></view>
+        <view class="eatimate">
+          <view>Tigerz Property Eatimate</view>
+          <view class="eatimate_item">
+            <span></span>
+            <p class="eatimate_item_xian">
+              <span></span>
+              <span></span>
+            </p>
+            <p class="eatimate_item_price">
+              <span>{{elePrice1}}</span>
+              <span>{{elePrice2}}</span>
+              <span>{{elePrice3}}</span> 
+            </p>
+          </view>
+        </view>
+        <view class="divide"></view>
+        <view class="basic">
+          <view class="basic_less">
+            <p>
+              <span>Building Age :</span>
+              <span>{{buildingAge}}</span>
+            </p>
+            <p>
+              <span>Land Area :</span>
+              <span>{{land}}</span>
+            </p>
+            <p>
+              <span>Floor Area :</span>
+              <span>{{floorArea}}</span>
+            </p>
+            <p>
+              <span>Property Type :</span>
+              <span>{{pType}}</span>
+            </p>
+            <p>
+              <span>Rates :</span>
+              <span>{{totalAnnualRates}}</span>
+            </p>
+            <p>
+              <span>Capital Value :</span>
+              <span>{{latestCapitalValue}}</span>
+            </p>
+          </view>
+          <view class="basic_more" wx:if="{{moreBasicInformation}}">
+            <p>
+            <span>TigerZ Estimate :</span>
+            <span>{{estimate}}</span>
+          </p>
+          <p>
+            <span>Building Value :</span>
+            <span>{{latestImprovementValue}}</span>
+          </p>
+          <p>
+            <span>Land Value :</span>
+            <span>{{latestLandValue}}</span>
+          </p>
+          <p>
+            <span>Land Slope :</span>
+            <span>{{slope}}</span>
+          </p>
+          <p>
+            <span>Wall Material :</span>
+            <span>{{wallMaterial}}</span>
+          </p>
+          <p>
+            <span>Zone :</span>
+            <span>{{zone}}</span>
+          </p>
+          </view>  
+        </view>
+        <view class="record_more_kuan basic_more" bindtap="basicInformation">
+          <view class="record_more more_equal">
+            <view class="equal_more_bottom"></view>
+            <view class="equal_more_top">{{moreBasicInformationContent}}</view>
+            <view class="equal_more_bottom"></view>
+          </view>
+        </view>
+        <view class="divide"></view>
+        <view class="history style_xt1">
+          <view class="house_title">
+            <view>Property History</view>
+          </view>
+          <view class="history_main">
+             <view class="noPropertyHistory" wx:if="{{noPropertyHistory}}">No Property History</view>
+             <view class="history_main_top" wx:if="{{historyMainTop}}">
+              <view class="history_top">
+                <span class="history_yuan"></span>
+                <p class="history_yanse"> ${{cvPrice}} {{cvType}} <span class="history_yanse">({{cvData}})</span></p>
+              </view>
+              <view class="history_xian">
+                <p></p>
+              </view>
+            </view>
+            <view class="history_main_center" wx:if="{{historyMainCenter}}" wx:for="{{cvAndSale}}" wx:key="value">
+              <view class="history_top">
+                <span></span>
+                <p> ${{item.price}} {{item.type}} <span>({{item.date}})</span></p>
+              </view>
+              <view class="history_xian"><p></p></view>
+            </view>
+            <view class="history_main_bottom" wx:if="{{historyMainBottom}}">
+              <view class="history_top">
+                <span></span>
+                <p> ${{cvPrice1}} {{cvType1}} <span>({{cvData1}})</span></p>
+              </view>
+              <view class="history_xian"><p></p></view>
+            </view> 
+          </view>
+           <view class="history_more more_equal" wx:if="{{historyMore}}" bindtap="historyMoreSj">
+            <view class="equal_more_top">{{morePropertyHistoryContent}}</view>
+            <view class="equal_more_bottom"></view>
+          </view> 
+        </view>
+        <view class="divide"></view>
+        <view class="record style_xt2">
+          <view class="house_title">
+            <view>Surrounding Listing</view>
+          </view>
+          <view class="record_switch">
+            <view class="record_switch_left" bindtap="recordSwitchLeft">
+              <p class="{{recordSwitchColor ? 'record_switch_color' : ''}}">For sale</p>
+            </view>
+            <view class="record_switch_center"></view>
+            <view class="record_switch_right" bindtap="recordSwitchRight">
+              <p class="{{recordSwitchColor1 ? 'record_switch_color' : ''}}">Traded</p>
+            </view>
+          </view>
+          <view class="record_houseInfo">
+            <ul class="record_houseInfo_sale" wx:if="{{recordHouseInfoSale}}">
+              <li wx:for="{{saleData}}" wx:key="value">
+                <view>
+                  <view class="record_item_list">
+                    <image src="{{item.houseMainImagePath}}"></image>
+                    <view class="record_list_dis">
+                      <p class="record_title">{{item.title}}</p>
+                      <p class="record_price">{{item.housePrice}}</p>
+                      <p class="record_addr">{{item.streetAddress}},{{item.suburb}}</p>
+                      <p class="record_info">
+                        <span class="record_bed"></span>
+                        <span>{{item.bedRoom}}</span>
+                        <span class="record_bath"></span>
+                        <span>{{item.bathRoom}}</span>
+                        <span class="updataDate">Updata Date:{{item.listedDate}}</span>
+                      </p>
+                    </view>
+                  </view>
+                </view>
+              </li>  
+            </ul>
+            <ul class="record_houseInfo_traded" wx:if="{{recordHouseInfoTraded}}">
+              <li wx:for="{{traded}}" wx:key="value">
+                <view>
+                  <view class="record_item_list">
+                    <image src="{{item.coverImgPath}}"></image>
+                    <view class="record_list_dis">
+                      <p class="record_title">Sold time : {{item.createTime}}</p>
+                      <p class="record_price">${{item.price}}</p>
+                      <p class="record_addr">{{item.hougardenAddress}}</p>
+                      <p class="record_info">
+                        <span class="record_bed"></span>
+                        <span>{{item.bedrooms}}</span>
+                        <span class="record_bath"></span>
+                        <span>{{item.bathrooms}}</span>
+                      </p>
+                    </view>
+                  </view>
+                </view>
+              </li>   
+            </ul>
+          </view>
+          <view class="record_more_kuan">
+            <view class="record_more more_equal" style="display:none">
+              <view href="./surroundingList.html">
+                <view class="equal_more_top">More Surrounding Listing</view>
+              </view>
+              <view class="equal_more_bottom"></view>
+            </view>
+          </view>
+        </view>
+        <view class="divide"></view>
+        <view class="area style_xt3">
+          <view class="house_title">
+            <view>Local Real Estate Trends</view>
+          </view>
+          <view class="area_list">
+              <view class="area_list_left">
+                <p>{{areaMidPrice}}</p>
+                <p>Averge price of nearby house</p>
+             </view>
+             <view class="area_list_right">
+                <p>{{areaPriceChangeByYear}}</p>
+                <p>Years of gains</p>
+             </view> 
+          </view>
+        </view>
+        <view class="divide"></view>
+        <view class="school style_xt2">
+          <view class="house_title">
+            <view>School information</view>
+          </view>
+          <view class="record_switch">
+            <view class="record_switch_left" bindtap="recordSwitchLeftSchool">
+              <p class="{{recordSwitchColorSchool ? 'record_switch_color' : ''}}">School District</p>
+            </view>
+            <view class="record_switch_center"></view>
+            <view class="record_switch_right" bindtap="recordSwitchRightSchool">
+              <p class="{{recordSwitchColorSchool1 ? 'record_switch_color' : ''}}">Private School</p>
+            </view>
+          </view>
+          <view class="record_houseInfo">
+            <view class="school_district" wx:for="{{schoolDistrict}}" wx:key="value">
+                <p wx:if="{{noSchool}}">{{noSchoolContent}}</p>
+               <view class="school_item">
+                <p class="school_name"><span></span>{{item.name}}</p>
+                <p class="school_type">
+                  <span>Grade: {{item.grade == '' ? 'All' : item.grade}}  </span>
+                  <span>  Type: {{item.schoolType}}</span>
+                </p>
+                <view class="school_star">
+                  <view class="school_decile">
+                    <span>Decile: </span>
+                    <p>
+                      <span class="yellowStar" wx:for="{{schoolDistrict[index].yellowStar}}" wx:key="value"></span>
+                      <span class="graystar" wx:for="{{schoolDistrict[index].grayStar}}" wx:key="value"></span>
+                    </p>
+                  </view>
+                  <p class="school_distance">Distance: {{item.minDis}}km</p>
+                </view>
+                <view class="school_rank">
+                  <p>{{item.rank}}</p>
+                  <p>Rank</p>
+                </view>
+              </view> 
+            </view>
+          </view>
+        </view>
+        <view class="divide"></view>
+        <view class="community style_xt3">
+          <view class="house_title">
+            <view>Community information</view>
+          </view>
+          <view class="area_list">
+             <view class="area_list_left">
+                 <p>{{communityTotalPeople}}</p>
+                <p>Community population</p> 
+             </view>
+             <view class="area_list_right">
+                 <p>{{crimeRate}}</p>
+                <p>Community Burglary Index </p> 
+             </view>
+          </view>
+        </view>
+        <view class="divide"></view>
+        <view class="income style_xt1">
+          <view class="house_title">
+            <view>Average household income</view>
+          </view>
+          <view class="history_main">
+            <view class="income_main">
+              <view class="income_main_top">
+                <view class="income_top_left">Auckland</view>
+                <view class="income_top_right">${{communityData.familyIncomeForRegion}}</view>
+              </view>
+              <view class="income_main_bottom">
+                <view class="income_bottom_color" style="width: {{incomeWidth1}}"></view>
+              </view>
+            </view>
+            <view class="income_main">
+              <view class="income_main_top">
+                <view class="income_top_left">{{houseData.suburb}}</view>
+                <view class="income_top_right">${{communityData.familyIncomeForCity}}</view>
+              </view>
+              <view class="income_main_bottom">
+                <view class="income_bottom_color" style="width: {{incomeWidth2}}"></view>
+              </view>
+            </view>
+            <view class="income_main">
+              <view class="income_main_top">
+                <view class="income_top_left">{{houseData.road}}</view>
+                <view class="income_top_right">${{communityData.familyIncome}}</view>
+              </view>
+              <view class="income_main_bottom">
+                <view class="income_bottom_color" style="width: {{incomeWidth3}}"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="divide"></view>
+        <view class="education style_xt1">
+          <view class="house_title">
+            <view>University and above education</view>
+          </view>
+          <view class="history_main">
+            <view class="education_main">
+              <view class="deucation_main_left">{{communityData.degree[0].name}}</view>
+              <view class="education_center_wai">
+                 <view class="deucation_main_center deucation_main_center1" style="width:{{communityData.degree[0].number}}"></view>
+              </view>
+              <view class="deucation_main_right">{{communityData.degree[0].number}}</view>
+            </view>
+             <view class="education_main">
+              <view class="deucation_main_left">{{communityData.degree[1].name}}</view>
+              <view class="education_center_wai">
+                <view class="deucation_main_center deucation_main_center2" style="width:{{communityData.degree[1].number}}"></view>
+              </view>
+              <view class="deucation_main_right">{{communityData.degree[1].number}}</view>
+            </view>
+             <view class="education_main">
+              <view class="deucation_main_left">{{communityData.degree[2].name}}</view>
+              <view class="education_center_wai">
+              <view class="deucation_main_center deucation_main_center3" style="width:{{communityData.degree[2].number}}"></view>
+              </view>
+              <view class="deucation_main_right">{{communityData.degree[2].number}}</view>
+            </view>
+             <view class="education_main">
+              <view class="deucation_main_left">{{communityData.degree[3].name}}</view>
+              <view class="education_center_wai">
+              <view class="deucation_main_center deucation_main_center4" style="width:{{communityData.degree[3].number}}"></view>
+              </view>
+              <view class="deucation_main_right">{{communityData.degree[3].number}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="divide"></view>
+        <view class="rate style_xt3">
+          <view class="house_title">
+            <view>Occupancy rate</view>
+          </view>
+          <view class="area_list">
+             <view class="area_list_left">
+                 <p>{{holdNum}}%</p> 
+                <p>NZ Houseing</p>
+             </view>
+             <view class="area_list_right">
+                 <p>{{publicNum}}%</p> 
+                <p>Occupancy</p>
+             </view>
+          </view>
+        </view>
+        <view class="divide"></view>
+        <view class="bingZhuangTu">
+          <view class="bingZhuangTu_top">
+            <view class="bingZhuangTu_top_title">Community living rate</view>
+            <view class="bingZhuangTu_top_tu">
+              <view class="bingTu_bai" wx:for="{{regionNum}}">
+                <view class="bingTu_left">{{item.name}}</view>
+                <view class="bingTu_right">{{item.value}}</view>
+              </view>
+            </view>
+          </view>
+          <view class="bingZhuangTu_bottom">
+            <view class="bingZhuangTu_bottom_title">Minority representation</view>
+            <view class="bingZhuangTu_bottom_tu">
+              <view class="bingTu_bai" wx:for="{{kpNum}}">
+                <view class="bingTu_left">{{item.name}}</view>
+                <view class="bingTu_right">{{item.value}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="end"></view>
+      </view>
+    </view>
+    <!-- share -->
+    <view class="share_page">
+      <view class="share_content">
+        <view class="share_content_top">
+          <view class="share_facebook share_common">
+            <span></span>
+            <p>Facebook</p>
+          </view>
+          <view class="share_google share_common">
+            <span></span>
+            <p>Google</p>
+          </view>
+          <view class="share_twitter share_common">
+            <span></span>
+            <p>Twitter</p>
+          </view>
+          <view class="share_Wechat share_common">
+            <span></span>
+            <p>Wechat</p>
+          </view>
+        </view>
+        <view class="share_content_bottom">
+          <span></span>
+        </view>
+      </view>
+    </view>
+</view>

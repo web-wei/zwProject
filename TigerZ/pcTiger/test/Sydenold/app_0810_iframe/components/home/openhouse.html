@@ -1,0 +1,225 @@
+<!------------------------------------------------------open house部分------------------------------------------------->
+<section class="home_open_house">
+    <div class="hoh_title">
+        <h4>Open Homes</h4>
+        <p style="display: none">213 upcoming open houses in seattle</p>
+    </div>
+    <div class="hoh_turn_wrap">
+        <div class="hoh_btn hoh_left" ng-click="allValue.openHouse('minus')"></div>
+        <div class="hoh_btn hoh_right" ng-click="allValue.openHouse('add')"></div>
+        <div class="hoh_img_wrap">
+            <div class="hoh_img_trun">
+                <div class="hoh_img_item" ng-repeat="item in allValue.openHouseData track by $index">
+                    <a href="/detail?{{house._id}}&{{house.streetAddress}},{{house.addressLocality}}"
+                       ng-repeat="house in item track by $index" target="_blank">
+                        <figure>
+                            <div class="hohii_img_wrap">
+                                <img ng-src="http://api.tigerz.nz/{{house.houseMainImagePath}}" alt="OpenHouse">
+                                <div class="hohii_img_over"></div>
+                            </div>
+                            <p class="hohii_img_dis" ng-bind="house.streetAddress+','+house.addressLocality"
+                               title="{{house.streetAddress+','+house.addressLocality || '-'}}"></p>
+                            <figcaption>
+                                <div class="hohi_item_discraption">
+                                    <p class="hohi_item_price" ng-bind="house.housePrice || '-'"
+                                       title="{{house.housePrice}}">$2,410,000<span class="hohi_item_collect"></span>
+                                    </p>
+                                    <p class="hohi_item_dis">
+                                        <span class="hohii_dis_bed"></span>
+                                        <span ng-bind="(house.bedRoom || house.bedroom) || '0'"></span>
+                                        <span class="hohii_dis_bath"></span>
+                                        <span ng-bind="(house.bathRoom || house.bathroom) || '0'"></span>
+                                    </p>
+                                </div>
+                                <!--<p class="hohi_item_addr" ng-bind="house.streetAddress || '-'" title="{{house.streetAddress || '-'}}">379 Lakeshore Dr.San Francisco</p>-->
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--轮播小点-->
+    <ul class="hoh_dot">
+        <li class="hoh_doted" ng-click="allValue.openHouseDot(0)"></li>
+        <li ng-click="allValue.openHouseDot(1)"></li>
+        <li ng-click="allValue.openHouseDot(2)"></li>
+        <li ng-click="allValue.openHouseDot(3)"></li>
+        <li ng-click="allValue.openHouseDot(4)"></li>
+        <li ng-click="allValue.openHouseDot(5)"></li>
+        <li ng-click="allValue.openHouseDot(6)"></li>
+    </ul>
+    <p class="hoh_getmore" style="display: none;">See more lists</p>
+</section>
+
+
+<!----------------------------------------------------great high school------------------------------------------->
+
+
+<section class="home_great_school">
+    <div class="hgs_title">
+        <h4>Great High School</h4>
+        <p style="display: none">1040 homes in seattle near highly rated schools</p>
+    </div>
+    <div class="hgs_turn_wrap">
+        <div class="hgs_btn hgs_left" ng-click="allValue.greatHighSchool('minus')"></div>
+        <div class="hgs_btn hgs_right" ng-click="allValue.greatHighSchool('add')"></div>
+        <div class="hgs_img_wrap">
+            <div class="hgs_img_trun">
+                <div class="hgs_img_item" ng-repeat="item in allValue.schoolHouseData track by $index">
+                    <a href="/detail?{{house._id}}&{{house.streetAddress}},{{house.addressLocality}}"
+                       ng-repeat="house in item track by $index" target="_blank">
+                        <figure>
+                            <div class="hgsii_img_wrap">
+                                <img ng-src="http://api.tigerz.nz/{{house.houseMainImagePath}}" alt="schoolHouse">
+                                <div class="hgsii_img_over"></div>
+                            </div>
+                            <p class="hgsii_img_dis" ng-bind="house.streetAddress+','+house.addressLocality"
+                               title="{{house.streetAddress+','+house.addressLocality || '-'}}"></p>
+                            <figcaption>
+                                <div class="hgsi_item_discraption">
+                                    <p class="hgsi_item_price" ng-bind="house.housePrice || '-'"
+                                       title="{{house.housePrice}}">$2,410,000<span class="hohi_item_collect"></span>
+                                    </p>
+                                    <p class="hgsi_item_dis">
+                                        <span class="hgsii_dis_bed"></span>
+                                        <span ng-bind="(house.bedRoom || house.bedroom) || '0'"></span>
+                                        <span class="hgsii_dis_bath"></span>
+                                        <span ng-bind="(house.bathRoom || house.bathroom) || '0'"></span>
+                                    </p>
+                                </div>
+                                <!--<p class="hohi_item_addr" ng-bind="house.streetAddress || '-'" title="{{house.streetAddress || '-'}}">379 Lakeshore Dr.San Francisco</p>-->
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--轮播小点-->
+    <ul class="hgs_dot">
+        <li class="hgs_doted" ng-click="allValue.ghDot(0)"></li>
+        <li ng-click="allValue.ghDot(1)"></li>
+        <li ng-click="allValue.ghDot(2)"></li>
+        <li ng-click="allValue.ghDot(3)"></li>
+        <li ng-click="allValue.ghDot(4)"></li>
+        <li ng-click="allValue.ghDot(5)"></li>
+        <li ng-click="allValue.ghDot(6)"></li>
+    </ul>
+    <p class="hgs_getmore" style="display: none;">See more lists</p>
+</section>
+
+
+<!----------------------------------------------------waterfront-------------------------------------------------->
+
+
+<section class="home_waterfront">
+    <div class="hw_title">
+        <h4>Waterfront</h4>
+        <p style="display: none">95 waterfront homes in seattle</p>
+    </div>
+    <div class="hw_turn_wrap">
+        <div class="hw_btn hw_left" ng-click="allValue.waterFront('minus')"></div>
+        <div class="hw_btn hw_right" ng-click="allValue.waterFront('add')"></div>
+        <div class="hw_img_wrap">
+            <div class="hw_img_trun">
+                <div class="hw_img_item" ng-repeat="item in allValue.waterHouseData track by $index">
+                    <a href="/detail?{{house._id}}&{{house.streetAddress}},{{house.addressLocality}}"
+                       ng-repeat="house in item track by $index" target="_blank">
+                        <figure>
+                            <div class="hwii_img_wrap">
+                                <img ng-src="http://api.tigerz.nz/{{house.houseMainImagePath}}" alt="waterFrontHouse">
+                                <div class="hwii_img_over"></div>
+                            </div>
+                            <p class="hwii_img_dis" ng-bind="house.streetAddress+','+house.addressLocality"
+                               title="{{house.streetAddress+','+house.addressLocality || '-'}}"></p>
+                            <figcaption>
+                                <div class="hwi_item_discraption">
+                                    <p class="hwi_item_price" ng-bind="house.housePrice || '-'"
+                                       title="{{house.housePrice}}">$2,410,000<span class="hohi_item_collect"></span>
+                                    </p>
+                                    <p class="hwi_item_dis">
+                                        <span class="hwii_dis_bed"></span>
+                                        <span ng-bind="(house.bedRoom || house.bedroom) || '0'"></span>
+                                        <span class="hwii_dis_bath"></span>
+                                        <span ng-bind="(house.bathRoom || house.bathroom) || '0'"></span>
+                                    </p>
+                                </div>
+                                <!--<p class="hohi_item_addr" ng-bind="house.streetAddress || '-'" title="{{house.streetAddress || '-'}}">379 Lakeshore Dr.San Francisco</p>-->
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--轮播小点-->
+    <ul class="hw_dot">
+        <li class="hw_doted" ng-click="allValue.wfDot(0)"></li>
+        <li ng-click="allValue.wfDot(1)"></li>
+        <li ng-click="allValue.wfDot(2)"></li>
+        <li ng-click="allValue.wfDot(3)"></li>
+        <li ng-click="allValue.wfDot(4)"></li>
+        <li ng-click="allValue.wfDot(5)"></li>
+        <li ng-click="allValue.wfDot(6)"></li>
+    </ul>
+    <p class="hw_getmore" style="display: none;">See more lists</p>
+</section>
+
+
+<!--tigerz介绍--->
+
+
+<section class="home_tg_house">
+    <div class="hth_btn hth_left" ng-click="allValue.tigerzIntroduce('minus')"></div>
+    <div class="hth_btn hth_right" ng-click="allValue.tigerzIntroduce('add')"></div>
+    <div class="home_hth_wrap">
+        <ul class="hth_turn">
+            <li>
+                <h4>TIGERZ HOUSE</h4>
+                <P><span>“</span>House Tiger provides new Zealand's real housing and its school district and community
+                    information,there are 4864 brekers detailed information,including business exprience,the number of
+                    transactions and buyers reviews.<span>”</span></P></li>
+            <li>
+                <h4>TIGERZ HOUSE</h4>
+                <P><span>“</span>House Tiger provides new Zealand's real housing and its school district and community
+                    information,there are 4864 brekers detailed information,including business exprience,the number of
+                    transactions and buyers reviews.<span>”</span></P></li>
+            <li>
+                <h4>TIGERZ HOUSE</h4>
+                <P><span>“</span>House Tiger provides new Zealand's real housing and its school district and community
+                    information,there are 4864 brekers detailed information,including business exprience,the number of
+                    transactions and buyers reviews.<span>”</span></P></li>
+            <li>
+                <h4>TIGERZ HOUSE</h4>
+                <P><span>“</span>House Tiger provides new Zealand's real housing and its school district and community
+                    information,there are 4864 brekers detailed information,including business exprience,the number of
+                    transactions and buyers reviews.<span>”</span></P></li>
+            <li>
+                <h4>TIGERZ HOUSE</h4>
+                <P><span>“</span>House Tiger provides new Zealand's real housing and its school district and community
+                    information,there are 4864 brekers detailed information,including business exprience,the number of
+                    transactions and buyers reviews.<span>”</span></P></li>
+            <li>
+                <h4>TIGERZ HOUSE</h4>
+                <P><span>“</span>House Tiger provides new Zealand's real housing and its school district and community
+                    information,there are 4864 brekers detailed information,including business exprience,the number of
+                    transactions and buyers reviews.<span>”</span></P></li>
+            <li>
+                <h4>TIGERZ HOUSE</h4>
+                <P><span>“</span>House Tiger provides new Zealand's real housing and its school district and community
+                    information,there are 4864 brekers detailed information,including business exprience,the number of
+                    transactions and buyers reviews.<span>”</span></P></li>
+        </ul>
+    </div>
+    <!--轮播小圆点-->
+    <ul class="hth_dot">
+        <li class="hth_doted" ng-click="allValue.introduceDot(0)"></li>
+        <li ng-click="allValue.introduceDot(1)"></li>
+        <li ng-click="allValue.introduceDot(2)"></li>
+        <li ng-click="allValue.introduceDot(3)"></li>
+        <li ng-click="allValue.introduceDot(4)"></li>
+        <li ng-click="allValue.introduceDot(5)"></li>
+        <li ng-click="allValue.introduceDot(6)"></li>
+    </ul>
+</section>

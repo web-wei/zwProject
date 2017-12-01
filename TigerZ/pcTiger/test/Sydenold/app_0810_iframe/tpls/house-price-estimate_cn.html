@@ -1,0 +1,114 @@
+<!-------------------------------------------------------home页头部---------------------------------------------------->
+<section class="estimate_header">
+    <div class="home_banner_advImg">
+        <img src="http://res.tigerz.nz/imgs/estimatebanner.jpg" alt="Houses For Sale in New Zealand">
+    </div>
+    <!--首页导航栏-->
+    <nav>
+        <a href="/home_cn" title="Houses For Sale in New Zealand"><h1 title="Houses For Sale in New Zealand">Houses For Sale in New Zealand <img src="http://res.tigerz.nz/imgs/logo2.png" alt="Houses For Sale in New Zealand" title="Houses For Sale in New Zealand"></h1></a>
+        <nav-itemcn class="home_nav" city="allValue.currentSelectCity"></nav-itemcn>
+        <div class="home_login_language">
+            <p class="home_language_wrap">
+                <span class="home_language"><a href="/house-price-estimate_cn?city=Auckland" style="color:#FFD800;">中文</a></span>
+                <i> / </i>
+                <span class="home_language"><a href="/house-price-estimate?city=Auckland">English</a></span>
+            </p>
+        </div>
+    </nav>
+    <!--收索框上的介绍-->
+    <section class="home_nav_title">
+        <h2>免费房产估价</h2>
+        <p>搜索超过50万套奥克兰房产信息和免费估价</p>
+    </section>
+    <!--搜索框的div-->
+    <div class="home_search_bar">
+        <ul class="home_search_type" style="display: none;">
+            <li>Find a home</li>
+            <li>School Zone</li>
+        </ul>
+        <span class="home_serach_type_icon" style="display: none"></span>
+        <div class="home_search">
+            <div class="home_search_box">
+                <input type="text" placeholder="请输入地址" ng-change="allValue.searchBar()" ng-model="allValue.currentValue" ng-focus="allValue.focusEvent()" ng-blur="allValue.blurEvent()">
+            </div>
+            <span class="home_search_icon"><a ng-href="{{allValue.searchBtn()}}"><span></span></a></span>
+        </div>
+        <div class="home_search_sub" ng-hide="allValue.subFlag">
+            <!----------------------------没有找到相应的房源----------------------------->
+            <p class="home_search_error">Can't find the corresponding data</p>
+            <!---------------------------模糊查询房源----------------------------------->
+            <ul class="home_search_simple" ng-mouseover="allValue.overEvent()" ng-mouseleave="allValue.leaveEvent()">
+                <li ng-repeat="item in allValue.searchData"><a ng-href="{{allValue.jugePage(item)}}" ng-mousedown="allValue.historyClick(item)"  title="{{item.name}},{{item.fatherName}},{{allValue.jugeLevel(item.level,item.isSale)}}"><span ng-bind="item.name+','"></span><span ng-bind="item.fatherName"></span><span ng-bind="allValue.jugeLevel(item.level,item.isSale)"></span></a></li>
+            </ul>
+            <!--------------------------搜索历史纪录------------------------------------->
+            <ul class="home_search_history" ng-mouseover="allValue.overEvent()" ng-mouseleave="allValue.leaveEvent()">
+                <li ng-repeat="item in allValue.searchHistoryData track by $index"><a ng-href="{{allValue.jugePage(item)}}"  title="{{item.name}},{{item.fatherName}},{{allValue.jugeLevel(item.level,item.isSale)}}"><span ng-bind="item.name+','"></span><span ng-bind="item.fatherName"></span><span ng-bind="allValue.jugeLevel(item.level,item.isSale)"></span></a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-----------------------------------------------------近十二个月的涨幅-------------------------------------------------->
+<section class="home_last_info">
+    <div class="hld_intro">
+        <p class="hld_title">过去12个月的价格指数:</p>
+        <span class="hld_line"></span>
+        <div class="hld_wrap">
+            <ul class="hld_static">
+                <li ng-repeat="item in allValue.statics.priceIncreaseList track by $index"><span ng-bind="item.area + ': '"></span><span class="hld_data_green" ng-bind="item.value"></span><span class="hld_data_green">%</span></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!------------------------------------------------------Why Choose TIGERZ--------------------------------------------->
+<section class="estimate_choose">
+    <estimate-contentcn></estimate-contentcn>
+</section>
+<!------------------------------------------------------footer部分----------------------------------------------------->
+<div id="estimate_footer">
+    <city-suburb city-json="cityJson" current-city="allValue.currentSelectCity"></city-suburb>
+    <div class="clearfix"></div>
+    <footer-itemcn></footer-itemcn>
+</div>
+<!------------------------------------------------------解决报错-------------------------------------------------------->
+<div>
+    <div class="dai_item"></div>
+    <div class="dai_item"></div>
+    <div class="dai_item"></div>
+    <div class="dai_item"></div>
+    <div class="dai_item"></div>
+    <div class="dai_item"></div>
+    <div class="dai_item"></div>
+    <div class="dai_item"></div>
+</div>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?98b74b7f3ddb1c502ca10f723fc80ab1";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-90714030-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https'){
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else{
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>

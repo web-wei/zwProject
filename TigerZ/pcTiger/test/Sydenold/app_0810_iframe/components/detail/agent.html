@@ -1,0 +1,53 @@
+<div class="agent-block">
+    <ul class="agent-detail">
+        <li ng-repeat="item in agentList track by $index" ng-click="agentChoice($index,item.agent_id)">
+            <i class="select-circle" ng-class="{false:'select-circle',true:'select-circled'}[$index == 0]"></i>
+            <div class="agentImgWrap">
+                <img error-src="http://res.tigerz.nz/imgs/defaultagent.png" ng-src="{{item.agent_icon}}" alt="{{item.agent_name}}">
+            </div>
+            <div class="detail-mes">
+                <p class="agent-name" ng-bind="item.agent_name"></p>
+                <p class="agent-tel">
+                    <span class="iconfont tel-icon">&#xe6ac;</span>
+                    <span class="tel-num" ng-bind="item.agent_mobile"></span>
+                </p>
+            </div>
+        </li>
+    </ul>
+    <p class="refresh-agent" ng-if="agentList.length > 3">
+        <i class="iconfont refresh-icon">&#xe600;</i>
+        <span>Change</span>
+    </p>
+    <div class="send-message">
+        <form name="agentForm" novalidate="novalidate">
+            <div class="input-wrap">
+                <span class="eName-require require-icon"></span>
+                <input type="text" placeholder="My name" id="agentUserName" ng-model="userName" required>
+                <i class="iconfont agentName-icon">&#xe627;</i>
+            </div>
+            <div class="input-wrap">
+                <input type="text" placeholder="Phone" id="agentTel" name="agentTel" ng-model="userFeedTel" ng-pattern="/^[0-9]*$/">
+                <i class="iconfont agentPhone-icon">&#xe678;</i>
+            </div>
+            <p class="err-alert" ng-show="agentForm.agentTel.$error.pattern">Please input a correct telephone number</p>
+
+            <div class="input-wrap">
+                <span class="aEmail-require require-icon"></span>
+                <input type="email" placeholder="Email" id="agentEmail" name="agentEmail" ng-model="userFeedEmail" ng-pattern="/^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/" required>
+                <i class="iconfont agentEmail-icon">&#xe7c0;</i>
+            </div>
+            <p class="err-alert" ng-show="agentForm.agentEmail.$error.required && agentForm.agentEmail.$dirty">Please input your email</p>
+            <p class="err-alert" ng-show="agentForm.agentEmail.$error.email || agentForm.agentEmail.$error.pattern">This is not a valid email !</p>
+
+        </form>
+        <div class="aContent">
+            <span class="aContent-require require-icon"></span>
+            <textarea ng-model="userContent" id="agentUserContact" placeholder="Descript your problem..." ng-blur="agentBlur()"></textarea>
+        </div>
+        <safe-code right-code="agentCheck" md="agentMd" count="agentCount"></safe-code>
+        <p class="err-alert" id="serverBack"></p>
+        <button class="send-btn" ng-click="contactFn(!((agentForm.agentEmail.$error.required && agentForm.agentEmail.$dirty)||agentForm.agentEmail.$error.email || agentForm.agentEmail.$error.pattern ||agentForm.agentTel.$error.pattern))">
+            Submit
+        </button>
+    </div>
+</div>

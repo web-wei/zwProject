@@ -1,0 +1,2212 @@
+.login_mask{
+  width:100%;
+  height:100%;
+  //transition: all linear .3s;
+  background: rgba(255,255,255,.8);
+  position: fixed;
+  left:0;
+  top:0;
+  z-index: 9999;
+  input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: rgb(255, 255, 255); /* #FAFFBD; */
+    background-image: none;
+    color: rgb(0, 0, 0);
+  }
+  .login_wrapper{
+    -webkit-transition:all linear 0.4s;
+    -moz-transition:all linear 0.4s;
+    -o-transition:all linear 0.4s;
+    transition:all linear 0.4s;
+    width:4.46rem;
+    min-height:3.81rem;
+    padding: .1px;
+    background: #FFFFFF;
+    margin: .5rem auto;
+    -moz-box-shadow:0 0 3px 3px rgba(0,0,0,.08);
+    -webkit-box-shadow:0 0 3px 3px rgba(0,0,0,.08);
+    box-shadow:0 0 3px 3px rgba(0,0,0,.08);
+    .login_title{
+      width: 4.06rem;
+      height:.39rem;
+      margin:.17rem auto;
+      line-height:.39rem;
+      position: relative;
+      h3{
+        font-size: .3rem;
+        color: #434343;
+      }
+      .close_wrap{
+        position: absolute;
+        right:0;
+        top:0;
+        width:.25rem;
+        height:.25rem;
+        cursor: pointer;
+        .login_close{
+          display: block;
+          margin-top: .1rem;
+          width:.21rem;
+          height:2px;
+          background: #444444;
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+      }
+
+      .login_close:before{
+        content: "";
+        display: block;
+        width:.21rem;
+        height:2px;
+        cursor: pointer;
+        background: #444444;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+    }
+    .login_regist{
+      padding: .1px;
+      width: 4.06rem;
+      height:.47rem;
+      margin:0 auto;
+      //box-sizing: border-box;
+      //overflow: hidden;
+      border-bottom: 1px solid #cccccc;
+      li{
+        float: left;
+        cursor: pointer;
+        height:.47rem;
+        line-height:.47rem;
+        //margin-bottom: .07rem;
+        padding:0 .3rem;
+        font-size: .19rem;
+        color: #434343;
+      }
+      li:hover{
+        border-bottom:2px solid #fdd731;
+      }
+      .login_active{
+        border-bottom:2px solid #fdd731;
+      }
+    }
+    .login_tab{
+      width: 4.06rem;
+      margin: .2rem auto 0 auto;
+      .input_wrap{
+        width: 100%;
+        height:.38rem;
+        box-sizing: border-box;
+        border:1px solid #cccccc;
+        margin-bottom: .15rem;
+        input{
+          width: 3.9rem;
+          margin:.09rem 0 0 .06rem;
+          height:.2rem;
+          font-size: .16rem;
+          line-height:.2rem;
+          outline: none;
+          border:none;
+        }
+      }
+      .login_file{
+        width:100%;
+        height:.26rem;
+        line-height:.26rem;
+        font-size: .14rem;
+        vertical-align:middle;
+        .file_confirm{
+          display:inline-block;
+          vertical-align: middle;
+          width:.15rem;
+          height:.15rem;
+          background: url("http://res.tigerz.nz/imgs/fileuncinfirm.png") no-repeat;
+          background-size: 100%;
+          margin-right: .05rem;
+          cursor: pointer;
+        }
+        .file_confirmed{
+          background: url("http://res.tigerz.nz/imgs/fileconfirm.png") no-repeat;
+        }
+        a{
+          color: #fdd731;
+        }
+      }
+      .commit_button{
+        width:4.06rem;
+        height:.38rem;
+        margin: .15rem 0;
+        //vertical-align:bottom;
+        padding: .1px;
+        input[type=button]{
+          float: left;
+          width:2.04rem;
+          height:.38rem;
+          border-radius: 5px;
+          outline:none;
+          border: none;
+          text-align: center;
+          line-height:.38rem;
+
+          font-size: .17rem;
+          color: #fff;
+          transition: all linear .2s;
+        }
+        .errBtn{
+          background: #cccccc;
+          cursor: default;
+        }
+        .okBtn{
+          background: #fdd731;
+          cursor: pointer;
+        }
+        .okBtn:hover{
+          background: #fdb82c;
+        }
+        .foget_password{
+          float: left;
+          display: block;
+          height:.38rem;
+          line-height:.38rem;
+          margin-left: .1rem;
+          color: #fcdc48;
+          font-size:.15rem;
+          cursor: pointer;
+        }
+        .foget_password:hover{
+          text-decoration: underline;
+        }
+      }
+      .login_auto{
+        width:100%;
+        height:.26rem;
+        line-height:.26rem;
+        font-size: .14rem;
+        vertical-align:middle;
+        .file_confirm{
+          display:inline-block;
+          vertical-align: middle;
+          width:.15rem;
+          height:.15rem;
+          background: url("http://res.tigerz.nz/imgs/fileuncinfirm.png") no-repeat;
+          background-size: 100%;
+          margin-right: .05rem;
+          cursor: pointer;
+          transition: all linear .2s;
+        }
+        .file_confirmed{
+          background: url("http://res.tigerz.nz/imgs/fileconfirm.png") no-repeat;
+        }
+      }
+      .login_error{
+        margin: .1rem 0;
+        width: 100%;
+        line-height:.19rem;
+        font-size:.12rem;
+        color: red;
+      }
+      .err_alert{
+        color: #f00;
+        display: inline-block;
+        margin: -0.1rem 0 .1rem 0;
+      }
+    }
+    .regist_tab{
+      //display: none;
+      width: 4.06rem;
+      margin: .2rem auto 0 auto;
+      .input_wrap{
+        width: 100%;
+        height:.38rem;
+        box-sizing: border-box;
+        border:1px solid #cccccc;
+        margin-bottom: .15rem;
+        input{
+          width: 3.9rem;
+          margin:.11rem 0 0 .06rem;
+          height:.16rem;
+          outline: none;
+          border:none;
+        }
+      }
+      .regist_file{
+        width:100%;
+        height:.26rem;
+        line-height:.26rem;
+        font-size: .14rem;
+        vertical-align:middle;
+        .file_confirm{
+          display:inline-block;
+          vertical-align: middle;
+          width:.15rem;
+          height:.15rem;
+          background: url("http://res.tigerz.nz/imgs/fileuncinfirm.png") no-repeat;
+          background-size: 100%;
+          margin-right: .05rem;
+          cursor: pointer;
+          transition: all linear .2s;
+        }
+        .file_confirmed{
+          background: url("http://res.tigerz.nz/imgs/fileconfirm.png") no-repeat;
+        }
+        a{
+          color: #fdd731;
+        }
+      }
+      .regist_button{
+        width:4.06rem;
+        height:.38rem;
+        margin-top: .15rem;
+        //vertical-align:bottom;
+        padding: .1px;
+        input[type=button]{
+          float: left;
+          width:2.04rem;
+          height:.38rem;
+          background: #fdd731;
+          border-radius: 5px;
+          outline:none;
+          border: none;
+          text-align: center;
+          line-height:.38rem;
+          cursor: pointer;
+          font-size: .17rem;
+          color: #fff;
+          transition: all linear .2s;
+        }
+        input[type=button]:hover{
+          background: #fdb82c;
+        }
+      }
+      .err_alert{
+        color: #f00;
+        display: inline-block;
+        margin: -0.1rem 0 .1rem 0;
+      }
+    }
+    .other_login{
+      height:.77rem;
+      width:4.06rem;
+      line-height:.77rem;
+      text-align: center;
+      font-size: .16rem;
+      margin: .15rem auto 0 auto;
+      border-top:1px solid #cccccc;
+      vertical-align: baseline;
+      .facebook_login{
+        display: inline-block;
+        width: .3rem;
+        height:.3rem;
+        background: url("http://res.tigerz.nz/imgs/facebook.png") no-repeat;
+        background-size: 100%;
+        margin-left: .29rem;
+        vertical-align: middle;
+      }
+      .google_login{
+        display: inline-block;
+        width: .3rem;
+        height:.3rem;
+        background: url("http://res.tigerz.nz/imgs/google.png") no-repeat;
+        background-size: 100%;
+        margin-left: .16rem;
+        vertical-align: middle;
+      }
+      .wechat_login{
+        display: inline-block;
+        width: .3rem;
+        height:.3rem;
+        background: url("http://res.tigerz.nz/imgs/wechat.png") no-repeat;
+        background-size: 100%;
+        margin-left: .16rem;
+        vertical-align: middle;
+      }
+    }
+  }
+
+}
+
+.login_mask.ng-hide-add, .login_mask.ng-hide-remove {
+  -webkit-transition:all linear 0.4s;
+  -moz-transition:all linear 0.4s;
+  -o-transition:all linear 0.4s;
+  transition:all linear 0.4s;
+}
+
+.login_mask.ng-hide-add.ng-hide-add-active,
+.login_mask.ng-hide-remove {
+  opacity: 0;
+  .login_wrapper{
+    margin-top: -4.1rem;
+  }
+}
+
+.login_mask.ng-hide-add,
+.login_mask.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
+  .login_wrapper{
+    margin-top: .5rem;
+  }
+}
+//=================================================header部分=============================================
+.home_header{
+  width: 12.8rem;
+  height: 5.8rem;
+  padding: .1px;
+  //background:rgba(255,185,0,.3);
+  //background-attachment: fixed;
+  //background-size: cover;
+  position: relative;
+  .home_banner_advImg{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    left:0;
+    top:0;
+    //z-index: 1;
+    img{
+      width: 100%;
+      height:100%;
+    }
+  }
+ nav{
+   position: absolute;
+   left: 0;
+   top:0;
+   width: 12.8rem;
+   height:1rem;
+   h1{
+     float: left;
+     margin:-0.06rem .14rem 0 .4rem;
+     width: 1.613rem;
+     font-size: 0;
+     cursor: pointer;
+     img{
+       width: 100%;
+     }
+   }
+   .home_addr{
+     cursor: pointer;
+     min-width: 1.5rem;
+     height: .15rem;
+     line-height:.15rem;
+     position: relative;
+     float: left;
+     margin: .42rem .45rem 0 0;
+     .home_map_icon{
+       display: inline-block;
+       vertical-align: top;
+       width: .11rem;
+       height: .14rem;
+       background: url("http://res.tigerz.nz/imgs/addr.png") no-repeat;
+       background-size: cover;
+     }
+     .home_current_city{
+       font-size: .16rem;
+       display: inline-block;
+       vertical-align: top;
+       color: #ffffff;
+       margin-left: .04rem;
+       position: relative;
+       transition: all linear .3s;
+     }
+     .home_current_city:hover{
+       color: #fed631;
+     }
+     .home_current_city:after{
+       content: 'new';
+       display: block;
+       position: absolute;
+       width: .31rem;
+       height: .14rem;
+       line-height:.12rem;
+       right: -0.34rem;
+       top:-0.1rem;
+       text-align: center;
+       border-radius: 8px;
+       background: #f00;
+       font-size: .11rem;
+       color: #fff;
+     }
+     .home_addr_choice{
+       min-width: 1.65rem;
+       background: #FFFFFF;
+       position: absolute;
+       z-index: 9999;
+       left: -0.3rem;
+       top:.37rem;
+       min-height: .6rem;
+       border-radius: 4px;
+       padding: .1rem 0;
+       display: none;
+       li{
+         height:.31rem;
+         text-align: center;
+         font-size: .14rem;
+         line-height: .31rem;
+         font-weight: 500;
+         color: #2b2b2b;
+         cursor: pointer;
+       }
+       li:hover{
+         text-decoration: underline;
+       }
+     }
+     .home_addr_choice:before{
+       content: '';
+       display: block;
+       width: 0;
+       height: 0;
+       border: 15px solid transparent;
+       border-bottom:15px solid #fff;
+       position: absolute;
+       left: 50%;
+       top:-25px;
+       z-index: 9999;
+       transform: translate(-50%,0);
+     }
+   }
+   .home_nav{
+     float: left;
+     li{
+       float: left;
+       height: 1rem;
+       text-align: center;
+       line-height:1rem;
+       a{
+         display: block;
+         padding:0 .22rem;
+         font-size: .16rem;
+         height: 1rem;
+         line-height:1rem;
+         color: #fff;
+         transition: all linear .2s;
+       }
+       a:hover{
+         color:#FFD800;
+       }
+     }
+     li:after{
+       content: "";
+       display: block;
+       clear: both;
+     }
+   }
+   .home_login_language{
+     float: right;
+     margin-right:.2rem;
+     .home_login{
+       float: left;
+       margin-right: .3rem;
+       padding:0 0.06rem;
+       text-align: center;
+       height: 1rem;
+       line-height:1rem;
+       color:#ffffff;
+       font-size: .14rem;
+       cursor: pointer;
+       transition: all linear .2s;
+     }
+     .home_login:hover{
+       color: #FFD800;
+     }
+     .home_hasLogin{
+       float: left;
+       height: 1rem;
+       margin-right: .06rem;
+       cursor: pointer;
+       position: relative;
+       .userName{
+         color: #fff;
+         font-size: .14rem;
+         display: inline-block;
+         vertical-align: middle;
+         height:1rem;
+         line-height:1rem;
+       }
+       .login_tri{
+         display: inline-block;
+         vertical-align: middle;
+         width: 0;
+         height:0;
+         margin: .09rem .16rem 0 .09rem;
+         border: 4px solid #fff;
+         border-right-color:transparent;
+         border-left-color: transparent;
+         border-bottom-color: transparent;
+         -webkit-transition: all linear .2s;
+         -moz-transition: all linear .2s ;
+         -ms-transition: all linear .2s ;
+         -o-transition: all linear .2s ;
+         transition: all linear .2s ;
+       }
+       .login_tri_open{
+         margin: 0 .16rem 0 .09rem;
+         border: 4px solid #fff;
+         border-right-color:transparent;
+         border-left-color: transparent;
+         border-top-color: transparent;
+         -webkit-transition: all linear .2s;
+         -moz-transition: all linear .2s ;
+         -ms-transition: all linear .2s ;
+         -o-transition: all linear .2s ;
+         transition: all linear .2s ;
+       }
+       .login_icon{
+         width: .3rem;
+         height:.3rem;
+         display: inline-block;
+         vertical-align: middle;
+         background: url("http://res.tigerz.nz/imgs/loginicon.png") no-repeat;
+         background-size: 100%;
+         margin-right: .35rem;
+       }
+       .userInfo_list{
+         opacity: 0;
+         transition: all linear .2s;
+         position: absolute;
+         z-index: 9999;
+         width: 2.4rem;
+         max-height:1.45rem;
+         -moz-box-shadow:0 0 3px 3px rgba(0,0,0,.08);
+         -webkit-box-shadow:0 0 3px 3px rgba(0,0,0,.08);
+         box-shadow:0 0 3px 3px rgba(0,0,0,.08);
+         background: #FFFFFF;
+         right: 0;
+         top:.8rem;
+          .userInfo_tri{
+            position: absolute;
+            display: block;
+            width:0;
+            height:0;
+            top:-25px;
+            right:.75rem;
+            border:15px solid #fff;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-left-color: transparent;
+          }
+          .info_list{
+            width:100%;
+            margin-top: .17rem;
+            li{
+              height:.22rem;
+              margin-bottom: .05rem;
+              a{
+                display:block;
+                text-indent:.25rem;
+                font-size: .14rem;
+                color: #323232;
+              }
+            }
+          }
+         .login_out{
+           width:100%;
+           height:.45rem;
+           box-sizing: border-box;
+           line-height:.45rem;
+           font-size:.14rem;
+           text-indent: .25rem;
+           border-top:1px solid #cccccc;
+         }
+       }
+     }
+     .home_language_wrap{
+       float: right;
+       .home_language{
+         padding:0 0.06rem;
+         float: left;
+         text-align: center;
+         height: 1rem;
+         line-height:1rem;
+         color:#ffffff;
+         font-size: .14rem;
+         cursor: pointer;
+         a{
+           display: block;
+           color: #ffffff;
+         }
+       }
+       i{
+         float: left;
+         height: 1rem;
+         line-height:1rem;
+         color:#ffffff;
+       }
+       .language_choiced{
+         color:#FFD800;
+       }
+     }
+   }
+ }
+.home_nav_title{
+  width: 12.8rem;
+  position: absolute;
+  left:0;
+  top: 2rem;
+  text-align: center;
+  h2{
+    font-size: .55rem;
+    height: .55rem;
+    line-height:.55rem;
+    font-weight: normal;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: .1rem;
+  }
+  p{
+    font-size:.22rem;
+    height: .25rem;
+    color: #ffffff;
+  }
+}
+  .home_search_bar{
+    width: 7.98rem;
+    margin: 3.2rem auto .24rem;
+    font-weight:normal;
+    position: relative;
+    .home_search_type{
+      overflow: hidden;
+      margin-bottom: .14rem;
+      li{
+        float: left;
+        cursor: pointer;
+        font-size: .16rem;
+        width: 1.05rem;
+        height: .14rem;
+        line-height:.14rem;
+        color: #ffffff;
+        text-align: center;
+      }
+    }
+    .home_serach_type_icon{
+      display: block;
+      width: 0;
+      height: 0;
+      border-bottom: 8px solid #ffffff;
+      border-top: 8px solid transparent;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      position: absolute;
+      left: .5rem;
+      top: .14rem;
+    }
+    .home_search{
+      width: 100%;
+      height: .52rem;
+      .home_search_bar_box{
+        float: left;
+        width: 6.67rem;
+        height: .52rem;
+        background: #ffffff;
+        border-radius: .03rem 0 0 .03rem;
+        input{
+          width: 6.41rem;
+          margin:.13rem 0 0 .25rem;
+          height: .3rem;
+          line-height: .3rem;
+          font-size: .16rem;
+          outline: none;
+          border: none;
+        }
+      }
+
+      .home_search_icon{
+        float: left;
+        width: 1.3rem;
+        height: .52rem;
+        background:#FFD800;
+        transition: all linear 0.3s;
+        border-radius: 0 .03rem .03rem 0;
+        cursor: pointer;
+        a{
+          display: block;
+          span{
+            display: inline-block;
+            width:.27rem;
+            height: .27rem;
+            margin: .12rem 0 0 .52rem;
+            background: url("http://res.tigerz.nz/imgs/search.png") no-repeat;
+            background-size: 100%;
+          }
+        }
+      }
+      .home_search_icon:hover{
+        background: #ffb900;
+      }
+    }
+    .home_search_sub{
+      position: absolute;
+      left: 0;
+      top:.5rem;
+      width: 6.68rem;
+      max-height: 1.7rem;
+      border-radius: 0 0 .03rem .03rem;
+      background: #ffffff;
+      overflow: scroll;
+      overflow-x: hidden;
+      z-index: 99;
+      ul{
+        //display: none;
+        width: 100%;
+        li{
+          width: 100%;
+          height: .33rem;
+          line-height:.33rem;
+          text-indent: .26rem;
+          font-size:.14rem ;
+          color: #000;
+          a{
+            display: block;
+            line-height:.3rem;
+            text-indent: .26rem;
+            font-size:.16rem ;
+            color: #000;
+            overflow: hidden;
+            span:nth-of-type(1){
+              float: left;
+            }
+            span:nth-of-type(2){
+              text-indent: 0;
+              float: left;
+            }
+            span:nth-of-type(3){
+              float: right;
+              margin-right: .2rem;
+              font-weight:bold;
+            }
+          }
+        }
+        li:hover{
+          background: #f2f3f5;
+          a{
+            span{
+              font-weight: bold;
+            }
+          }
+        }
+      }
+      .home_search_simple{
+         display: none;
+       }
+      .home_search_error{
+        display: none;
+        color: #ff0000;
+        font-size:.16rem;
+        text-indent: .26rem;
+        line-height: .5rem;
+        height: .5rem;
+        width: 100%;
+        cursor: default;
+      }
+    }
+  }
+  #footer_top{
+    width: 12rem;
+    height:1.7rem;
+    margin: 0 auto;
+    position: absolute;
+    left:.4rem;
+    bottom:.3rem;
+    .nav_citys{
+      width: 6.8rem;
+      margin: 0 auto .07rem auto;
+      height:.35rem;
+      display: flex;
+      justify-content: space-around;
+      li{
+        //float: left;
+        min-width: 1.2rem;
+        line-height: .35rem;
+        margin-right: .1rem;
+        text-align: center;
+        border-radius: .03rem;
+        background: #ffd800;
+        cursor: pointer;
+        a{
+          display: block;
+          min-width: 1.2rem;
+          padding: 0 .2rem;
+          color: #2b2b2b;
+          font-size:.14rem;
+        }
+      }
+      .overNavLi{
+        background:#ffb900;
+      }
+    }
+    .nav_city_wrap{
+      width: 12rem;
+      li{
+        float: left;
+        line-height: .2rem;
+        margin: .02rem .05rem 0 0;
+        border-radius: .02rem;
+        background: #05090c;
+        a{
+          display: block;
+          color: #fff;
+          padding: 0 .07rem;
+          font-size: .12rem;
+          color: #9B9B9B;
+        }
+      }
+      .overNavSubLi{
+        background:#0f1a23;
+        a{
+          color: #fff;
+        }
+      }
+    }
+  }
+  .home_hot_search{
+    width: 9rem;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    span{
+      float: left;
+      font-size: .16rem;
+      font-weight:bold;
+      width: 1rem;
+      color: #ffffff;
+      margin: 0 .15rem 0 .65rem;
+    }
+    ul{
+      float: left;
+      li{
+        float: left;
+        width: 1.3rem;
+        a{
+          display: block;
+          text-align: center;
+          color: #ffffff;
+          font-size: .16rem;
+          text-decoration: underline;
+        }
+        a:hover{
+          color: #ffb900;
+        }
+      }
+    }
+    ol{
+      position: absolute;
+      left:1.8rem;
+      top:.28rem;
+      //======================================================================
+      li{
+        float: left;
+        width: 1.3rem;
+        a{
+          display: block;
+          color: #ffffff;
+          font-size: .16rem;
+          text-align: center;
+          text-decoration: underline;
+        }
+        a:hover{
+          color: #ffb900;
+        }
+      }
+    }
+  }
+}
+//=================================================十二个月内的涨幅=========================================
+.home_last_info{
+  width: 12.8rem;
+  .hld_intro{
+    width: 100%;
+    height: .6rem;
+    background: #FFD800;
+    .hld_title{
+      float: left;
+      width: 3rem;
+      height: .6rem;
+      line-height:.6rem;
+      margin-left: .4rem;
+      font-size: .16rem;
+      font-weight: bold;
+    }
+    .hld_line{
+      float: left;
+      width: .12rem;
+      height: .6rem;
+      margin-right: .28rem;
+      background: url("http://res.tigerz.nz/imgs/index_icon.png") no-repeat -10px -60px;
+    }
+    .hld_wrap{
+      float: left;
+      width: 8.9rem;
+      height: .6rem;
+      overflow: hidden;
+      position: relative;
+      ul{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top:0;
+        li{
+          float: left;
+          height:.6rem;
+          line-height: .6rem;
+          margin-right: .56rem;
+          span{
+            font-size: .16rem;
+            font-weight:bold;
+          }
+          .hld_data_green{
+            color:green;
+            font-weight:normal;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+          }
+        }
+      }
+    }
+  }
+}
+//=================================================dataInformation部分====================================
+.home_last_data{
+  width: 12.8rem;
+  height: 4.4rem;
+  .hld_detail{
+    width: 12.8rem;
+    height: 4.4rem;
+    background: url("http://res.tigerz.nz/imgs/index2.jpg");
+    background-size: 100%;
+    .hld_detail_word{
+      width: 12rem;
+      height: 2.35rem;
+      .hld_updata_wrap{
+        width: 9.8rem;
+        height: 2.35rem;
+        margin-left: 1.3rem;
+        overflow: hidden;
+        position: relative;
+        .hldu_ul{
+          width: 39.2rem;
+          height:2.35rem;
+          position: absolute;
+          left:0;
+          top:0;
+          .hld_updata{
+            float: left;
+            width: 9.8rem;
+            height: 2.35rem;
+            p{
+              float: left;
+              width: 3.4rem;
+              text-align: right;
+              height: 2.35rem;
+              line-height: 2.35rem;
+              font-size: .55rem;
+              //font-family: tf;
+              color:#ffffff;
+              margin-right:.8rem;
+            }
+            .hld_updata_ul{
+              float: left;
+              width: 5.6rem;
+              height: 2.35rem;
+              padding-top: .605rem;
+              li{
+                width: 5.6rem;
+                line-height: .38rem;
+                font-size: .18rem;
+                color: #ffffff;
+                span{
+                  display:inline-block;
+                  margin-right: .1rem;
+                  width: .08rem;
+                  height: .08rem;
+                  background: #ffffff;
+                  border-radius: 50%;
+                }
+              }
+            }
+        }
+        }
+      }
+    }
+    .hld_detail_number{
+      width: 12rem;
+      height: 1.4rem;
+      margin:.16rem 0 0 .4rem;
+      .hld_downdata{
+        width: 100%;
+        height: 100%;
+        li{
+          float: left;
+          position: relative;
+          box-sizing: border-box;
+          width: 2.7rem;
+          margin-right: .3rem;
+          height: 1.36rem;
+          border: 1px solid #ffffff;
+          cursor: pointer;
+          transition: all linear .3s;
+          .hld_downdata_icon{
+            display: block;
+            width: 0;
+            height: 0;
+            position: absolute;
+            left: 1.25rem;
+            top:-20px;
+          }
+          .hld_turn_icon{
+            border-bottom: 10px solid #FFD11E;
+            border-top: 10px solid transparent;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+          }
+          .down_num{
+            width: 100%;
+            text-align: center;
+            color: #ffffff;
+            font-size:.6rem;
+            height: .6rem;
+            line-height: .6rem;
+            margin: .25rem 0 .15rem 0;
+          }
+          .down_dis{
+            color: #ffffff;
+            font-size: .16rem;
+            height: .16rem;
+            line-height:.16rem;
+            text-align: center;
+          }
+        }
+        li:hover{
+          background: rgba(255,185,0,.5);
+          border:1px solid #FFD11E;
+          color: #FFD11E;
+          .down_num{
+            color: #FFD11E;
+          }
+          .down_dis {
+            color: #FFD11E;
+          }
+        }
+        //.hld_turn_num{
+        //  border:1px solid #FFD11E;
+        //  .down_num{
+        //    color: #FFD11E;
+        //  }
+        //  .down_dis {
+        //    color: #FFD11E;
+        //  }
+        //}
+      }
+    }
+  }
+}
+//=================================================Why Choose TIGERZ=====================================
+.home_choose{
+  width: 12.8rem;
+  height:4.5rem;
+  position: relative;
+  background: #ffffff;
+  overflow: hidden;
+
+  .hc_title{
+    position: relative;
+    width: 12.8rem;
+    height: .6rem;
+    text-align: center;
+    line-height:.6rem;
+    font-weight: normal;
+    font-size: .55rem;
+    margin-top: .5rem;
+    color: #2b2b2b;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+    b{
+      font-size: .3rem;
+      position: absolute;
+      top:-0.15rem;
+      left: 8.2rem;
+    }
+  }
+  ul{
+    position: absolute;
+    width: 12rem;
+    height: 2.8rem;
+    left: .4rem;
+    bottom: 0rem;
+    li{
+      float: left;
+      width: 3rem;
+      height: 2.8rem;
+      .hc_img{
+        width: 1.6rem;
+        height: 1.6rem;
+        border-radius: 50%;
+        margin: 0 auto;
+      }
+      h4{
+        font-size: .18rem;
+        color: #2a2a2a;
+        margin: .4rem 0 .2rem 0;
+        height: .16rem;
+        line-height:.16rem;
+        text-align: center;
+      }
+      .hc_dis{
+        width: 100%;
+        span{
+          display: block;
+          text-align: center;
+          height: .24rem;
+          line-height: .24rem;
+          font-size: .12rem;
+          color: #979797;
+        }
+      }
+    }
+    li:nth-of-type(1){
+      .hc_img{
+        background: #ffd01e url("http://res.tigerz.nz/imgs/why1.png") no-repeat center center;
+        transition: all linear 0.3s;
+       }
+      .hc_img:hover{
+        background: #ffb900 url("http://res.tigerz.nz/imgs/why1.png") no-repeat center center;
+      }
+    }
+    li:nth-of-type(2){
+      .hc_img{
+        background: #ffd01e url("http://res.tigerz.nz/imgs/why2.png") no-repeat center center;
+        transition: all linear 0.3s;
+      }
+      .hc_img:hover{
+        background: #ffb900 url("http://res.tigerz.nz/imgs/why2.png") no-repeat center center;
+      }
+    }
+    li:nth-of-type(3){
+      .hc_img{
+        background: #ffd01e url("http://res.tigerz.nz/imgs/why3.png") no-repeat center center;
+        transition: all linear 0.3s;
+      }
+      .hc_img:hover{
+        background: #ffb900 url("http://res.tigerz.nz/imgs/why3.png") no-repeat center center;
+      }
+    }
+    li:nth-of-type(4){
+      .hc_img{
+        background: #ffd01e url("http://res.tigerz.nz/imgs/why4.png") no-repeat center center;
+        transition: all linear 0.3s;
+      }
+      .hc_img:hover{
+        background: #ffb900 url("http://res.tigerz.nz/imgs/why4.png") no-repeat center center;
+      }
+    }
+  }
+}
+//=================================================open house部分=========================================
+.home_open_house{
+  width: 12.8rem;
+  height:4.2rem;
+  padding: 0.1px;
+  background: #f2f3f5;
+  .hoh_title{
+    width: 100%;
+    height:.74rem;
+    margin-top: .35rem;
+    h4{
+      width: 100%;
+      text-align: center;
+      font-weight: normal;
+      height: .55rem;
+      line-height:.55rem;
+      font-size:.5rem;
+    }
+    p{
+      height: .2rem;
+      line-height:.2rem;
+      width: 100%;
+      margin-top: .2rem;
+      text-align: center;
+      font-size:.2rem;
+    }
+  }
+  .hoh_turn_wrap{
+    width: 12.8rem;
+    height: 2.7rem;
+    position: relative;
+    .hoh_btn{
+      width: .2rem;
+      height:.37rem;
+      position: absolute;
+      top:1.2rem;
+      cursor: pointer;
+      z-index: 99;
+    }
+    .hoh_left{
+      left: .18rem;
+      background: url("http://res.tigerz.nz/imgs/arrowleft.png") no-repeat;
+      -webkit-background-size:100%;
+      background-size:100%;
+    }
+    .hoh_right{
+      right: .28rem;
+      background: url("http://res.tigerz.nz/imgs/arrowright.png") no-repeat;
+      -webkit-background-size:100%;
+      background-size:100%;
+    }
+    .hoh_img_wrap{
+      width: 12rem;
+      height: 2.8rem;
+      margin-left:.3rem;
+      position: relative;
+      overflow: hidden;
+      .hoh_img_trun{
+        width: 84rem;
+        height:2.8rem;
+        position: absolute;
+        overflow: hidden;
+        left: 0;
+        top:0;
+        .hoh_img_item{
+          width: 12rem;
+          float: left;
+          height: 3rem;
+          overflow: hidden;
+          figure{
+            display: block;
+            cursor: pointer;
+            width: 3.625rem;
+            height: 2.58rem;
+            box-sizing: border-box;
+            border-bottom: .03rem solid transparent;
+            float: left;
+            margin:.2rem 0 0 .3rem;
+            position: relative;
+            transition: all linear 0.3s;
+            .hohii_img_wrap{
+              width: 100%;
+              height: 2.17rem;
+              overflow: hidden;
+              position:relative;
+              .hohii_img_over{
+                position: absolute;
+                width: 100%;
+                height:100%;
+                background: -webkit-linear-gradient(bottom,rgba(0,0,0,0.6),rgba(255,255,255,0));
+                background: -o-linear-gradient(bottom,rgba(0,0,0,0.6),rgba(255,255,255,0));
+                background: -moz-linear-gradient(bottom,rgba(0,0,0,0.6),rgba(255,255,255,0));
+                background: linear-gradient(bottom,rgba(0,0,0,0.6),rgba(255,255,255,0));
+                left: 0;
+                top:0;
+              }
+              img{
+                width: 100%;
+                height: 2.17rem;
+                transform:scale(1.6);
+                -webkit-transform:scale(1.6);
+                -moz-transform:scale(1.6);
+                -o-transform:scale(1.6);
+                -ms-transform:scale(1.6);
+              }
+            }
+            //================================================================================================================
+            .hohii_img_dis{
+              width: 3.4rem;
+              color: #ffffff;
+              position: absolute;
+              left: .1rem;
+              top:1.9rem;
+              cursor: pointer;
+              white-space:nowrap;
+              overflow:hidden;
+              text-overflow:ellipsis;
+              font-size:0.16rem;
+            }
+            figcaption{
+              width: 100%;
+              height: .38rem;
+              background: #ffffff;
+              p{
+                width: 3.6rem;
+                text-indent: .1rem;
+              }
+              .hohi_item_discraption{
+                overflow: hidden;
+                .hohi_item_price{
+                  float: left;
+                  width: 68%;
+                  height:.38rem;
+                  line-height: .38rem;
+                  color: #2b2b2b;
+                  font-size: .18rem;
+                  font-weight: normal;
+                  white-space:nowrap;
+                  overflow:hidden;
+                  text-overflow:ellipsis;
+                  .hohi_item_collect{
+                    display: none;
+                    float: right;
+                    display: inline-block;
+                    width: .26rem;
+                    height: .23rem;
+                    margin: .12rem .12rem 0 0;
+                    background: url("http://res.tigerz.nz/imgs/collect1.png") no-repeat;
+                    background-size: 100%;
+                  }
+                  .hohi_item_collected{
+                    display: none;
+                    background: url("http://res.tigerz.nz/imgs/collected.png") no-repeat;
+                    background-size: 100%;
+                  }
+                }
+                .hohi_item_dis {
+                  width: 31%;
+                  float: right;
+                  text-indent: 0;
+                  color: #2b2b2b;
+                  span{
+                    float: left;
+                    height: .38rem;
+                    line-height:.38rem;
+                    font-size:.14rem;
+                    color:#2b2b2b;
+                  }
+                  .hohii_dis_bed{
+                    width: .16rem;
+                    height: .12rem;
+                    background: url("http://res.tigerz.nz/imgs/bed.png") no-repeat;
+                    background-size: 100%;
+                    margin: .12rem .1rem 0 .2rem;
+                  }
+                  .hohii_dis_bath{
+                    width: .14rem;
+                    height:.13rem;
+                    background: url("http://res.tigerz.nz/imgs/bath.png") no-repeat;
+                    background-size: 100%;
+                    margin: .12rem .1rem 0 .2rem;
+                  }
+                }
+              }
+              .hohi_item_addr{
+                font-size: .14rem;
+                color: #8b8b8b;
+                height: .12rem;
+                line-height:.12rem;
+                float: left;
+              }
+            }
+          }
+          figure:hover{
+            border-bottom: .03rem solid #ffb900;
+            margin:.1rem 0 0 .3rem;
+          }
+        }
+      }
+
+    }
+  }
+  //轮播小圆点
+  .hoh_dot{
+    width: 1.5rem;
+    height: .1rem;
+    margin: .3rem auto .25rem;
+    li{
+      width: .1rem;
+      height: .1rem;
+      background: #aaaaac;
+      border-radius: 50%;
+      float: left;
+      margin-right: .1rem;
+      cursor: pointer;
+    }
+    .hoh_doted{
+      background: #ffd101;
+    }
+  }
+  .hoh_getmore{
+    width: 2.5rem;
+    height: .5rem;
+    border-radius: .3rem;
+    background: #ffd101;
+    text-align: center;
+    line-height: .5rem;
+    font-size: .2rem;
+    color: #2b2b2b;
+    transition: all linear 0.3s;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+  .hoh_getmore:hover{
+    background: #ffb900;
+  }
+}
+//=================================================great high school部分==================================
+.home_great_school{
+  overflow: hidden;
+  width: 12.8rem;
+  height:4.2rem;
+  padding: 0.1px;
+  background: #f2f3f5;
+  .hgs_title{
+    width: 100%;
+    height:.74rem;
+    margin-top: .35rem;
+    h4{
+      width: 100%;
+      text-align: center;
+      font-weight: normal;
+      height: .55rem;
+      line-height:.55rem;
+      font-size:.5rem;
+    }
+    p{
+      height: .2rem;
+      line-height:.2rem;
+      width: 100%;
+      margin-top: .2rem;
+      text-align: center;
+      font-size:.2rem;
+    }
+  }
+  .hgs_turn_wrap{
+      width: 12.8rem;
+      height: 2.7rem;
+      position: relative;
+      .hgs_btn{
+        width: .2rem;
+        height:.37rem;
+        position: absolute;
+        top:1.2rem;
+        cursor: pointer;
+        z-index: 99;
+      }
+      .hgs_left{
+        left: .18rem;
+        background: url("http://res.tigerz.nz/imgs/arrowleft.png") no-repeat;
+        -webkit-background-size:100%;
+        background-size:100%;
+      }
+      .hgs_right{
+        right: .28rem;
+        background: url("http://res.tigerz.nz/imgs/arrowright.png") no-repeat;
+        -webkit-background-size:100%;
+        background-size:100%;
+      }
+    .hgs_img_wrap{
+      width: 12rem;
+      height: 2.8rem;
+      margin-left: .3rem;
+      position: relative;
+      overflow: hidden;
+      .hgs_img_trun{
+        width: 84rem;
+        height:2.8rem;
+        position: absolute;
+        overflow: hidden;
+        left: 0;
+        top:0;
+        .hgs_img_item{
+          width: 12rem;
+          float: left;
+          height: 3.3rem;
+          figure{
+            cursor: pointer;
+            width: 3.625rem;
+            height: 2.58rem;
+            box-sizing: border-box;
+            border-bottom: .03rem solid transparent;
+            float: left;
+            margin:.2rem 0 0 .3rem;
+            position: relative;
+            transition: all linear 0.3s;
+            //=================================================================================================================
+            .hgsii_img_wrap{
+              width: 100%;
+              height: 2.17rem;
+              overflow: hidden;
+              position:relative;
+              .hgsii_img_over{
+                position: absolute;
+                width: 100%;
+                height:100%;
+                background: -webkit-linear-gradient(bottom,rgba(0,0,0,0.6),rgba(255,255,255,0));
+                background: -o-linear-gradient(bottom,rgba(0,0,0,0.6),rgba(255,255,255,0));
+                background: -moz-linear-gradient(bottom,rgba(0,0,0,0.6),rgba(255,255,255,0));
+                background: linear-gradient(bottom,rgba(0,0,0,0.6),rgba(255,255,255,0));
+                left: 0;
+                top:0;
+              }
+              img{
+                width: 100%;
+                height: 2.17rem;
+                transform:scale(1.6);
+                -webkit-transform:scale(1.6);
+                -moz-transform:scale(1.6);
+                -o-transform:scale(1.6);
+                -ms-transform:scale(1.6);
+              }
+            }
+            .hgsii_img_dis{
+                width: 3.4rem;
+                color: #ffffff;
+                position: absolute;
+                left: .1rem;
+                top:1.9rem;
+                cursor: pointer;
+                white-space:nowrap;
+                overflow:hidden;
+                text-overflow:ellipsis;
+                font-size:0.16rem;
+              }
+              figcaption{
+                width: 100%;
+                height: .38rem;
+                background: #ffffff;
+                p{
+                  width: 3.6rem;
+                  text-indent: .1rem;
+                }
+                .hgsi_item_discraption{
+                  overflow: hidden;
+                  .hgsi_item_price{
+                    float: left;
+                    width: 68%;
+                    height:.38rem;
+                    line-height: .38rem;
+                    color: #2b2b2b;
+                    font-size: .18rem;
+                    font-weight: normal;
+                    white-space:nowrap;
+                    overflow:hidden;
+                    text-overflow:ellipsis;
+                    .hgsi_item_collect{
+                      display: none;
+                      float: right;
+                      display: inline-block;
+                      width: .26rem;
+                      height: .23rem;
+                      margin: .12rem .12rem 0 0;
+                      background: url("http://res.tigerz.nz/imgs/collect1.png") no-repeat;
+                      background-size: 100%;
+                    }
+                    .hgsi_item_collected{
+                      display: none;
+                      background: url("http://res.tigerz.nz/imgs/collected.png") no-repeat;
+                      background-size: 100%;
+                    }
+                  }
+                  .hgsi_item_dis {
+                    width: 31%;
+                    float: right;
+                    text-indent: 0;
+                    color: #2b2b2b;
+                    span{
+                      float: left;
+                      height: .38rem;
+                      line-height:.38rem;
+                      font-size:.14rem;
+                      color:#2b2b2b;
+                    }
+                    .hgsii_dis_bed{
+                      width: .16rem;
+                      height: .12rem;
+                      background: url("http://res.tigerz.nz/imgs/bed.png") no-repeat;
+                      background-size: 100%;
+                      margin: .12rem .1rem 0 .2rem;
+                    }
+                    .hgsii_dis_bath{
+                      width: .14rem;
+                      height:.13rem;
+                      background: url("http://res.tigerz.nz/imgs/bath.png") no-repeat;
+                      background-size: 100%;
+                      margin: .12rem .1rem 0 .2rem;
+                    }
+                  }
+                }
+              .hgsi_item_addr{
+                font-size: .14rem;
+                color: #8b8b8b;
+                height: .14rem;
+                line-height:.14rem;
+              }
+            }
+          }
+          figure:hover{
+            border-bottom: .03rem solid #ffb900;
+            margin:.1rem 0 0 .3rem;
+          }
+        }
+      }
+
+    }
+  }
+  //轮播小圆点
+  .hgs_dot{
+    width: 1.5rem;
+    height: .1rem;
+    margin: .3rem auto .25rem;
+    li{
+      width: .1rem;
+      height: .1rem;
+      background: #aaaaac;
+      border-radius: 50%;
+      float: left;
+      margin-right: .1rem;
+      cursor: pointer;
+    }
+    .hgs_doted{
+      background: #ffd101;
+    }
+  }
+  .hgs_getmore{
+    cursor: pointer;
+    width: 2.5rem;
+    height: .5rem;
+    border-radius: .3rem;
+    background: #ffd101;
+    text-align: center;
+    line-height: .5rem;
+    font-size: .2rem;
+    color: #2b2b2b;
+    transition: all linear 0.3s;
+    margin: 0 auto;
+  }
+  .hgs_getmore:hover{
+    background: #ffb900;
+  }
+}
+//=================================================waterfront部分=========================================
+.home_waterfront{
+  width: 12.8rem;
+  height:4.55rem;
+  padding: 0.1px;
+  background: #f2f3f5;
+  .hw_title{
+    width: 100%;
+    height:.74rem;
+    margin-top: .35rem;
+    h4{
+      width: 100%;
+      text-align: center;
+      font-weight: normal;
+      height: .55rem;
+      line-height:.55rem;
+      font-size:.5rem;
+    }
+    p{
+      height: .2rem;
+      line-height:.2rem;
+      width: 100%;
+      margin-top: .2rem;
+      text-align: center;
+      font-size:.2rem;
+    }
+  }
+  .hw_turn_wrap{
+      width: 12.8rem;
+      height: 2.7rem;
+      position: relative;
+      .hw_btn{
+        width: .2rem;
+        height:.37rem;
+        position: absolute;
+        top:1.2rem;
+        cursor: pointer;
+        z-index: 99;
+      }
+      .hw_left{
+        left: .18rem;
+        background: url("http://res.tigerz.nz/imgs/arrowleft.png") no-repeat;
+        -webkit-background-size:100%;
+        background-size:100%;
+      }
+      .hw_right{
+        right: .28rem;
+        background: url("http://res.tigerz.nz/imgs/arrowright.png") no-repeat;
+        -webkit-background-size:100%;
+        background-size:100%;
+      }
+    .hw_img_wrap{
+      width: 12rem;
+      height: 2.8rem;
+      margin-left: .3rem;
+      overflow: hidden;
+      position: relative;
+      .hw_img_trun{
+        width: 84rem;
+        height:2.8rem;
+        position: absolute;
+        overflow: hidden;
+        left: 0;
+        top:0;
+        .hw_img_item{
+          width: 12rem;
+          float: left;
+          height: 3.3rem;
+          figure{
+            cursor: pointer;
+            width: 3.625rem;
+            height: 2.58rem;
+            box-sizing: border-box;
+            border-bottom: .03rem solid transparent;
+            float: left;
+            margin:.2rem 0 0 .3rem;
+            position: relative;
+            transition: all linear 0.3s;
+            .hwii_img_wrap{
+              width: 100%;
+              height: 2.17rem;
+              overflow: hidden;
+              position:relative;
+              .hwii_img_over{
+                position: absolute;
+                width: 100%;
+                height:100%;
+                background: -webkit-linear-gradient(bottom,rgba(0,0,0,0.6),rgba(255,255,255,0));
+                background: -o-linear-gradient(bottom,rgba(0,0,0,0.6),rgba(255,255,255,0));
+                background: -moz-linear-gradient(bottom,rgba(0,0,0,0.6),rgba(255,255,255,0));
+                background: linear-gradient(bottom,rgba(0,0,0,0.6),rgba(255,255,255,0));
+                left: 0;
+                top:0;
+              }
+              img{
+                width: 100%;
+                height: 2.17rem;
+                transform:scale(1.6);
+                -webkit-transform:scale(1.6);
+                -moz-transform:scale(1.6);
+                -o-transform:scale(1.6);
+                -ms-transform:scale(1.6);
+              }
+            }
+            .hwii_img_dis{
+              width: 3.4rem;
+              color: #ffffff;
+              position: absolute;
+              left: .1rem;
+              top:1.9rem;
+              cursor: pointer;
+              white-space:nowrap;
+              overflow:hidden;
+              text-overflow:ellipsis;
+              font-size:0.16rem;
+            }
+            figcaption{
+              width: 100%;
+              height: .38rem;
+              background: #ffffff;
+              p{
+                width: 3.6rem;
+                text-indent: .1rem;
+              }
+              .hwi_item_discraption{
+                overflow: hidden;
+                .hwi_item_price{
+                  float: left;
+                  width: 68%;
+                  height:.38rem;
+                  line-height: .38rem;
+                  color: #2b2b2b;
+                  font-size: .18rem;
+                  font-weight: normal;
+                  white-space:nowrap;
+                  overflow:hidden;
+                  text-overflow:ellipsis;
+                  .hwi_item_collect{
+                    display: none;
+                    float: right;
+                    display: inline-block;
+                    width: .26rem;
+                    height: .23rem;
+                    margin: .12rem .12rem 0 0;
+                    background: url("http://res.tigerz.nz/imgs/collect1.png") no-repeat;
+                    background-size: 100%;
+                  }
+                  .hwi_item_collected{
+                    display: none;
+                    background: url("http://res.tigerz.nz/imgs/collected.png") no-repeat;
+                    background-size: 100%;
+                  }
+                }
+                .hwi_item_dis {
+                  width: 31%;
+                  float: right;
+                  text-indent: 0;
+                  color: #2b2b2b;
+                  span{
+                    float: left;
+                    height: .38rem;
+                    line-height:.38rem;
+                    font-size:.14rem;
+                    color:#2b2b2b;
+                  }
+                  .hwii_dis_bed{
+                    width: .16rem;
+                    height: .12rem;
+                    background: url("http://res.tigerz.nz/imgs/bed.png") no-repeat;
+                    background-size: 100%;
+                    margin: .12rem .1rem 0 .2rem;
+                  }
+                  .hwii_dis_bath{
+                    width: .14rem;
+                    height:.13rem;
+                    background: url("http://res.tigerz.nz/imgs/bath.png") no-repeat;
+                    background-size: 100%;
+                    margin: .12rem .1rem 0 .2rem;
+                  }
+                }
+              }
+              .hwi_item_addr{
+                font-size: .14rem;
+                color: #8b8b8b;
+                height: .14rem;
+                line-height:.14rem;
+              }
+            }
+          }
+          figure:hover{
+            border-bottom: .03rem solid #ffb900;
+            margin:.1rem 0 0 .3rem;
+          };
+        }
+      }
+    }
+  }
+  //轮播小圆点
+  .hw_dot{
+    width: 1.5rem;
+    height: .1rem;
+    margin: .3rem auto .3rem;
+    li{
+      width: .1rem;
+      height: .1rem;
+      background: #aaaaac;
+      border-radius: 50%;
+      float: left;
+      margin-right: .1rem;
+      cursor: pointer;
+    }
+    .hw_doted{
+      background: #ffd101;
+    }
+  }
+  .hw_getmore{
+    width: 2.5rem;
+    height: .5rem;
+    border-radius: .3rem;
+    background: #ffd101;
+    text-align: center;
+    line-height: .5rem;
+    font-size: .2rem;
+    color: #2b2b2b;
+    transition: all linear 0.3s;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+  .hw_getmore:hover{
+    background: #ffb900;
+  }
+}
+//=================================================tigerz介绍=============================================
+.home_tg_house{
+  width: 12.8rem;
+  height:3.6rem;
+  background: url("http://res.tigerz.nz/imgs/Customer.jpg") no-repeat;
+  background-size:cover;
+  position: relative;
+  .hth_btn{
+    position: absolute;
+    top:1.515rem;
+    width:.3rem;
+    height:.57rem;
+    cursor: pointer;
+    z-index: 99;
+  }
+  .hth_left{
+    width: .3rem;
+    background: url("http://res.tigerz.nz/imgs/leftbtn.png") no-repeat;
+    background-size: 100%;
+    left: 0;
+  }
+  .hth_left:hover{
+    background: url("http://res.tigerz.nz/imgs/onleftbtn.png") no-repeat;
+    background-size: 100%;
+  }
+  .hth_right{
+    width: .3rem;
+    background: url("http://res.tigerz.nz/imgs/rightbtn.png") no-repeat;
+    background-size: 100%;
+    right: .2rem;
+  }
+  .hth_right:hover{
+    background: url("http://res.tigerz.nz/imgs/onrightbtn.png") no-repeat;
+    background-size: 100%;
+  }
+  .home_hth_wrap{
+    width: 12rem;
+    height:3.6rem;
+    margin: 0 0 0 .3rem;
+    overflow: hidden;
+    .hth_turn{
+      width: 84rem;
+      height: 3.6rem;
+      position: absolute;
+      left: 0;
+      top:0;
+      li{
+        width: 9rem;
+        padding: 0 1.5rem;
+        float: left;
+        height: 100%;
+        h4{
+          font-size: .5rem;
+          font-weight: normal;
+          color: #ffffff;
+          height: .5rem;
+          line-height:.5rem;
+          width: 100%;
+          text-align: center;
+          margin: .8rem auto .3rem;
+        }
+        p{
+          width: 100%;
+          text-align: center;
+          line-height: .5rem;
+          font-size: .14rem;
+          color: #ffffff;
+          span{
+            font-size: .3rem;
+          }
+        }
+      }
+    }
+  }
+  .hth_dot{
+    width: 1.5rem;
+    height: .1rem;
+    position: absolute;
+    left: 5.5rem;
+    bottom: .5rem;
+    li{
+      float: left;
+      width: .1rem;
+      height:.1rem;
+      border-radius: 50%;
+      background: #787a79;
+      margin-right: .1rem;
+      cursor: pointer;
+    }
+    .hth_doted{
+      background: #ffd001;
+    }
+  }
+}
+//================================================= five steps =============================================
+.home_step{
+  width: 12.8rem;
+  height: 5.4rem;
+  background: #ffd01e;
+  padding: .1px;
+  position: relative;
+  h4{
+    width:100%;
+    height: .5rem;
+    text-align: center;
+    line-height:.5rem;
+    font-size:.5rem;
+    margin-top: 1rem;
+    font-weight: 400;
+  }
+  .ht_line{
+    position: absolute;
+    width: 12.8rem;
+    height: 4px;
+    background: #cca718;
+    left: 0;
+    top:3rem;
+  }
+  .ht_wrap{
+    width: 12rem;
+    height: 1.6rem;
+    position: absolute;
+    left: .7rem;
+    bottom: 1.4rem;
+    z-index: 99;
+    .ht_item{
+      width: 2.2rem;
+      height:1.6rem;
+      float: left;
+      .step{
+        width: 1.2rem;
+        height: 1.2rem;
+        border:0.03rem solid #2b2b2b;
+        border-radius: 50%;
+        background-size: cover;
+        margin-left: .5rem;
+      }
+      .step1{
+        background:#ffd01e url('http://res.tigerz.nz/imgs/step1.png') no-repeat center center;
+      }
+      .step2{
+        background:#ffd01e url('http://res.tigerz.nz/imgs/step2.png') no-repeat center center;
+      }
+      .step3{
+        background:#ffd01e url('http://res.tigerz.nz/imgs/step3.png') no-repeat center center;
+      }
+      .step4{
+        background:#ffd01e url('http://res.tigerz.nz/imgs/step4.png') no-repeat center center;
+      }
+      .step5{
+         background:#ffd01e url('http://res.tigerz.nz/imgs/step5.png') no-repeat center center;
+       }
+      p:nth-of-type(2){
+        text-align: center;
+        font-size: .18rem;
+        font-weight: bold;
+        margin-top: .2rem;
+        height: .18rem;
+        line-height: .18rem;
+        color: #2b2b2b;
+      }
+    }
+  }
+}
+//================================================= footer search ===========================================
+.home_fsearch_bar{
+  width: 12.8rem;
+  height: 4rem;
+  background: url("http://res.tigerz.nz/imgs/aoubt-brand.jpg") no-repeat;
+  background-size: cover;
+  padding: .1px;
+  h4{
+    width: 100%;
+    text-align: center;
+    height: .4rem;
+    line-height:.4rem;
+    margin: 1.4rem 0 .2rem 0;
+    font-size: .55rem;
+    height: .52rem;
+    font-weight: normal;
+    color: #ffffff;
+    text-shadow: 2px 2px 3px #000;
+
+  }
+  .hf_search_con{
+    width: 8rem;
+    height: .52rem;
+    margin: 0 auto;
+    position: relative;
+    .hf_search_box{
+      float: left;
+      width: 6.68rem;
+      height: .52rem;
+      background: #FFFFFF;
+      border-radius: .03rem 0 0 .03rem;
+      input{
+        width: 6.3rem;
+        height:.3rem;
+        margin: .13rem 0 0 .26rem;
+        line-height: .3rem;
+        font-size: .16rem;
+        outline: none;
+        border: none;
+      }
+    }
+    .hf_search_icon{
+      float: left;
+      width: 1.3rem;
+      height: .52rem;
+      background:#FFD800;
+      cursor: pointer;
+      transition: all linear .3s;
+      border-radius: 0 .03rem .03rem 0;
+      a{
+        display: block;
+        span{
+          display: inline-block;
+          width:.3rem;
+          height: .3rem;
+          margin: .1rem 0 0 .5rem;
+          background: url("http://res.tigerz.nz/imgs/search.png") no-repeat;
+          background-size: 100%;
+        }
+      }
+    }
+    .hf_search_icon:hover{
+      background: #ffb900;
+    }
+    .home_search_reminder{
+      position: absolute;
+      left:0;
+      top:.5rem;
+      width: 6.68rem;
+      max-height:1.7rem;
+      background: #ffffff;
+      border-radius: 0 0 .03rem .03rem;
+      overflow: scroll;
+      overflow-x: hidden;
+      ul{
+        width: 100%;
+        li{
+          width: 100%;
+          height: .33rem;
+          line-height:.33rem;
+          text-indent: .26rem;
+          font-size:.14rem ;
+          color: #000;
+          a{
+            display: block;
+            line-height:.3rem;
+            text-indent: .26rem;
+            font-size:.14rem ;
+            color: #000;
+            overflow: hidden;
+            span:nth-of-type(1){
+              float: left;
+            }
+            span:nth-of-type(2){
+              text-indent: 0;
+              float: left;
+            }
+            span:nth-of-type(3){
+              float: right;
+              margin-right: .2rem;
+              font-weight:bold;
+            }
+          }
+        }
+        li:hover{
+          background: #f2f3f5;
+          a{
+            span{
+              font-weight: bold;
+            }
+          }
+        }
+      }
+      .hf_search_simple{
+        display: none;
+      }
+      .hf_search_error{
+        display: none;
+        color: #ff0000;
+        font-size:.16rem;
+        text-indent: .26rem;
+        line-height: .5rem;
+        height: .5rem;
+        width: 100%;
+        cursor: default;
+      }
+    }
+  }
+}
+//================================================== footer部分 ===========================================
+#home_footer{
+  width: 12.8rem;
+  min-height: 4.5rem;
+  margin-bottom: .2rem;
+  background: #2b2b2b;
+  padding:.1px;
+  position: relative;
+}

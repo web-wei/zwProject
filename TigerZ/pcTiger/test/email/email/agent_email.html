@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1">
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0
+		}
+		html,body{
+			font-family: "Microsoft Yahei", Arial;
+		}
+		.wrap{
+			width: 800px;
+			border: 1px solid #ebebeb;
+			min-height: 600px;
+		}
+		.innerWrap{
+			width: 800px;
+			margin: 0 auto 20px auto;
+		}
+		.logo{
+			width: 100%;
+			height: 80px;
+			background: #000;
+		}
+		img{
+			height: 80px;
+			margin-left: 20px;
+		}
+		.regard,.house,.contactUs{
+			padding: 30px 20px; 
+			border-bottom: 1px solid #ebebeb;
+		}
+		.problem{
+			padding: 30px 20px;
+		}
+		h2{
+			font-size: 25px;
+			font-weight: normal;
+			height: 30px;
+			line-height: 30px;
+		}
+		.dear{
+			font-size: 17px;
+		}
+		.content{
+			word-wrap: break-word;
+			line-height: 25px;
+			font-size: 16px;
+			margin: 20px 0;
+		}
+		.res{
+			font-size: 16px;
+			line-height: 25px;
+		}
+		.houseDetail{
+			text-decoration: none;
+			display: block;
+			margin-top: 20px;
+			line-height: 40px;
+			font-size: 16px;
+		}
+		.houseDetail .imgWrap{
+			width: 150px;
+			height: 110px;
+			display: inline-block;
+			vertical-align: top;
+			margin-right: 5px;
+			overflow: hidden;
+		}
+		.imgWrap img{
+			height: 100%;
+			display: block;
+			transform: scale(1.1);
+		}
+		.houseDetail .houseDis{
+			width: 550px;
+			display: inline-block;
+			vertical-align: top;
+			height: 110px;
+			color: #2b2b2b;
+		}
+		.houseDis p{
+			width: 550px;
+			font-size: 18px;
+			line-height: 23px;
+			height: 23px;
+		}
+		.houseDis .houseTitle{
+			width: 550px;
+			font-size: 20px;
+			line-height: 30px;
+			height: 30px;
+			color: #2b2b2b;
+			display:block;
+			white-space:nowrap; 
+			overflow:hidden;
+			text-overflow:ellipsis;
+		}
+
+		.houseDis .housePrice{
+			font-size: 20px;
+			line-height: 30px;
+			height: 30px;
+			color: #2b2b2b;
+		}
+		
+		.houseDis .houseAddr{
+			font-size: 16px;
+			color: #c4c4c4;
+		}
+		.houseDis .houseBase{
+			font-size: 16px;
+			color: #8b8b8b;
+		}
+		.houseBase span{
+			display: inline-block;
+			vertical-align: top;
+		}
+		.bedIcon{
+          width: 18px;
+          height:14px;
+          background: url("http://res.tigerz.nz/imgs/bed.png") no-repeat;
+          background-size: cover;
+          margin:6px 10px 0 0;
+        }
+        .bathIcon{
+          width: 13px;
+          height:12px;
+          background: url("http://res.tigerz.nz/imgs/bath.png") no-repeat;
+          background-size: cover;
+          margin:7px 10px 0 20px;
+        }
+		.userInput{
+			margin-top: 20px;
+			line-height: 20px;
+			word-wrap: break-word;
+			font-size: 15px;
+			border-radius: 3px;
+			border:1px solid #ebebeb;
+			padding: 10px 10px 30px 10px; 
+		}
+		.contactUs{
+			background: #f8f8f8;
+			border: 1px solid #ebebeb;
+		}
+		.contactUs p{
+			font-size: 14px;
+			color: #858585;
+			line-height: 35px;
+		}
+		.website{
+			color: green;
+		}
+		.company{
+			line-height: 20px;
+			margin:15px 0;
+		}
+		.reponseEmail{
+			/*width: 800px;
+			height: 271px;*/
+			margin:15px 0;
+			padding: 38px 134px;
+			box-sizing: border-box;
+			border: 1px solid #479dd6;
+			background: #479dd6;
+		}
+		.reponseEmail p{
+			text-indent: 20px;
+			line-height: 50px;
+			font-size: 30px;
+			text-align: center;
+			color: #fff;
+		}
+		#emailWrap{
+			/*display:inline-block;*/
+			display: block;
+			color: #fff;
+			text-decoration: none;
+			border:2px solid #fff; 
+			height: 78px;
+			line-height: 78px;
+			margin: 0 auto;
+			padding: 0 20px;
+			box-sizing: border-box;
+			text-align: center;
+			font-size: 32px;
+			border-radius: 5px;
+			margin-top: 20px;
+		}
+		.companyDis{
+			width: 800px;
+			background:url('http://res.tigerz.nz/imgs/top_banner9.jpg') no-repeat center center;
+			background-size: cover;
+			min-height: 100px; 
+			margin-top: 10px;
+		}
+		.companyWrap{
+			color: #fff;
+			font-family: "Microsoft Yahei", Arial;
+			width: 100%;
+			padding: 37px 37px 95px 32px; 
+			box-sizing: border-box;
+			background: rgba(51,51,51,0.9);
+			position: relative;
+		}
+		.companyWrap h2{
+			font-size: 24px;
+			height: 30px;
+			line-height: 33px;
+		}
+		.companyWrap p{
+			margin-top: 15px;
+			font-size: 12.5px;
+			line-height: 21px;
+		}
+		.toWeb{
+			display: block;
+			text-decoration: none;
+			padding: 10px 28px;
+			background:rgba(71,154,214,0.75);
+			font-size: 20px;
+			color: #fff;
+			position: absolute;
+			right: 37px;
+			bottom: 29px;
+			border-radius: 5px;
+		}
+		.rightArrow{
+			display: inline-block;
+			vertical-align: top;
+			margin-top: 4px;
+			margin-left: 3px;
+			width: 12px;
+			height:19px;
+			background: url("http://res.tigerz.nz/imgs/emailIcon.png") no-repeat;
+			background-size: 100%;
+		}
+	</style>
+	<title>Agent Email</title>
+</head>
+<body>
+<div class="innerWrap">
+	<div class="wrap">
+		<div class="logo">
+			<a href="http://tigerz.nz"><img src="http://res.tigerz.nz/imgs/logo2.png" alt=""></a>
+		</div>
+		<div class="regard">
+			<h2 class="dear">Dear<span class="userId">1851097</span>:</h2>
+			<p class="content">A customer from TigerZ.nz send a mail to you for inquring the following propery,</p>
+			<p class="res">Looking forward your quick reply.</p>
+		</div>
+		<div class="house">
+			<h2>The propery customer follow:</h2>
+			<a class="houseDetail" href="http://tigerz.nz/detail?58e45ab64860e42cd13c1e6b&31%20Tane%20Road&Laingholm&Auckland">
+				<div class="imgWrap">
+					<img src="http://img.tigerz.nz/sellinghouse/58d5da554860e47d6c06e212/5af8f776b3a0543400757f92daa76b88.jpg">
+				</div>
+				<div class="houseDis">
+                    <p class="houseTitle">20B Rawhitiroa Road, Kohimarama 20B Rawhitiroa Road, Kohimarama 20B Rawhitiroa Road, Kohimarama 20B Rawhitiroa Road, Kohimarama 20B Rawhitiroa Road, Kohimarama</p>
+                    <p class="housePrice">$ 83,673</p>
+                    <p class="houseAddr">20B Rawhitiroa Road</p>
+                    <p class="houseBase">
+                        <span class="bedIcon"></span>
+                        <span>3</span>
+                        <span class="bathIcon"></span>
+                        <span>2</span>
+                    </p>
+				</div>
+			</a>
+		</div>
+		<div class="problem">
+			<h2>The question customer ask:</h2>
+			<p class="userInput">I am interested in this property ref:HD1286717,please send me more information ty ref:HD1286717,please send me more information ty ref:HD1286717,please send me more information</p>
+		</div>
+	</div>
+	<div class="reponseEmail">
+		<p>Reply to him/her</p>
+		<a href="mailto:756739666@qq.com;support@tigerz.nz" id="emailWrap">66666666@qq.com</a>
+	</div>
+	<div class="contactUs">
+		<p>Please feel free to contact us for any questions with following mail:</p>
+		<p class="email">Email : wjc@tigerz.nz</p>
+		<a href="http://tigerz.nz" class="website">TigerZ</a>
+		<p class="dis">The best property search engine in new zealand.</p>
+	</div>
+	<div class="companyDis">
+		<div class="companyWrap">
+			<h2>TigerZ is your friend!</h2>
+			<p class="company">TigerZ is the best search engine, which can help you research any propery in New Zealand, can help estimate your propery.</p>
+			<a class="toWeb" href="http://tigerz.nz">Enter To TigerZ <i class="rightArrow"></i></a>
+		</div>
+	</div>
+</div>
+	
+</body>
+</html>

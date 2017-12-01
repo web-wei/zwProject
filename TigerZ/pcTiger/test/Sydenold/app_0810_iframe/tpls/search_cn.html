@@ -1,0 +1,242 @@
+<!--header部分-------------------------------->
+  <header class="search_header" ng-click="allValue.hideSelectDiv()">
+   <div class="search_logo"> 
+    <a href="/home_cn"><h2>新西兰房产中介</h2></a>
+    <!--<div class="search_addr"> -->
+     <!--<span class="search_map_icon"></span> -->
+     <!--<span class="search_current_city">奥克兰</span> -->
+     <!--<ul class="search_addr_choice"> -->
+      <!--<li>奥克兰</li> -->
+      <!--<li>新西兰</li> -->
+     <!--</ul> -->
+    <!--</div> -->
+   </div> 
+   <div class="search_bar"> 
+    <div class="search_main">
+     <div class="search_main_box">
+      <input type="text" placeholder="输入城市、区域或地址" ng-change="allValue.searchPageBar()" ng-model="allValue.searchPageValue" ng-focus="allValue.searchFocusEvent()" ng-blur="allValue.searchBlurEvent()">
+     </div>
+     <span class="search_icon_wrap"><a ng-href="{{allValue.searchPageBtn()}}"><span class="search_icon"></span></a></span>
+     <div class="search_reminder" ng-hide="allValue.searchSubFlag"> 
+      <!--没有找到相应的房源-----------------------------> 
+      <p class="searchPage_error">没有找到相对应的数据</p>
+      <!--模糊查询房源-----------------------------------> 
+      <ul class="searchPage_simple" ng-mouseover="allValue.searchOverEvent()" ng-mouseleave="allValue.searchLeaveEvent()"> 
+       <li ng-repeat="item in allValue.searchPageData" title="{{allValue.jugePage(item)}}"><a ng-href="{{allValue.jugePage(item)}}" ng-mousedown="allValue.historyClick(item)" title="{{item.name}},{{item.fatherName}},{{allValue.jugeLevel(item.level,item.isSale)}}"><span ng-bind="item.name+','"></span><span ng-bind="item.fatherName"></span><span ng-bind="allValue.jugeLevel(item.level,item.isSale)"></span></a></li>
+      </ul> 
+      <!--搜索历史纪录-------------------------------------> 
+      <ul class="searchPage_history" ng-mouseover="allValue.searchOverEvent()" ng-mouseleave="allValue.searchLeaveEvent()"> 
+       <li ng-repeat="item in allValue.searchHistoryData track by $index"><a ng-href="{{allValue.jugePage(item)}}" title="{{item.name}},{{item.fatherName}},{{allValue.jugeLevel(item.level,item.isSale)}}"><span ng-bind="item.name+','"></span><span ng-bind="item.fatherName"></span><span ng-bind="allValue.jugeLevel(item.level,item.isSale)"></span></a></li>
+      </ul> 
+     </div> 
+    </div>
+   </div> 
+   <p class="search_language_wrap"> <span class="search_language"><a href="/search_cn" class="search_language_cn" style="color:#FFD800;">中文</a></span> <i> / </i> <span class="search_language"><a href="/search" class="search_language_en">English</a></span> </p>
+  </header> 
+  <!--search main部分---------------------------> 
+  <section class="search_main_part"> 
+   <!--搜索列表部分---------------------------------> 
+   <div class="search_list_wrap"> 
+    <!--列表信息部分---------------------------------> 
+    <div class="sl_part"> 
+     <div class="slp_title_wrap"> 
+      <ul class="slp_tul"> 
+       <li class="slp_tul_li"> 
+        <ul class="slp_title">
+         <li class="search_select_city">
+          <p class="select_city_show" ng-bind="allValue.currentCity">选择城市</p> 
+          <div class="search_select_cityItem select_item">
+           <p ng-repeat="selectCity in allValue.select.city" ng-bind="selectCity" ng-mousedown="allValue.cityClick(selectCity)"></p> 
+          </div> 
+          <span class="select_city_tri select_tri"></span>
+         </li>
+         <li class="search_select_suburb">
+          <p class="select_suburb_show" ng-bind="allValue.currentSuburb">选择区域</p> 
+          <div class="search_select_suburbItem select_item">
+           <p ng-repeat="selectSuburb in allValue.suburbs" ng-bind="selectSuburb" ng-mousedown="allValue.suburbClick(selectSuburb)"></p> 
+          </div> 
+          <span class="select_suburb_tri select_tri"></span>
+         </li>
+         <div class="clearfix"></div>
+         <!--------------------------------------------------卧室筛选------------------------------>
+         <li class="search_select_rooms">
+          <p class="select_rooms_show">卧室</p>
+          <div class="search_select_roomsItem select_item">
+
+           <p ng-mousedown="allValue.selectRoom('all',$event)" ng-class="{true:'checked',false:'uncheck'}[allValue.roomParam.all]">不限</p>
+           <p ng-mousedown="allValue.selectRoom('one',$event)" ng-class="{true:'checked',false:'uncheck'}[allValue.roomParam.one]">1间</p>
+           <p ng-mousedown="allValue.selectRoom('two',$event)" ng-class="{true:'checked',false:'uncheck'}[allValue.roomParam.two]">2间</p>
+           <p ng-mousedown="allValue.selectRoom('three',$event)" ng-class="{true:'checked',false:'uncheck'}[allValue.roomParam.three]">3间</p>
+           <p ng-mousedown="allValue.selectRoom('four',$event)" ng-class="{true:'checked',false:'uncheck'}[allValue.roomParam.four]">4间</p>
+           <p ng-mousedown="allValue.selectRoom('more',$event)" ng-class="{true:'checked',false:'uncheck'}[allValue.roomParam.more]">>4间</p>
+          </div>
+          <span class="select_rooms_tri select_tri"></span>
+         </li>
+         <li class="search_select_school">
+         <p class="select_school_show" ng-bind="allValue.curSchool" title="{{allValue.curSchool}}">学校</p>
+         <div class="search_select_schoolItem select_item">
+             <p ng-repeat="school in allValue.schools" ng-bind="school.name" ng-mousedown="allValue.schoolClick(school)" title="{{school.name}}"></p>
+         </div>
+         <span class="select_school_tri select_tri"></span>
+         </li>
+        </ul>
+       </li>
+       <li class="slp_tul_li" ng-click="allValue.hideSelectDiv()"> 
+        <div class="slp_nav"> 
+         <ol> 
+          <li class="slp_nav_actived" ng-click="allValue.setListNav(0,'default')">房源列表</li> 
+          <li ng-click="allValue.setListNav(1,'newest')">新增房源</li> 
+          <li ng-click="allValue.setListNav(2,'priceUp')" class="nav_price">价格<i class="priceUp"></i><i class="priceDown"></i></li>
+          <!--<li ng-click="allValue.setListNav(3)">More</li>--> 
+         </ol> 
+         <span ng-bind="'( Total: '+allValue.totalHouseNum+' )'">(1298)</span>
+        </div> </li> 
+      </ul> 
+     </div> 
+     <div class="slp_list" ng-click="allValue.hideSelectDiv()"> 
+      <ul> 
+       <!--<li ng-click="allValue.liClick(lh)" ng-repeat="lh in allValue.listHouse.houseInfo track by $index">-->
+       <li ng-mouseover="allValue.showView(lh,$event)" ng-repeat="lh in allValue.listHouse.houseInfo track by $index">
+        <div class="slp_list_img">
+         <a href="/detail_cn?{{lh._id}}&{{lh.streetAddress}}&{{lh.suburb}}&{{allValue.ct}}" target="_blank"><img ng-src="{{imgDomain+lh.houseMainImagePath}}" error-src="http://res.tigerz.nz/imgs/scollicon.jpg" alt="houseImage"></a>
+         <div class="slp_list_dis"> 
+          <a href="/detail_cn?{{lh._id}}&{{lh.streetAddress}}&{{lh.suburb}}&{{allValue.ct}}" class="slpld_title" ng-bind="lh.title || '-'" title="{{lh.title || 'Unknown'}}" target="_blank"></a>
+          <p class="slpld_price" ng-bind="lh.housePrice || '-'"></p> 
+          <p class="slpld_addr" ng-bind="lh.streetAddress+','+lh.suburb" title="{{lh.streetAddress}}+','{{lh.suburb}}"></p> 
+          <p class="slpld_info"> <span class="slpldi_bed"></span> <span ng-bind="lh.bedroom || '-'"></span> <span class="slpldi_bath"></span> <span ng-bind="lh.bathroom || '-'"></span> <span class="slpldi_num"><i>更新日期：</i><i ng-bind="lh.houseUpDate"></i></span> </p> 
+         </div> 
+        </div> </li>
+      </ul> 
+      <div class="slp_more_btn"> 
+       <!--<p class="slp_more_page">页面:&nbsp;&nbsp;2&nbsp;/&nbsp;20</p>-->
+       <p class="slp_more_page">页面:&nbsp;&nbsp;<span ng-bind="allValue.listHouse.curPage">2</span>&nbsp;/&nbsp;<span ng-bind="allValue.listHouse.maxPage">20</span></p>
+       <p class="slp_more_next">
+        <!--<span class="slp_pre" ng-click="allValue.prePage()">Prev</span>-->
+        <!--<span class="slp_next" ng-click="allValue.nextPage()">Next</span>-->
+        <a href="/search_cn?name={{allValue.pageJumpParam.name}}&level={{allValue.pageJumpParam.level}}&page={{allValue.proPage}}&sort={{allValue.pageJumpParam.sort}}&isAllHouse=false&fn={{allValue.currentCity}}&ct={{allValue.ct}}" class="slp_pre_pro">上一页</a>
+        <!--<a href="/search?" class="slp_pre" ng-click="allValue.prePage()">Prev</a>-->
+        <!--<a href="/search?" class="slp_next" ng-click="allValue.nextPage()">Next</a>-->
+        <a href="/search_cn?name={{allValue.pageJumpParam.name}}&level={{allValue.pageJumpParam.level}}&page={{allValue.nextPage}}&sort={{allValue.pageJumpParam.sort}}&isAllHouse=false&fn={{allValue.currentCity}}&ct={{allValue.ct}}" class="slp_next_pro">下一页</a>
+       </p>
+
+      </div>
+      <div class="slp_more_btn showBtns"> 
+       <!--<p class="slp_more_page">页面:&nbsp;&nbsp;2&nbsp;/&nbsp;20</p>-->
+       <p class="slp_more_page">页面:&nbsp;&nbsp;<span ng-bind="allValue.listHouse.curPage">2</span>&nbsp;/&nbsp;<span ng-bind="allValue.listHouse.maxPage">20</span></p>
+       <p class="slp_more_next"><span class="slp_pre" ng-click="allValue.preMapPage()">上一页</span><span class="slp_next" ng-click="allValue.nextMapPage()">下一页</span></p> 
+      </div>
+      <div class="slp_list_load">
+       <img src="http://res.tigerz.nz/imgs/default.svg" alt="">
+      </div>
+     </div> 
+    </div>
+   </div> 
+   <!--地图部分------------------------------------> 
+   <div class="search_map" id="search_map" ng-click="allValue.hideView()"></div>
+   <!--加载数据时候的loading框--------------------------------->
+   <section class="search_loading_wrap">
+    <p>房源搜索中...</p>
+    <div class="loading_wrap">
+     <div class="loading_item"></div>
+    </div>
+    <span><i class="loading_item_num">20</i><i>%</i></span>
+   </section>
+
+   <section class="search_safe_wrap">
+    <div class="search_safe_icon">
+        <figure ng-click="allValue.blockFilter(1)">
+            <i></i>
+            <figcaption style="letter-spacing: 4px">犯罪率</figcaption>
+        </figure>
+        <figure ng-click="allValue.blockFilter(2)">
+            <i class="hotel_icon"></i>
+            <figcaption style="letter-spacing: 4px">饭店</figcaption>
+        </figure>
+        <figure ng-click="allValue.blockFilter(3)">
+            <i class="hospital_icon"></i>
+            <figcaption style="letter-spacing: 4px;text-indent: 2px">医院</figcaption>
+        </figure>
+        <figure ng-click="allValue.blockFilter(4)">
+            <i class="supermarket_icon"></i>
+            <figcaption style="letter-spacing: 4px;text-indent: 4px">便利店</figcaption>
+        </figure>
+    </div>
+    <div class="search_safe_display">
+     <div class="search_safe_close"><span></span><span></span></div>
+     <div class="search_safe_dis">
+      <p class="safe_dis">犯罪率</p>
+      <p class="safe_pic"><span style="margin-left: 52px;">低</span><i></i><i></i><i></i><i></i><i></i><span>高</span></p>
+     </div>
+    </div>
+    <div class="search_hotel_display">
+     <div class="search_hotel_close"><span></span><span></span></div>
+     <div class="search_hotel_dis">
+      <p class="hotel_dis">饭店位置</p>
+      <p class="hotel_pic"><i></i><span>饭店</span></p>
+     </div>
+    </div>
+    <div class="search_hospital_display">
+     <div class="search_hospital_close"><span></span><span></span></div>
+     <div class="search_hospital_dis">
+      <p class="hospital_dis">医院位置</p>
+      <p class="hospital_pic"><i></i><span>医院</span></p>
+     </div>
+    </div>
+    <div class="search_supermarket_display">
+     <div class="search_supermarket_close"><span></span><span></span></div>
+     <div class="search_supermarket_dis">
+      <p class="supermarket_dis">便利店位置</p>
+      <p class="supermarket_pic"><i></i><span>便利店</span></p>
+     </div>
+    </div>
+   </section>
+
+  </section>
+  <!--地图上没有房子显示的信息框-------------------------------> 
+  <section class="noHouse">
+   这块区域没有可售房源
+  </section> 
+
+  <div> 
+   <div class="dai_item"></div> 
+   <div class="dai_item"></div> 
+   <div class="dai_item"></div> 
+   <div class="dai_item"></div> 
+   <div class="dai_item"></div> 
+   <div class="dai_item"></div> 
+   <div class="dai_item"></div> 
+   <div class="dai_item"></div> 
+  </div>
+<script>
+ var _hmt = _hmt || [];
+ (function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?98b74b7f3ddb1c502ca10f723fc80ab1";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+ })();
+</script>
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ ga('create', 'UA-90714030-1', 'auto');
+ ga('send', 'pageview');
+
+</script>
+<script>
+ (function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+   bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+ })();
+</script>

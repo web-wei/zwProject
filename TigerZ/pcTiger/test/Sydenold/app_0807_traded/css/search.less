@@ -1,0 +1,1615 @@
+//=================================================header部分=========================================
+.search_header{
+  width: 12.8rem;
+  height:50px;
+  background:#2b2b2b;
+  .search_logo{
+    width: 2.74rem;
+    height:100%;
+    float: left;
+    margin-left:  .4rem;
+    h2{
+      float: left;
+      margin-right: .14rem;
+      width: 1.6rem;
+      height: 50px;
+      background: url("http://res.tigerz.nz/imgs/logo1.png") left center no-repeat;
+      background-size: 100%;
+      cursor: pointer;
+      font-size: 0;
+    }
+    .search_addr{
+      cursor: pointer;
+      width: 1rem;
+      height: 15px;
+      line-height:15px;
+      position: relative;
+      float: left;
+      margin-top: 23px;
+      .search_map_icon{
+        display: inline-block;
+        width: .11rem;
+        height: .14rem;
+        background: url("http://res.tigerz.nz/imgs/addr.png") no-repeat;
+        background-size: cover;
+        margin-right: 3px;
+      }
+      .search_current_city{
+        font-size: .14rem;
+        color: #ffffff;
+      }
+      //这块没有设计
+      .search_addr_choice{
+        width: 1rem;
+        position: absolute;
+        left: 0;
+        top:.15rem;
+        text-indent: .1rem;
+        //border:1px solid brown;
+        display: none;
+        li{
+          line-height: .3rem;
+          color: #ffffff;
+          cursor: pointer;
+        }
+      }
+    }
+
+  }
+  .search_bar{
+    height: 30px;
+    //隐藏登陆之前的样式
+    //width: 8.55rem;
+    width: 3.7rem;
+    float: left;
+    //隐藏登陆之前的样式
+    //margin:15px 0 0 .2rem;
+    margin:10px 0 0 4.3rem;
+    .search_main{
+      float: left;
+      //隐藏登陆等之前的宽度
+      //width: 4.02rem;
+      width: 3.7rem;
+      height: 30px;
+      margin-right: .12rem;
+      position: relative;
+      .search_main_box{
+        float: left;
+        width: 3rem;
+        height:30px;
+        background: #fff;
+        border-radius: .03rem 0 0 .03rem;
+        input{
+          width: 2.8rem;
+          height:24px;
+          line-height: 24px;
+          margin: 3px 0 0 .1rem;
+          outline:none;
+          border:none;
+          font-size: .12rem;
+        }
+      }
+
+      .search_icon_wrap{
+        float: left;
+        width: .6rem;
+        height: 30px;
+        border-radius: 0 .03rem .03rem 0;
+        background: #ffd11c;
+        cursor: pointer;
+        transition:all linear .3s;
+        a{
+          display: block;
+          width: .6rem;
+          height:30px;
+          .search_icon{
+            display: inline-block;
+            width:15px;
+            height: 15px;
+            margin: 6px 0 0 .22rem;
+            background: url("http://res.tigerz.nz/imgs/search.png") no-repeat;
+            background-size: 100%;
+          }
+        }
+      }
+      .search_icon_wrap:hover{
+        background: #ffb900;
+      }
+      .search_reminder{
+        position: absolute;
+        left: 0;
+        top:28px;
+        //没有隐藏登陆等的样式
+        //width: 3.22rem;
+        width: 3.6rem;
+        max-height: 200px;
+        z-index: 99;
+        border-radius: 0 0 .03rem .03rem;
+        background: #ffffff;
+        overflow: scroll;
+        overflow-x: hidden;
+        ul {
+          width: 100%;
+          li {
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            text-indent: .1rem;
+            font-size: .12rem;
+            color: #000;
+            a {
+              display: block;
+              line-height: 30px;
+              text-indent: .1rem;
+              font-size: .12rem;
+              color: #000;
+              white-space:nowrap;
+              overflow:hidden;
+              text-overflow:ellipsis;
+              span:nth-of-type(1) {
+                display: block;
+                max-width: 1.55rem;
+                white-space:nowrap;
+                overflow:hidden;
+                text-overflow:ellipsis;
+                float: left;
+              }
+              span:nth-of-type(2) {
+                text-indent: 0;
+                float: left;
+              }
+              span:nth-of-type(3) {
+                float: right;
+                margin-right: .05rem;
+                font-weight: bold;
+              }
+            }
+          }
+          li:hover {
+            background: #f2f3f5;
+            a {
+              span {
+                font-weight: bold;
+              }
+            }
+          }
+        }
+        .searchPage_simple{
+          display: none;
+        }
+        .searchPage_error{
+          display: none;
+          color: #ff0000;
+          font-size:.14rem;
+          text-indent: .1rem;
+          line-height: .3rem;
+          height: .3rem;
+          width: 100%;
+          cursor: default;
+        }
+      }
+    }
+    .search_select{
+      width: 4.26rem;
+      float: left;
+      height:40px;
+      .search_select_item{
+        width: 1.2rem;
+        float: left;
+        height:40px;
+        position:relative;
+        margin-right: .2rem;
+        .search_select{
+          width: 1.3rem;
+          height:40px;
+          line-height:40px;
+          text-indent: .18rem;
+          font-size:.14rem;
+          border-radius: .03rem;
+          background: #ffffff;
+          cursor: pointer;
+          .search_select_icon{
+            float: right;
+            margin:15px .2rem 0 0;
+            width: .12rem;
+            height:.09rem;
+            background: url("http://res.tigerz.nz/imgs/select.png") no-repeat;
+            background-size: 100%;
+          }
+        }
+        .search_select_option{
+          position: absolute;
+          z-index: 999;
+          left: 0;
+          top:38px;
+          width: 1.3rem;
+          line-height:36px;
+          font-size:.14rem;
+          text-indent: .18rem;
+          background: #ffffff;
+          display: none;
+        }
+        .search_select_option>p:hover{
+          background: #8b8b8b;
+        }
+      }
+    }
+  }
+  .search_login{
+    float: left;
+    height: 70px;
+    line-height:70px;
+    color: #ffffff;
+    font-size: .12rem;
+    cursor: default;
+    span{
+      cursor: pointer;
+    }
+  }
+  .search_language_wrap{
+    float: right;
+    margin-right: .4rem;
+    height: 50px;
+    line-height:50px;
+    color: #ffffff;
+    a{
+      color: #ffffff;
+      font-size:.14rem;
+      height:50px;
+      line-height:50px;
+    }
+    i{
+      margin: 0 .1rem;
+    }
+  }
+}
+//================================================search main部分=====================================
+.search_main_part{
+  width: 12.8rem;
+  position: relative;
+//================================================列表信息部分==========================================
+    .search_list_wrap{
+      box-sizing: border-box;
+      width: 4.8rem;
+      height:100%;
+      float: left;
+      overflow-y: hidden;
+      padding: .1px;
+//===============================================列表部分==============================================
+      .sl_part{
+        //overflow-x: hidden;
+        height: 100%;
+        width: 4.8rem;
+        box-sizing: border-box;
+        position: relative;
+        z-index: 9;
+        background: #ffffff;
+        .slp_title_wrap{
+          width: 4.8rem;
+          //height: 92px;
+          //=============================================卧室筛选
+          height: 137px;
+          box-sizing: border-box;
+          .slp_tul{
+            width: 100%;
+            .slp_tul_li{
+              width: 100%;
+              //=============================================卧室筛选
+              height: 87px;
+              //height: 45px;
+              border-bottom: 1px solid #ebebeb;
+            }
+            .slp_title{
+              width: 4.1rem;
+              margin: 0 auto;
+              //overflow: hidden;
+              box-sizing: border-box;
+              //li{
+              //  float: left;
+              //}
+              .search_select_city{
+                -moz-user-select:none;
+                -webkit-user-select:none;
+                user-select:none;
+                box-sizing: border-box;
+                width: 1.95rem;
+                float: left;
+                height: 34px;
+                margin-top: 5px;
+                border: 1px solid #ebebeb;
+                position: relative;
+                p{
+                  text-indent: 10px;
+                  font-size:.16rem;
+                  line-height: 32px;
+                  width: 100%;
+                  background: #ffffff;
+                  cursor: default;
+                }
+                .search_select_cityItem{
+                  display: none;
+                  width: 1.95rem;
+                  box-sizing: border-box;
+                  position: absolute;
+                  left: -1px;
+                  top:32px;
+                  border:1px solid #ebebeb;
+                  z-index: 999;
+                  max-height: 256px;
+                  overflow: scroll;
+                  overflow-x: hidden;
+                  p:hover{
+                    background: #f0a901;
+                  }
+                }
+                .select_city_tri{
+                  display: block;
+                  position: absolute;
+                  width: 0;
+                  height:0;
+                  border: 5px solid transparent;
+                  border-top:5px solid rgba(43,43,43,0.8);
+                  right: 15px;
+                  top: 15px;
+                }
+                .select_open_tri{
+                  border: 5px solid transparent;
+                  border-bottom:5px solid #2b2b2b;
+                  top:10px;
+                }
+              }
+              .search_select_suburb{
+                -moz-user-select:none;
+                -webkit-user-select:none;
+                user-select:none;
+                box-sizing: border-box;
+                width: 1.95rem;
+                float: left;
+                height: 34px;
+                margin: 4px 0 0 .2rem;
+                border: 1px solid #ebebeb;
+                position: relative;
+                p{
+                  text-indent: 10px;
+                  font-size:.16rem;
+                  line-height: 32px;
+                  width: 100%;
+                  background: #ffffff;
+                  cursor: default;
+                }
+                .search_select_suburbItem{
+                  display: none;
+                  width: 1.95rem;
+                  box-sizing: border-box;
+                  position: absolute;
+                  left: -1px;
+                  top:32px;
+                  border:1px solid #ebebeb;
+                  z-index: 999;
+                  max-height: 320px;
+                  overflow: scroll;
+                  overflow-x: hidden;
+                  p:hover{
+                    background: #f0a901;
+                  }
+                }
+                .select_suburb_tri{
+                  display: block;
+                  position: absolute;
+                  width: 0;
+                  height:0;
+                  border: 5px solid transparent;
+                  border-top:5px solid rgba(43,43,43,0.8);
+                  right: 15px;
+                  top: 15px;
+                }
+                .select_open_tri{
+                  border: 5px solid transparent;
+                  border-bottom:5px solid #2b2b2b;
+                  top:10px;
+                }
+              }
+              .search_select_rooms{
+                -moz-user-select:none;
+                -webkit-user-select:none;
+                user-select:none;
+                box-sizing: border-box;
+                width: 1.95rem;
+                height: 34px;
+                float: left;
+                margin-top: 5px;
+                border: 1px solid #ebebeb;
+                position: relative;
+                p{
+                  text-indent: 10px;
+                  font-size:.16rem;
+                  line-height: 32px;
+                  width: 100%;
+                  background: #ffffff;
+                  cursor: default;
+                }
+                .search_select_roomsItem{
+                  display: none;
+                  width: 1.95rem;
+                  box-sizing: border-box;
+                  position: absolute;
+                  left: -1px;
+                  top:32px;
+                  border:1px solid #ebebeb;
+                  z-index: 999;
+                  max-height: 256px;
+                  overflow: scroll;
+                  overflow-x: hidden;
+                  p{
+                    width: 100%;
+                    background-color: #ffffff;
+                    background-position: 7px 8px;
+                    background-repeat: no-repeat;
+                    background-size: 14px 14px;
+                    height: 30px;
+                    cursor: pointer;
+                    text-indent: 33px;
+                  }
+                  .checked{
+                    background-image: url("http://res.tigerz.nz/imgs/checked_box.png");
+                    -moz-background-image: url("http://res.tigerz.nz/imgs/checked_box.png") ;
+                    -o-background-image: url("http://res.tigerz.nz/imgs/checked_box.png");
+                    -webkit-background-image: url("http://res.tigerz.nz/imgs/checked_box.png");
+                  }
+                  .uncheck{
+                    background-image: url("http://res.tigerz.nz/imgs/uncheck_box.png");
+                    -moz-background-image: url("http://res.tigerz.nz/imgs/uncheck_box.png");
+                    -o-background-image: url("http://res.tigerz.nz/imgs/uncheck_box.png");
+                    -webkit-background-image: url("http://res.tigerz.nz/imgs/uncheck_box.png");
+                  }
+                  //p{
+                  //  width: 100%;
+                  //  background: #ffffff;
+                  //  height: 30px;
+                  //  cursor: pointer;
+                  //  position: relative;
+                  //  input{
+                  //    position: absolute;
+                  //    left: .07rem;
+                  //    top:9px;
+                  //  }
+                  //  span{
+                  //    display: block;
+                  //    width: 1.95rem;
+                  //    text-indent: .35rem;
+                  //    height:30px;
+                  //    line-height:30px;
+                  //  }
+                  //}
+                  p:hover{
+                    background-color: #f0a901;
+                  }
+                }
+                .select_rooms_tri{
+                  display: block;
+                  position: absolute;
+                  width: 0;
+                  height:0;
+                  border: 5px solid transparent;
+                  border-top:5px solid rgba(43,43,43,0.8);
+                  right: 15px;
+                  top: 15px;
+                }
+                .select_open_tri{
+                  border: 5px solid transparent;
+                  border-bottom:5px solid #2b2b2b;
+                  top:10px;
+                }
+              }
+              .search_select_school{
+                -moz-user-select:none;
+                -webkit-user-select:none;
+                user-select:none;
+                box-sizing: border-box;
+                width: 1.95rem;
+                float: left;
+                height: 34px;
+                margin: 4px 0 0 .2rem;
+                border: 1px solid #ebebeb;
+                position: relative;
+                p{
+                  text-indent: 10px;
+                  font-size:.16rem;
+                  line-height: 32px;
+                  width: 100%;
+                  background: #ffffff;
+                  cursor: default;
+                }
+                .select_school_show{
+                  width: 1.7rem;
+                  white-space:nowrap;
+                  overflow:hidden;
+                  text-overflow:ellipsis;
+                }
+                .search_select_schoolItem{
+                  display: none;
+                  width: 1.95rem;
+                  box-sizing: border-box;
+                  position: absolute;
+                  left: -1px;
+                  top:32px;
+                  border:1px solid #ebebeb;
+                  z-index: 999;
+                  max-height: 320px;
+                  overflow: scroll;
+                  overflow-x: hidden;
+                  p{
+                    white-space:nowrap;
+                    overflow:hidden;
+                    text-overflow:ellipsis;
+                  }
+                  p:hover{
+                    background: #f0a901;
+                  }
+                }
+                .select_school_tri{
+                  display: block;
+                  position: absolute;
+                  width: 0;
+                  height:0;
+                  border: 5px solid transparent;
+                  border-top:5px solid rgba(43,43,43,0.8);
+                  right: 15px;
+                  top: 15px;
+                }
+                .select_open_tri{
+                  border: 5px solid transparent;
+                  border-bottom:5px solid #2b2b2b;
+                  top:10px;
+                }
+              }
+
+            }
+            .slp_nav{
+              width: 4.08rem;
+              height: 45px;
+              margin: 0 auto;
+              overflow: hidden;
+              ol{
+                float: left;
+                li{
+                  box-sizing: border-box;
+                  float: left;
+                  height: 45px;
+                  line-height:45px;
+                  margin-right: .18rem;
+                  font-size: .14rem;
+                  color: #2b2b2b;
+                  cursor: pointer;
+                  position: relative;
+                }
+                li:hover{
+                  border-bottom: 2px solid #ffd801;
+                }
+                .slp_nav_actived{
+                  border-bottom: 2px solid #ffd801;
+                }
+                .nav_price i{
+                  display: block;
+                  width: 0;
+                  height:0;
+                  position: absolute;
+                  border-width: 3px;
+                  border-style: solid;
+                  right: -9px;
+                }
+                .nav_price .priceDown{
+                  border-left-color:transparent;
+                  border-right-color:transparent;
+                  border-top-color:transparent;
+                  border-bottom-color: gray;
+                  top: 16px;
+                }
+                .nav_price .priceUp{
+                  border-left-color:transparent;
+                  border-right-color:transparent;
+                  border-bottom-color:transparent;
+                  border-top-color:gray;
+                  top:24px;
+                }
+              }
+              span{
+                float: right;
+                height:45px;
+                line-height:45px;
+                font-size: .14rem;
+                cursor: default;
+              }
+            }
+          }
+
+        }
+        .slp_list{
+          overflow-x: hidden;
+          width: 4.8rem;
+          background: #ffffff;
+          overflow-y: scroll;
+          padding: .1px;
+          //box-sizing: border-box;
+          //border:1px solid brown;
+          position: relative;
+          ul{
+            width: 4rem;
+            margin: 0 auto 40px auto;
+            li{
+              cursor: pointer;
+              border-bottom: 1px solid #ebebeb;
+              overflow: hidden;
+              transition: all linear .3s;
+              cursor: default;
+              .slp_list_img{
+                width: 100%;
+                //height: 1.1rem;
+                a{
+                  float: left;
+                  width: 1.2rem;
+                  margin: .14rem .2rem 0 0;
+                  border-radius: .04rem;
+                  cursor: pointer;
+                  img{
+                    float: left;
+                    width: 1.2rem;
+                    //margin: .14rem .2rem 0 0;
+                    width: 100%;
+                    border-radius: .04rem;
+                  }
+                }
+
+                .slp_list_dis{
+                  float: left;
+                  width: 2.5rem;
+                  margin-top: .14rem;
+                  .slpld_title{
+                    width: 100%;
+                    font-size: .18rem;
+                    color: #2b2b2b;
+                    height: .2rem;
+                    line-height:.2rem;
+                    white-space:nowrap;
+                    overflow:hidden;
+                    text-overflow:ellipsis;
+                    cursor: pointer;
+                  }
+                  .slpld_title:hover{
+                    text-decoration: underline;
+                  }
+                  .slpld_price{
+                    font-size:.2rem;
+                    //color: #ff500c;
+                    color:#2b2b2b;
+                    //height: .3rem;
+                    line-height:.3rem;
+                  }
+                  .slpld_addr{
+                    font-size: .12rem;
+                    height:.25rem;
+                    line-height:.25rem;
+                    color: #bbbbbb;
+                    border-bottom: 1px solid #ebebeb;
+                    white-space:nowrap;
+                    overflow:hidden;
+                    text-overflow:ellipsis;
+                  }
+                  .slpld_info{
+                    height: .3rem;
+                    line-height:.3rem;
+                    padding: 0.1px;
+                    span{
+                      float: left;
+                      //display: inline-block;
+                      color: #8b8b8b;
+                      font-size: .12rem;
+                      height:.3rem;
+                      line-height:.3rem;
+                    }
+                    .slpldi_bed{
+                      width: .18rem;
+                      height:.14rem;
+                      background: url("http://res.tigerz.nz/imgs/bed.png") no-repeat;
+                      background-size: cover;
+                      margin: .07rem .1rem 0 0;
+                    }
+                    .slpldi_bath{
+                      width: .13rem;
+                      height:.12rem;
+                      background: url("http://res.tigerz.nz/imgs/bath.png") no-repeat;
+                      background-size: cover;
+                      margin:.08rem .1rem 0 .2rem;
+                    }
+                    .slpldi_num{
+                      float: right;
+                      i{
+                        font-style: normal;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            li:hover{
+              background: rgba(232,232,232,.4);
+            }
+          }
+          .slp_list_load{
+            position: fixed;
+            width: 4.8rem;
+            background: rgba(255,255,255,0.7);
+            //left:0;
+            bottom:0;
+            z-index: 9999;
+            //display: none;
+            img{
+              width: .6rem;
+              height:.6rem;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+          .slp_more_btn{
+            height: 30px;
+            cursor: pointer;
+            width:4.7rem;
+            background: #e9e9e9;
+            text-align: center;
+            line-height: .38rem;
+            font-size: .16rem;
+            color: #2b2b2b;
+            position: fixed;
+            //left: 0;
+            bottom:0;
+            z-index: 99;
+            .slp_more_page{
+              width: 50%;
+              margin-left: 5%;
+              float: left;
+              height:30px;
+              line-height:30px;
+              text-align: left;
+              font-weight: bold;
+            }
+            .slp_more_next{
+              width: 40%;
+              float: right;
+              .slp_next{
+                width: 70px;
+                float: right;
+                border:1px solid #ccc;
+                height: 20px;
+                background: #ffffff;
+                text-align: center;
+                line-height:20px;
+                font-size:.14rem;
+                margin: 3px 2% 0 0;
+              }
+              .slp_pre{
+                float: left;
+                margin-top: 3px;
+                width: 70px;
+                height:20px;
+                text-align: center;
+                line-height:20px;
+                border:1px solid #ccc;
+                background: #ffffff;
+                display: none;
+              }
+              .slp_next_pro{
+                width: 70px;
+                float: right;
+                border:1px solid #ccc;
+                height: 20px;
+                background: #ffffff;
+                text-align: center;
+                line-height:20px;
+                font-size:.14rem;
+                margin: 3px 2% 0 0;
+                color: #000;
+              }
+              .slp_pre_pro{
+                float: left;
+                margin-top: 3px;
+                width: 70px;
+                height:20px;
+                text-align: center;
+                line-height:20px;
+                border:1px solid #ccc;
+                background: #ffffff;
+                color: #000;
+              }
+            }
+          }
+          .showBtns{
+            display: none;
+          }
+        }
+      }
+//==============================================简单详细请部分==========================================
+//      .sl_detail{
+//        border-left: 1px solid #8b8b8b;
+//        position: absolute;
+//        //left: 4.8rem;
+//        left: 0;
+//        top:0;
+//        background: #ffffff;
+//        width: 4.6rem;
+//        height:100%;
+//        overflow-y: scroll;
+//        z-index: 2;
+//        overflow-x: hidden;
+//        .sld_close{
+//          width: 100%;
+//          height:.3rem;
+//          .sld_close_icon{
+//            float: right;
+//            margin:.05rem .2rem 0 0;
+//            width: .2rem;
+//            height:.2rem;
+//            background: url("http://res.tigerz.nz/imgs/closeicon.png") no-repeat;
+//            background-size: 100%;
+//            cursor: pointer;
+//          }
+//        }
+//        .sld_title{
+//          width: 4rem;
+//          height:.68rem;
+//          margin: 0 auto .05rem auto;
+//          position: relative;
+//          .sld_title_cont{
+//            span:nth-of-type(1){
+//              font-size: .16rem;
+//              display: block;
+//              white-space:nowrap;
+//              overflow:hidden;
+//              text-overflow:ellipsis;
+//            }
+//            span:nth-of-type(2){
+//              display: block;
+//              font-size: .12rem;
+//              margin-top: .06rem;
+//              i{
+//                font-style: normal;
+//              }
+//            }
+//          }
+//          .sld_jump_detail{
+//            position: absolute;
+//            right: 0;
+//            bottom: 0;
+//            width: 1.45rem;
+//            height:.38rem;
+//            background: #FFD800;
+//            text-align: center;
+//            line-height:.38rem;
+//            font-size: .16rem;
+//            color: #2b2b2b;
+//            border-radius: .03rem;
+//            transition: all linear .3s;
+//          }
+//          .sld_jump_detail:hover{
+//            background: #ffb900;
+//          }
+//        }
+//        .sld_turn{
+//          width: 4rem;
+//          height:2.7rem;
+//          margin: 0 auto;
+//          position: relative;
+//          overflow: hidden;
+//          .sld_turn_btn{
+//            position: absolute;
+//            top:1.1rem;
+//            width: .3rem;
+//            height:.57rem;
+//            background-size: 100%;
+//            z-index: 9;
+//            cursor: pointer;
+//          }
+//          .sld_left_btn{
+//            left: .2rem;
+//            background:rgba(0,0,0,.5) url("http://res.tigerz.nz/imgs/leftbtn.png") no-repeat;
+//            background-size: 100%;
+//          }
+//          .sld_left_btn:hover{
+//            background:rgba(0,0,0,.7) url("http://res.tigerz.nz/imgs/onleftbtn.png") no-repeat;
+//            background-size: 100%;
+//          }
+//          .sld_right_btn{
+//            right: .2rem;
+//            background:rgba(0,0,0,.5) url("http://res.tigerz.nz/imgs/rightbtn.png") no-repeat;
+//            background-size: 100%;
+//          }
+//          .sld_right_btn:hover{
+//            background:rgba(0,0,0,.7) url("http://res.tigerz.nz/imgs/onrightbtn.png") no-repeat;
+//            background-size: 100%;
+//          }
+//          .sld_turn_wrap{
+//            height: 2.7rem;
+//            position: absolute;
+//            left: 0;
+//            top:0;
+//            .sld_turn_item{
+//              width: 4rem;
+//              max-height:2.7rem;
+//              float: left;
+//            }
+//          }
+//        }
+//        .sld_estimate{
+//          width: 4rem;
+//          height:.5rem;
+//          margin: 0 auto;
+//          line-height:.5rem;
+//          font-weight:bold;
+//          font-size: .16rem;
+//          color: #2b2b2b;
+//          border-top: 1px solid #8b8b8b;
+//          border-bottom: 1px solid #8b8b8b;
+//          span:nth-of-type(1){
+//            font-weight: bold;
+//          }
+//        }
+//        .sld_auctioned{
+//          width: 4rem;
+//          //height:1.1rem;
+//          margin: 0 auto;
+//          cursor: default;
+//          border-bottom: 1px solid #8b8b8b;
+//          h4{
+//            width: 100%;
+//            height: .72rem;
+//            line-height:.72rem;
+//            font-size:.35rem;
+//            color: #fd6840;
+//            font-weight: normal;
+//            white-space:nowrap;
+//            overflow:hidden;
+//            text-overflow:ellipsis;
+//          }
+//          .sld_addr{
+//            width: 4rem;
+//            height:.5rem;
+//            margin: 0 auto;
+//            line-height:.5rem;
+//            font-weight:bold;
+//            font-size: .16rem;
+//            color: #2b2b2b;
+//            //border-bottom: 1px solid #8b8b8b;
+//            i{
+//              font-style: normal;
+//              font-weight:normal;
+//            }
+//          }
+//          .sld_auctioned_time{
+//            font-size: .16rem;
+//            height: .2rem;
+//            line-height:.2rem;
+//            margin-bottom: .14rem;
+//
+//            color: #2b2b2b;
+//            .slda_time_icon{
+//              width: .2rem;
+//              height:.22rem;
+//              vertical-align:middle;
+//              background: url("http://res.tigerz.nz/imgs/calicon.png") no-repeat;
+//              background-size: 100%;
+//              display: inline-block;
+//            }
+//          }
+//          .sld_estimate{
+//            font-size: .16rem;
+//            color: #2b2b2b;
+//            height:.18rem;
+//            font-weight: bold;
+//            line-height:.18rem;
+//            .sld_price{
+//              color:#fd6840;
+//            }
+//          }
+//        }
+//        .sld_constitute{
+//          width: 4rem;
+//          height:1rem;
+//          margin: 0 auto;
+//          border-bottom: 1px solid #8b8b8b;
+//          .sldc_house{
+//            height: .3rem;
+//            line-height:.3rem;
+//            padding: 0.1px;
+//            span{
+//              display: inline-block;
+//              color: #2b2b2b;
+//              font-size: .12rem;
+//              height:.3rem;
+//              line-height:.3rem;
+//            }
+//            .sldc_house_bed{
+//              width: .14rem;
+//              height:.14rem;
+//              background: url("http://res.tigerz.nz/imgs/bed.png") no-repeat;
+//              background-size: cover;
+//              margin:.1rem .1rem 0 0;
+//            }
+//            .sldc_house_bath{
+//              width: .14rem;
+//              height:.14rem;
+//              background: url("http://res.tigerz.nz/imgs/bath.png") no-repeat;
+//              background-size: 100%;
+//              margin:.1rem .1rem 0 .13rem;
+//            }
+//          }
+//          .sldc_house_type{
+//            font-size: .16rem;
+//            font-weight:bold;
+//            height:.16rem;
+//            line-height:.16rem;
+//            color: #2b2b2b;
+//            margin: .12rem 0 .15rem 0;
+//            span{
+//              font-weight:normal;
+//            }
+//          }
+//          .sldc_house_location{
+//            font-size: .16rem;
+//            height:.16rem;
+//            line-height:.16rem;
+//            font-weight: bold;
+//            color: #2b2b2b;
+//            span{
+//              font-weight:normal;
+//            }
+//          }
+//        }
+//        .sld_basic{
+//          width: 4rem;
+//          margin: 0 auto;
+//          h4{
+//            height: .5rem;
+//            line-height:.5rem;
+//            border-bottom: 1px solid #8b8b8b;
+//            font-size: .2rem;
+//            color: #000000;
+//            font-weight:normal;
+//          }
+//          ul{
+//            width: 100%;
+//            margin-top: .2rem;
+//            li{
+//              width: 4rem;
+//              height: .45rem;
+//              line-height:.45rem;
+//              cursor: default;
+//              span{
+//                //display: inline-block;
+//                display: block;
+//                float: left;
+//                height: .45rem;
+//                line-height:.45rem;
+//                color: #2b2b2b;
+//                font-size:.14rem;
+//              }
+//              span:nth-of-type(1){
+//                font-weight: bold;
+//                width: 1.05rem;
+//              }
+//              span:nth-of-type(2){
+//                width: 1px;
+//                height:.16rem;
+//                margin-top: .15rem;
+//                background: #d1d1d1;
+//              }
+//              span:nth-of-type(3){
+//                width: 2.73rem;
+//                margin-left: .2rem;
+//                display:block;
+//                white-space:nowrap;
+//                overflow:hidden;
+//                text-overflow:ellipsis;
+//                i{
+//                  font-style: normal;
+//                }
+//              }
+//            }
+//          }
+//        }
+//        .sl_detail_view{
+//          display: inline-block;
+//          width: 3rem;
+//          margin: .2rem .8rem .3rem;
+//          height:.4rem;
+//          text-align: center;
+//          line-height:.4rem;
+//          background: #ffd11c;
+//          color: #2b2b2b;
+//          font-size: .16rem;
+//          border-radius: .03rem;
+//          transition: all linear .3s;
+//        }
+//        .sl_detail_view:hover{
+//          background: #ffb900;
+//        }
+//      }
+    }
+//==============================================地图部分===============================================
+    .search_map{
+      box-sizing: border-box;
+      float: left;
+      width: 8rem;
+      height: 100%;
+    }
+  //============================================地图上loading的样式============================================
+  .search_loading_wrap{
+    display: none;
+    position: absolute;
+    //z-index: 999999999999;
+    //left: 5.5rem;
+    left: 4.9rem;
+    top:50px;
+    width: 220px;
+    height:46px;
+    background: rgba(255,255,255,0.8);
+    border-radius: .03rem;
+    p{
+      text-indent: 10px;
+      margin-top: 5px;
+    }
+    span{
+      position: absolute;
+      top:5px;
+      right:10px;
+      i{
+        font-style: normal;
+      }
+    }
+    .loading_wrap{
+      width:200px;
+      height:3px;
+      margin: 7px auto;
+      background: #f8f8f7;
+      border-radius: 3px;
+      //border:1px solid brown; f0a901
+      .loading_item{
+        width: 40px;
+        height: 3px;
+        border-radius: 3px;
+        background: #f0a901;
+      }
+    }
+  }
+
+  .search_safe_wrap{
+    position: absolute;
+    left: 6.3rem;
+    top:5px;
+    max-width: 300px;
+    height:50px;
+    .search_safe_icon{
+      position: absolute;
+      left:0;
+      top:0;
+      width: 320px;
+      //min-width: 60px;
+      height:50px;
+      font-size: 14px;
+      background: rgb(255,255,255);
+      text-align: center;
+      color: #F36320;
+      cursor: pointer;
+      border-radius: 3px;
+      figure{
+        float: left;
+        width: 80px;
+        height:50px;
+        transition: all linear 300ms;
+        i {
+          width: 25px;
+          height: 25px;
+          display: block;
+          background: url("http://res.tigerz.nz/imgs/Security.png") no-repeat;
+          background-size: 100%;
+          margin: 4px 0 0 27.5px;
+        }
+        .hotel_icon{
+          background: url("http://res.tigerz.nz/imgs/hotel.png") no-repeat;
+          background-size: 100%;
+        }
+        .hospital_icon{
+          background: url("http://res.tigerz.nz/imgs/hospital.png") no-repeat;
+          background-size: 100%;
+        }
+        .supermarket_icon{
+          background: url("http://res.tigerz.nz/imgs/supermarket.png") no-repeat;
+          background-size: 100%;
+        }
+        figcaption{
+          height: 25px;
+          width: 100%;
+          font-size: 12px;
+          color:#2b2b2b;
+          text-align: center;
+          line-height:25px;
+          margin-top: -3px;
+        }
+      }
+      figure:hover{
+        background: rgba(221, 221, 221, 0.5);
+      }
+    }
+    .search_safe_display{
+      background: rgb(255,255,255);
+      width: 500px;
+      height:50px;
+      position: absolute;
+      left:0;
+      top:0;
+      display: none;
+      border-radius: 3px;
+      .search_safe_close{
+        float: left;
+        width: 50px;
+        height:50px;
+        border-right: 1px solid #b0afaf;
+        cursor: pointer;
+        position: relative;
+        transition: all linear 300ms;
+        span{
+          display: block;
+          position: absolute;
+          width: 20px;
+          height: 1px;
+          background: #2b2b2b;
+          left: 15px;
+          top:24px;
+        }
+        span:nth-of-type(1){
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+        span:nth-of-type(2){
+          -webkit-transform: rotate(135deg);
+          -moz-transform: rotate(135deg);
+          -ms-transform: rotate(135deg);
+          -o-transform: rotate(135deg);
+          transform: rotate(135deg);
+        }
+      }
+      .search_safe_close:hover{
+        background: rgba(221, 221, 221, 0.5);
+      }
+      .search_safe_dis{
+        float: left;
+        width: 449px;
+        .safe_pic{
+          width: 449px;
+          height:25px;
+          i{
+            display: inline-block;
+            width: 60px;
+            height:10px;
+            background:rgb(32, 192, 99);
+            //margin-top: 20px;
+          }
+          i:nth-of-type(1){
+            margin-left: 12px;
+          }
+          i:nth-of-type(2){
+            background:rgb(143, 206, 54);
+          }
+          i:nth-of-type(3){
+            background: rgb(255, 220, 10);
+          }
+          i:nth-of-type(4){
+            background: rgb(252, 149, 30);
+          }
+          i:nth-of-type(5){
+            background: rgb(249, 78, 50);
+            margin-right: 12px;
+          }
+          span{
+            font-size: 13px;
+          }
+          span:nth-of-type(1){
+            margin-left: 19px;
+          }
+
+        }
+        .safe_dis{
+          width: 449px;
+          height:25px;
+          font-size: 14px;
+          font-weight: 400;
+          line-height:25px;
+          text-align: center;
+        }
+      }
+    }
+    .search_hotel_display{
+      background: rgb(255,255,255);
+      width: 500px;
+      height:50px;
+      position: absolute;
+      left:0;
+      top:0;
+      display: none;
+      border-radius: 3px;
+      .search_hotel_close{
+        float: left;
+        width: 50px;
+        height:50px;
+        border-right: 1px solid #b0afaf;
+        cursor: pointer;
+        position: relative;
+        transition: all linear 300ms;
+        span{
+          display: block;
+          position: absolute;
+          width: 20px;
+          height: 1px;
+          background: #2b2b2b;
+          left: 15px;
+          top:24px;
+        }
+        span:nth-of-type(1){
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+        span:nth-of-type(2){
+          -webkit-transform: rotate(135deg);
+          -moz-transform: rotate(135deg);
+          -ms-transform: rotate(135deg);
+          -o-transform: rotate(135deg);
+          transform: rotate(135deg);
+        }
+      }
+      .search_hotel_close:hover{
+        background: rgba(221, 221, 221, 0.5);
+      }
+      .search_hotel_dis{
+        float: left;
+        width: 449px;
+        .hotel_dis{
+          width: 449px;
+          height:25px;
+          font-size: 14px;
+          font-weight: 400;
+          line-height:25px;
+          text-align: center;
+        }
+        .hotel_pic{
+          width: 449px;
+          height:25px;
+          text-align: center;
+          i{
+            display: inline-block;
+            margin-right: 5px;
+            width: 10px;
+            height:10px;
+            border-radius: 50%;
+            background:#3c8df6;
+            //margin-top: 20px;
+          }
+          span{
+            font-size: 13px;
+          }
+        }
+      }
+    }
+    .search_hospital_display{
+      background: rgb(255,255,255);
+      width: 500px;
+      height:50px;
+      position: absolute;
+      left:0;
+      top:0;
+      display: none;
+      border-radius: 3px;
+      .search_hospital_close{
+        float: left;
+        width: 50px;
+        height:50px;
+        border-right: 1px solid #b0afaf;
+        cursor: pointer;
+        position: relative;
+        transition: all linear 300ms;
+        span{
+          display: block;
+          position: absolute;
+          width: 20px;
+          height: 1px;
+          background: #2b2b2b;
+          left: 15px;
+          top:24px;
+        }
+        span:nth-of-type(1){
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+        span:nth-of-type(2){
+          -webkit-transform: rotate(135deg);
+          -moz-transform: rotate(135deg);
+          -ms-transform: rotate(135deg);
+          -o-transform: rotate(135deg);
+          transform: rotate(135deg);
+        }
+      }
+      .search_hospital_close:hover{
+        background: rgba(221, 221, 221, 0.5);
+      }
+      .search_hospital_dis{
+        float: left;
+        width: 449px;
+        .hospital_dis{
+          width: 449px;
+          height:25px;
+          font-size: 14px;
+          font-weight: 400;
+          line-height:25px;
+          text-align: center;
+        }
+        .hospital_pic{
+          width: 449px;
+          height:25px;
+          text-align: center;
+          i{
+            display: inline-block;
+            margin-right: 5px;
+            width: 10px;
+            height:10px;
+            border-radius: 50%;
+            background:#26cf5c;
+            //margin-top: 20px;
+          }
+          span{
+            font-size: 13px;
+          }
+        }
+      }
+    }
+    .search_supermarket_display{
+      background: rgb(255,255,255);
+      width: 500px;
+      height:50px;
+      position: absolute;
+      left:0;
+      top:0;
+      display: none;
+      border-radius: 3px;
+      .search_supermarket_close{
+        float: left;
+        width: 50px;
+        height:50px;
+        border-right: 1px solid #b0afaf;
+        cursor: pointer;
+        position: relative;
+        transition: all linear 300ms;
+        span{
+          display: block;
+          position: absolute;
+          width: 20px;
+          height: 1px;
+          background: #2b2b2b;
+          left: 15px;
+          top:24px;
+        }
+        span:nth-of-type(1){
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+        span:nth-of-type(2){
+          -webkit-transform: rotate(135deg);
+          -moz-transform: rotate(135deg);
+          -ms-transform: rotate(135deg);
+          -o-transform: rotate(135deg);
+          transform: rotate(135deg);
+        }
+      }
+      .search_supermarket_close:hover{
+        background: rgba(221, 221, 221, 0.5);
+      }
+      .search_supermarket_dis{
+        float: left;
+        width: 449px;
+        .supermarket_dis{
+          width: 449px;
+          height:25px;
+          font-size: 14px;
+          font-weight: 400;
+          line-height:25px;
+          text-align: center;
+        }
+        .supermarket_pic{
+          width: 449px;
+          height:25px;
+          text-align: center;
+          i{
+            display: inline-block;
+            margin-right: 5px;
+            width: 10px;
+            height:10px;
+            border-radius: 50%;
+            background:#a970ff;
+            //margin-top: 20px;
+          }
+          span{
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//============================================滚动条设置===============================================
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar
+{
+  width: 10px;
+  height: 5px;
+  background-color: #F5F5F5;
+}
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #cccccc;
+}
+//=============================================没有房子时候显示的信息框========================================
+.noHouse{
+  max-width: 2.5rem;
+  height: 35px;
+  background: rgba(0,0,0,0.5);
+  font-size: 16px;
+  text-align: center;
+  line-height:35px;
+  color: #ffffff;
+  position: absolute;
+  left: 8.1rem;
+  top:50px;
+  //border-radius: 25px;
+  display: none;
+}
+
+//===========================================test部分=================================================
+.nav{
+  li:nth-of-type(2){
+    a{
+      color:#EDD813;
+    }
+  }
+}
+.buy{
+  width: 12.8rem;
+  height: 5rem;
+  .buyp{
+    width: 400px;
+    height:40px;
+    line-height:40px;
+    border:1px solid blue;
+  }
+}

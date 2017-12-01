@@ -1,0 +1,20 @@
+<!--location.wxml-->
+<view class="location_content">
+  <view class="header_clear">
+    <navigator url="../list/list?name={{allCityFirst}}&level=2&page=0&sort=default&isAllHouse=false&scope={{area}}" open-type="reLaunch"></navigator>
+    <view>Select area</view>
+  </view>
+  <section class="lcasec">
+    <p class="lctitle">GPS city</p>
+    <view class="nowCity">
+      <navigator url="../list/list?name={{allCityFirst}}&level=2&page=0&sort=default&isAllHouse=false&scope={{area}}" class="curCityLink" open-type="reLaunch">{{area}}</navigator>
+      <navigator url="./location?area={{area}}" class="locbtn" open-type="redirect"></navigator>
+    </view>
+    <p class="lctitle">All City</p>
+    <ul class="lcul">
+       <li wx:for="{{allCity}}" class="{{area == item.en ? 'active' : ''}}" bindtap="sjTiaoZhuan" data-text="{{item.en}}">
+        <span>{{item.en}}</span>
+      </li>
+    </ul>
+  </section>
+</view>

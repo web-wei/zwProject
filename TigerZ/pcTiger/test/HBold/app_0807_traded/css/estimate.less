@@ -1,0 +1,611 @@
+//=================================================header部分=============================================
+.estimate_header{
+  width: 12.8rem;
+  height: 5.6rem;
+  padding: .1px;
+  //background:rgba(255,185,0,.3);
+  //background-attachment: fixed;
+  //background-size: cover;
+  position: relative;
+  .home_banner_advImg{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    left:0;
+    top:0;
+    //z-index: -1;
+    img{
+      width: 100%;
+      height:100%;
+    }
+  }
+  nav{
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 12.8rem;
+    height:1rem;
+    h1{
+      float: left;
+      margin:0 .14rem 0 .4rem;
+      width: 1.613rem;
+      height: 1rem;
+      font-size: 0;
+      //background: url("../imgs/logo1.png") left center no-repeat;
+      //background-size: 100%;
+      cursor: pointer;
+      img{
+        width: 100%;
+        height:100%;
+      }
+    }
+    //.home_addr{
+    //  cursor: pointer;
+    //  width: 1rem;
+    //  height: .15rem;
+    //  line-height:.15rem;
+    //  position: relative;
+    //  float: left;
+    //  margin: .5rem 1.9rem 0 0;
+    //  .home_map_icon{
+    //    display: inline-block;
+    //    width: .11rem;
+    //    height: .14rem;
+    //    background: url("http://res.tigerz.nz/imgs/addr.png") no-repeat;
+    //    background-size: cover;
+    //    //margin-right: -4px;
+    //  }
+    //  .home_current_city{
+    //    font-size: .16rem;
+    //    color: #ffffff;
+    //    margin-left: .04rem;
+    //  }
+    //  //这块没有设计
+    //  ul{
+    //    width: 1rem;
+    //    position: absolute;
+    //    left: 0;
+    //    top:.55rem;
+    //    display: none;
+    //    li{
+    //      line-height: .3rem;
+    //      color: #ffffff;
+    //      cursor: pointer;
+    //    }
+    //  }
+    //}
+    .home_nav{
+      width: 4.45rem;
+      float: left;
+      //margin-left: 1.4rem;
+      margin-left: 4.3rem;
+      li{
+        float: left;
+        //width: .9rem;
+        height: .3rem;
+        text-align: center;
+        line-height:.3rem;
+        margin:.35rem .1rem 0 0;
+        a{
+          display: block;
+          width: .9rem;
+          font-size: .16rem;
+          //font-weight: bold;
+          background: #FFD800;
+          height: .3rem;
+          line-height:.3rem;
+          border-radius: .03rem;
+          color: #000000;
+        }
+        a:hover{
+          background: #ffb900;
+        }
+        .home_buyicon:before{
+          display: block;
+          float: left;
+          width: .2rem;
+          height:.2rem;
+          content: '';
+          margin:.04rem -0.1rem 0 .15rem;
+          background: url("http://res.tigerz.nz/imgs/home.png") no-repeat;
+          background-size: 100%;
+        }
+        .home_mapicon:before{
+          display: block;
+          float: left;
+          width: .18rem;
+          height:.18rem;
+          content: '';
+          margin:.05rem -0.15rem 0 .15rem;
+          background: url("http://res.tigerz.nz/imgs/map-pin-silhouette.png") no-repeat;
+          background-size: 100%;
+        }
+        .home_estimateicon{
+          width: 1.05rem;
+        }
+        .home_estimateicon:before{
+          display: block;
+          float: left;
+          width: .18rem;
+          height:.18rem;
+          content: '';
+          margin:.05rem -0.1rem 0 .1rem;
+          background: url("http://res.tigerz.nz/imgs/dollar-symbol.png") no-repeat;
+          background-size: 100%;
+        }
+        .home_auction{
+          width: 1.05rem;
+        }
+        .home_auction:before{
+          display: block;
+          float: left;
+          width: .18rem;
+          height:.18rem;
+          content: '';
+          margin:.05rem -0.1rem 0 .1rem;
+          background: url("http://res.tigerz.nz/imgs/auction.png") no-repeat;
+          background-size: 100%;
+        }
+      }
+    }
+    .home_login_language{
+      float: right;
+      width: 1.8rem;
+      //margin-right:.6rem;
+      //width: 2.1rem;
+      .home_login{
+        float: left;
+        color:#ffffff;
+        padding:0 0.1rem;
+        height: 1rem;
+        line-height: 1rem;
+        text-align: center;
+        font-size: .18rem;
+        span{
+          font-size: .14rem;
+          color:#ffffff;
+          line-height: 1rem;
+          cursor: pointer;
+        }
+      }
+      .home_language_wrap{
+        //float: left;
+        .home_language{
+          padding:0 0.06rem;
+          float: left;
+          text-align: center;
+          height: 1rem;
+          line-height:1rem;
+          color:#ffffff;
+          font-size: .16rem;
+          cursor: pointer;
+          a{
+            display: block;
+            color: #ffffff;
+          }
+        }
+        i{
+          float: left;
+          margin: 0 .1rem;
+          height: 1rem;
+          line-height:1rem;
+          color:#ffffff;
+        }
+        .language_choiced{
+          color:#FFD800;
+        }
+      }
+    }
+  }
+  .home_nav_title{
+    position: absolute;
+    left:0;
+    top: 1.5rem;
+    width: 12.8rem;
+    margin-top: .55rem;
+    text-align: center;
+    h2{
+      //font-family: tf;
+      font-size: .55rem;
+      height: .55rem;
+      line-height:.55rem;
+      font-weight: normal;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      margin-bottom: .1rem;
+    }
+    p{
+      font-size:.22rem;
+      height: .25rem;
+      color: #ffffff;
+    }
+  }
+  .home_search_bar{
+    width: 7.98rem;
+    margin: 3.1rem auto .24rem;
+    font-weight:normal;
+    position: relative;
+    .home_search_type{
+      overflow: hidden;
+      margin-bottom: .14rem;
+      li{
+        float: left;
+        cursor: pointer;
+        font-size: .16rem;
+        width: 1.05rem;
+        height: .14rem;
+        line-height:.14rem;
+        color: #ffffff;
+        text-align: center;
+      }
+    }
+    .home_serach_type_icon{
+      display: block;
+      width: 0;
+      height: 0;
+      border-bottom: 8px solid #ffffff;
+      border-top: 8px solid transparent;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      position: absolute;
+      left: .5rem;
+      top: .14rem;
+    }
+    .home_search{
+      width: 100%;
+      height: .52rem;
+      .home_search_box{
+        float: left;
+        width: 6.68rem;
+        height: .52rem;
+        border-radius: .03rem 0 0 .03rem;
+        background: #FFFFFF;
+        input{
+          width:6.4rem;
+          height:.3rem;
+          line-height: .3rem;
+          margin: .11rem 0 0 .26rem;
+          font-size: .16rem;
+          outline: none;
+          border: none;
+        }
+      }
+
+      .home_search_icon{
+        float: left;
+        width: 1.3rem;
+        height: .52rem;
+        background:#FFD800;
+        transition: all linear 0.3s;
+        border-radius: 0 .03rem .03rem 0;
+        cursor: pointer;
+        a{
+          display: block;
+          width: 1.3rem;
+          height: .52rem;
+          span{
+            display: inline-block;
+            width:.27rem;
+            height: .27rem;
+            margin: .12rem 0 0 .52rem;
+            background: url("http://res.tigerz.nz/imgs/search.png") no-repeat;
+            background-size: 100%;
+          }
+        }
+      }
+      .home_search_icon:hover{
+        background: #ffb900;
+      }
+    }
+    .home_search_sub{
+      position: absolute;
+      left: 0;
+      top:.5rem;
+      width: 6.68rem;
+      max-height: 1.7rem;
+      border-radius: 0 0 .03rem .03rem;
+      background: #ffffff;
+      overflow: scroll;
+      overflow-x: hidden;
+      z-index: 99;
+      ul{
+        //display: none;
+        width: 100%;
+        li{
+          width: 100%;
+          height: .33rem;
+          line-height:.33rem;
+          text-indent: .26rem;
+          font-size:.14rem ;
+          //font-family: tf;
+          color: #000;
+          a{
+            display: block;
+            line-height:.3rem;
+            text-indent: .26rem;
+            font-size:.16rem ;
+            color: #000;
+            overflow: hidden;
+            span:nth-of-type(1){
+              float: left;
+            }
+            span:nth-of-type(2){
+              text-indent: 0;
+              float: left;
+            }
+            span:nth-of-type(3){
+              float: right;
+              margin-right: .2rem;
+              font-weight:bold;
+            }
+          }
+        }
+        li:hover{
+          background: #f2f3f5;
+          a{
+            span{
+              font-weight: bold;
+            }
+          }
+        }
+      }
+      .home_search_simple{
+        display: none;
+      }
+      .home_search_error{
+        display: none;
+        color: #ff0000;
+        font-size:.16rem;
+        text-indent: .26rem;
+        line-height: .5rem;
+        height: .5rem;
+        width: 100%;
+        cursor: default;
+      }
+    }
+  }
+}
+//=================================================十二个月内的涨幅=========================================
+.home_last_info{
+  width: 12.8rem;
+  .hld_intro{
+    width: 100%;
+    height: .6rem;
+    background: #FFD800;
+    .hld_title{
+      float: left;
+      width: 3rem;
+      height: .6rem;
+      line-height:.6rem;
+      margin-left: .4rem;
+      font-size: .16rem;
+      font-weight: bold;
+      //font-family: tf;
+    }
+    .hld_line{
+      float: left;
+      width: .12rem;
+      height: .6rem;
+      margin-right: .28rem;
+      background: url("http://res.tigerz.nz/imgs/index_icon.png") no-repeat -10px -60px;
+    }
+    .hld_wrap{
+      float: left;
+      width: 8.9rem;
+      height: .6rem;
+      overflow: hidden;
+      position: relative;
+      ul{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top:0;
+        li{
+          float: left;
+          height:.6rem;
+          line-height: .6rem;
+          margin-right: .56rem;
+          span{
+            font-size: .16rem;
+            font-weight:bold;
+            //color:#01a304;
+          }
+          .hld_data_green{
+            color:green;
+            font-weight:normal;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+          }
+        }
+      }
+    }
+  }
+}
+//=================================================dataInformation部分====================================
+.home_last_data{
+  width: 12.8rem;
+  height: 4.4rem;
+  //border:1px solid black;
+  .hld_detail{
+    width: 12.8rem;
+    height: 4.4rem;
+    //background: url("../imgs/Statistics.jpg");
+    background: url("http://res.tigerz.nz/imgs/index2.jpg");
+    background-size: 100%;
+    .hld_detail_word{
+      width: 12rem;
+      height: 2.35rem;
+      .hld_updata_wrap{
+        width: 9.8rem;
+        height: 2.35rem;
+        margin-left: 1.3rem;
+        overflow: hidden;
+        position: relative;
+        .hldu_ul{
+          width: 39.2rem;
+          height:2.35rem;
+          position: absolute;
+          left:0;
+          top:0;
+          .hld_updata{
+            float: left;
+            width: 9.8rem;
+            height: 2.35rem;
+            p{
+              float: left;
+              width: 3.4rem;
+              text-align: right;
+              height: 2.35rem;
+              line-height: 2.35rem;
+              font-size: .55rem;
+              //font-family: tf;
+              color:#ffffff;
+              margin-right:.8rem;
+            }
+            .hld_updata_ul{
+              float: left;
+              width: 5.6rem;
+              height: 2.35rem;
+              padding-top: .605rem;
+              li{
+                width: 5.6rem;
+                line-height: .38rem;
+                font-size: .18rem;
+                color: #ffffff;
+                //font-family: tf;
+                span{
+                  display:inline-block;
+                  margin-right: .1rem;
+                  width: .08rem;
+                  height: .08rem;
+                  background: #ffffff;
+                  border-radius: 50%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .hld_detail_number{
+      width: 12rem;
+      height: 1.4rem;
+      margin:.16rem 0 0 .4rem;
+      .hld_downdata{
+        width: 100%;
+        height: 100%;
+        li{
+          float: left;
+          position: relative;
+          box-sizing: border-box;
+          width: 2.7rem;
+          margin-right: .3rem;
+          height: 1.36rem;
+          border: 1px solid #ffffff;
+          cursor: pointer;
+          transition: all linear .3s;
+          .hld_downdata_icon{
+            display: block;
+            width: 0;
+            height: 0;
+            position: absolute;
+            left: 1.25rem;
+            top:-20px;
+          }
+          .hld_turn_icon{
+            border-bottom: 10px solid #FFD11E;
+            border-top: 10px solid transparent;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+          }
+          .down_num{
+            width: 100%;
+            text-align: center;
+            color: #ffffff;
+            font-size:.6rem;
+            //font-family: tf;
+            height: .6rem;
+            line-height: .6rem;
+            margin: .25rem 0 .15rem 0;
+          }
+          .down_dis{
+            color: #ffffff;
+            font-size: .16rem;
+            height: .16rem;
+            line-height:.16rem;
+            text-align: center;
+          }
+        }
+        li:hover{
+          background: rgba(255,185,0,.5);
+          border:1px solid #FFD11E;
+          color: #FFD11E;
+          .down_num{
+            color: #FFD11E;
+          }
+          .down_dis {
+            color: #FFD11E;
+          }
+        }
+        .hld_turn_num{
+          border:1px solid #FFD11E;
+          .down_num{
+            color: #FFD11E;
+          }
+          .down_dis {
+            color: #FFD11E;
+          }
+        }
+      }
+    }
+  }
+}
+//=================================================Why Choose TIGERZ=====================================
+.estimate_choose{
+  width: 12.8rem;
+  background: #ffffff;
+  //height:4.5rem;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: .3rem;
+  .estimate_content{
+    width: 7rem;
+    margin: 0 auto;
+    //font-family: "Microsoft Yahei";
+    h2{
+      font-size: .2rem;
+      text-align: center;
+      height:.4rem;
+      line-height: .4rem;
+      color: #2b2b2b;
+      margin: .3rem auto .2rem auto;
+    }
+    p{
+      font-size: .16rem;
+      margin-bottom: .2rem;
+      line-height:.28rem;
+      color: #585858;
+    }
+    dt{
+      line-height:.28rem;
+      font-size: .16rem;
+      font-weight: bold;
+      color: #2b2b2b;;
+    }
+    dd{
+      line-height:.28rem;
+      font-size: .16rem;
+      margin-bottom: .2rem;
+      color: #585858;
+    }
+  }
+}
+//================================================== footer部分 ===========================================
+#estimate_footer{
+  width: 12.8rem;
+  min-height: 4.5rem;
+  margin-bottom: .2rem;
+  background: #2b2b2b;
+  padding:.1px;
+  position: relative;
+}

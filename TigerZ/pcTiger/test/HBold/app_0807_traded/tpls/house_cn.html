@@ -1,0 +1,444 @@
+<!--header部分------------------------->
+<header class="house_header">
+    <div class="house_logo">
+        <a href="../home_cn" class="house_logo1"><h2>Houses For Sale in New Zealand <img
+                src="http://res.tigerz.nz/imgs/logo2.png" alt="{{allValue.houseLogotitle}}"
+                title="Houses For Sale in New Zealand"></h2></a>
+        <!--<div class="house_addr"> -->
+        <!--<span class="house_map_icon"></span> -->
+        <!--<span class="house_current_city">奥克兰</span> -->
+        <!--<ul class="house_addr_choice"> -->
+        <!--<li>奥克兰</li> -->
+        <!--<li>新西兰</li> -->
+        <!--</ul> -->
+        <!--</div> -->
+    </div>
+    <div class="house_bar">
+        <div class="house_main">
+            <div class="house_main_box">
+                <input type="text" placeholder="城市或街道" ng-change="allValue.houseSearchBar()"
+                       ng-model="allValue.housePageValue" ng-focus="allValue.houseFocusEvent()"
+                       ng-blur="allValue.houseBlurEvent()">
+            </div>
+            <span class="house_icon_wrap"><a ng-href="{{allValue.housePageBtn()}}"><span class="search_icon"></span></a></span>
+            <div class="house_search_reminder" ng-hide="allValue.houseSubFlag">
+                <!--没有找到相应的房源----------------------------->
+                <p class="housePage_error">不能找到相对应的数据</p>
+                <!--模糊查询房源----------------------------------->
+                <ul class="housePage_simple" ng-mouseover="allValue.houseOverEvent()"
+                    ng-mouseleave="allValue.houseLeaveEvent()">
+                    <li ng-repeat="item in allValue.housePageData"><a ng-href="{{allValue.jugePage(item)}}"
+                                                                      ng-mousedown="allValue.historyClick(item)"
+                                                                      title="{{item.name}},{{item.fatherName}},{{allValue.jugeLevel(item.level,item.isSale)}}"><span
+                            ng-bind="item.name+','"></span><span ng-bind="item.fatherName"></span><span
+                            ng-bind="allValue.jugeLevel(item.level,item.isSale)"></span></a></li>
+                </ul>
+                <!--搜索历史纪录------------------------------------->
+                <ul class="housePage_history" ng-mouseover="allValue.houseOverEvent()"
+                    ng-mouseleave="allValue.houseLeaveEvent()">
+                    <li ng-repeat="item in allValue.searchHistoryData track by $index"><a
+                            ng-href="{{allValue.jugePage(item)}}"
+                            title="{{item.name}},{{item.fatherName}},{{allValue.jugeLevel(item.level,item.isSale)}}"><span
+                            ng-bind="item.name+','"></span><span ng-bind="item.fatherName"></span><span
+                            ng-bind="allValue.jugeLevel(item.level,item.isSale)"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <nav-itemcn class="house_nav" city="allValue.currentSelectCity"></nav-itemcn>
+    <p class="house_login"><span class="house_language"><a href="/house_cn" class="house_language_cn"
+                                                           style="color:#FFD800;">中文</a></span> <i> / </i> <span
+            class="house_language"><a href="/house" class="house_language_en">English</a></span></p>
+</header>
+<!--地图上方title部分--------------------->
+<section class="house_simple_info">
+    <ul class="hsi-title_share">
+        <li><a href="/home_cn">Home</a>&nbsp;&gt;&nbsp;<a href="javascript:void(0)"
+                                                          ng-bind="allValue.allData.city || 'CITY'"></a>&nbsp;&gt;&nbsp;<a
+                href="javascript:void(0)" ng-bind="allValue.allData.oldSuburb || 'SUBURB'"></a>&nbsp;&gt;&nbsp;<a
+                href="javascript:void(0)" ng-bind="allValue.allData.address || 'ROAD'"></a></li>
+        <li><i>更新日期：</i><i ng-bind="allValue.upTime"></i></li>
+    </ul>
+</section>
+<!--卫星地图部分--------------------------->
+
+<section class="house_map_wrap">
+    <section id="house_top_map"></section>
+</section>
+<!--中位价部分------------------------------>
+<section class="house_midPrice" ng-if="!(allValue.lowEstimate == 'N/A' || allValue.estimateValue == 'N/A' || allValue.highEstimate == 'N/A')">
+    <h3>TigerZ 房产估价</h3>
+    <p class="mid_road"><span ng-bind="allValue.allData.address || 'road'"></span>,<span
+            ng-bind="allValue.allData.oldSuburb || 'suburb'">suburb</span>,<span
+            ng-bind="allValue.allData.city || 'city'"></span></p>
+    <div class="mid_price">
+        <p class="mid_priceDetail"><span ng-bind="allValue.lowEstimate"></span><span
+                ng-bind="allValue.estimateValue"></span><span ng-bind="allValue.highEstimate"></span></p>
+        <p class="mid_priceLine"><span class="mid_lineWord">最低</span><span class="mid_line"></span><span
+                class="mid_lineWord">均值</span><span class="mid_line"></span><span class="mid_lineWord">最高</span></p>
+    </div>
+</section>
+<!--all info部分----------------------->
+<section class="house_all_info">
+    <!--所有信息导航部分---------------------->
+    <ul class="hai_nav">
+        <li><a href="" ng-click="allValue.jump(0)" class="aclicked">基础信息</a></li>
+        <li><a href="" ng-click="allValue.jump(1)">学校信息</a></li>
+        <li><a href="" ng-click="allValue.jump(2)">房屋信息</a></li>
+        <li><a href="" ng-click="allValue.jump(3)">历史成交</a></li>
+        <li><a href="" ng-click="allValue.jump(4)">趋势走向</a></li>
+        <li><a href="" ng-click="allValue.jump(5)">社区指数</a></li>
+        <li><a href="" ng-click="allValue.jump(6)">房源介绍</a></li>
+        <li><a href="" ng-click="allValue.jump(7)">周边情况</a></li>
+    </ul>
+    <div class="hai_nav_ocupy"></div>
+    <!--基本信息------------------------------>
+    <!--basic信息----------------------------->
+    <div class="dai_item dai_item_basic">
+        <h5 id="basic">基本信息</h5>
+        <div class="daii_basic_info">
+            <div class="daiib_info_left">
+                <ul>
+                    <li><span>房屋位置</span> <span></span> <span ng-bind="allValue.allData.address || '-'"></span></li>
+                    <li><span>房屋面积</span> <span></span> <span ng-bind="allValue.allData.floorArea"></span></li>
+                    <li><span>土地面积</span> <span></span> <span ng-bind="allValue.allData.shareData"></span></li>
+                    <li>
+                        <span>墙体材料</span>
+                        <span></span>
+                        <span ng-bind="allValue.allData.wallMaterial || 'N/A'"
+                              title="{{allValue.allData.wallMaterial}}"></span>
+                    </li>
+                    <li><span>区域土地规划</span> <span></span> <span ng-bind="allValue.allData.zone || '-'"
+                                                                title="{{allValue.allData.zone}}"></span></li>
+                </ul>
+            </div>
+            <div class="daiib_info_center">
+                <ul>
+                    <li><span>卧室</span> <span></span> <span
+                            ng-bind="((allValue.allData.bedRoom || allValue.allData.bedroom) || '0')"></span></li>
+                    <li><span>浴室</span> <span></span> <span
+                            ng-bind="((allValue.allData.bathRoom || allValue.allData.bathroom) || '0')"></span></li>
+                    <li><span>停车位</span> <span></span> <span ng-bind="(allValue.allData.carPark || '-')"></span></li>
+                    <li><span>房屋属性</span> <span></span> <span ng-bind="allValue.allData.type || 'unknown'"></span></li>
+                    <li><span>地表坡度</span> <span></span> <span><i ng-bind="allValue.allData.eastWestAngel+'°(E-W) '"></i> , <i
+                            ng-bind="allValue.allData.nouthSouthAngel+'°(N-S) '"></i></span></li>
+                </ul>
+            </div>
+            <div class="daiib_info_right">
+                <ul>
+                    <li><span>地税</span> <span></span> <span
+                            ng-bind="allValue.allData.totalAnnualRates | priceJuge:'$'"></span></li>
+                    <li><span>政府估价</span> <span></span> <span
+                            ng-bind="allValue.allData.latestCapitalValue  | priceJuge:'$'"></span></li>
+                    <li><span>建筑价值</span> <span></span> <span
+                            ng-bind="allValue.allData.latestImprovementValue  | priceJuge:'$'"></span></li>
+                    <li><span>土地价值</span> <span></span> <span
+                            ng-bind="allValue.allData.latestLandValue  | priceJuge:'$'"></span></li>
+                    <li><span>房屋年龄</span> <span></span> <span ng-bind="allValue.allData.buildingAge || '-'"></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <!--school部分------------------------------>
+    <div class="dai_item dai_item_school">
+        <h5 id="school">校区信息</h5>
+        <div class="daii_school_info">
+            <!--<h5>San Ramon Valley</h5>-->
+            <ul>
+                <li class="schoolclicked" ng-click="allValue.schoolNav(0)">公立学校</li>
+                <li ng-click="allValue.schoolNav(1)">私立学校</li>
+            </ul>
+            <div class="daiis_info_wrap">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>学校排名</th>
+                        <th>学校名字</th>
+                        <th>学校类型</th>
+                        <th>适龄范围</th>
+                        <th>学区分</th>
+                        <th>距离</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="x in allValue.district">
+                        <td ng-bind="x.rank || '0'"></td>
+                        <td ng-bind="x.name || 'Unknown'"></td>
+                        <td ng-bind="x.schoolType"></td>
+                        <td ng-bind="x.grade || 'All'"></td>
+                        <td><span class="whitestar"></span> <span ng-repeat="a in x.yellowStar"
+                                                                  class="yellowstar"></span> <span
+                                ng-repeat="b in x.grayStar" class="graystar"></span></td>
+                        <td ng-bind="(x.minDis | number:2)+'km' || '0km'"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>学校排名</th>
+                        <th>学校名字</th>
+                        <th>学校类型</th>
+                        <th>适龄范围</th>
+                        <th>学区分</th>
+                        <th>距离</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="x in allValue.private">
+                        <td ng-bind="x.rank || '0'"></td>
+                        <td ng-bind="x.name || 'Unknown'"></td>
+                        <td ng-bind="x.schoolType"></td>
+                        <td ng-bind="x.grade || 'All'"></td>
+                        <td><span class="whitestar"></span> <span ng-repeat="a in x.yellowStar"
+                                                                  class="yellowstar"></span> <span
+                                ng-repeat="b in x.grayStar" class="graystar"></span></td>
+                        <td ng-bind="(x.minDis | number:2) +'km' || '0km'"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <p>以上资料仅供参考.如您需要详细准确的资料，请通过学校网站或直接联系学校进行咨询</p>
+    </div>
+    <!--attention部分-------------------------->
+    <div class="dai_item dai_item_attention">
+        <h5>房屋信息</h5>
+        <table>
+            <tbody>
+            <tr>
+                <td><span class="towericon"></span><span>高压塔 &gt; 1000 米 <i
+                        ng-class="{true:'hidenum',false:'shownum'}[allValue.allData.tower]">(</i><i
+                        ng-bind="((allValue.allData.pylonInfo.pylon_min_distance | number:0))+'m'"
+                        ng-class="{true:'hidenum',false:'shownum'}[allValue.allData.tower]"></i><i
+                        ng-class="{true:'hidenum',false:'shownum'}[allValue.allData.tower]">)</i></span><span
+                        ng-class="{true:'haveicon',false:'noicon'}[allValue.allData.tower]"></span></td>
+                <td><span class="landicon"></span><span>地面坡度&lt;2°<i
+                        ng-bind="'['+(allValue.allData.eastWestAngel | number:2) +'°(E-W)'"
+                        ng-class="{true:'hidenum',false:'shownum'}[allValue.allData.land]"></i><i
+                        ng-class="{true:'hidenum',false:'shownum'}[allValue.allData.land]">,</i><i
+                        ng-bind="(allValue.allData.nouthSouthAngel | number:2) +'°(N-S)]'"
+                        ng-class="{true:'hidenum',false:'shownum'}[allValue.allData.land]"></i></span><span
+                        ng-class="{true:'haveicon',false:'noicon'}[allValue.allData.land]"></span></td>
+                <td><span class="speedicon"></span><span>距离高速&gt;200米<i
+                        ng-class="{true:'hidenum',false:'shownum'}[allValue.allData.highway]">(</i><i
+                        ng-bind="((allValue.allData.highwayInfo.highway_min_distance | number:0))+'m'"
+                        ng-class="{true:'hidenum',false:'shownum'}[allValue.allData.highway]"></i><i
+                        ng-class="{true:'hidenum',false:'shownum'}[allValue.allData.highway]">)</i></span><span
+                        ng-class="{true:'haveicon',false:'noicon'}[allValue.allData.highway]"></span></td>
+            </tr>
+            <tr>
+                <td><span class="railwayicon"></span><span>距离铁路&gt;300米<i
+                        ng-class="{true:'hidenum',false:'shownum'}[allValue.allData.railway]">(</i><i
+                        ng-bind="((allValue.allData.railwayInfo.railway_min_distance | number:0))+'m'"
+                        ng-class="{true:'hidenum',false:'shownum'}[allValue.allData.railway]"></i><i
+                        ng-class="{true:'hidenum',false:'shownum'}[allValue.allData.railway]">)</i></span><span
+                        ng-class="{true:'haveicon',false:'noicon'}[allValue.allData.railway]"></span></td>
+                <td><span class="stationicon"></span><span>距离加油站&lt;1000米<i
+                        ng-class="{true:'hidenum',false:'shownum'}[allValue.allData.petrolStation]">(</i><i
+                        ng-bind="((allValue.allData.petrolStationsInfo.petrol_stations_distance | number:0))+'m'"
+                        ng-class="{true:'hidenum',false:'shownum'}[allValue.allData.petrolStation]"></i><i
+                        ng-class="{true:'hidenum',false:'shownum'}[allValue.allData.petrolStation]">)</i></span><span
+                        ng-class="{true:'haveicon',false:'noicon'}[allValue.allData.petrolStation]"></span></td>
+                <td><span></span><span></span><span></span></td>
+            </tr>
+            <tr>
+                <td><span class="riskicon"></span><span>无洪水风险</span><span
+                        ng-class="{true:'haveicon',false:'noicon'}[allValue.allData.stream]"></span></td>
+                <td><span class="treeicon"></span><span>无保护树</span><span
+                        ng-class="{true:'haveicon',false:'noicon'}[allValue.allData.tree]"></span></td>
+                <td><span></span><span></span><span></span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--history部分----------------------------->
+    <div class="dai_item dai_item_history">
+        <h5 id="history">房产历史</h5>
+        <cv-sold></cv-sold>
+    </div>
+    <!--trends部分--------------------------->
+    <div class="dai_item dai_item_trends">
+        <h5 id="trends">当地房地产趋势</h5>
+        <div class="daii_trends_info">
+            <table>
+                <tbody>
+                <tr>
+                    <td>附近房屋平均价格</td>
+                    <td>过去12个月内的价格趋势</td>
+                </tr>
+                <tr>
+                    <!---->
+                    <td ng-bind="(allValue.midP | currency:number:0) || 'N/A'">$1,149,950</td>
+                    <td ng-bind="allValue.grownP" ng-class="allValue.areaPriceColor">+11.9%</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--community部分---------------------------->
+    <div class="dai_item dai_item_community">
+        <h5 id="community">社区信息</h5>
+        <div class="daii_community_info">
+            <!--community population 部分------------------>
+            <div class="daiic_info_population">
+                <div class="daiici_population_left daiici_population">
+                    <h6>社区人口</h6>
+                    <div class="daiicip_left_img"></div>
+                    <p><span ng-bind="allValue.communityData.communityTotalPeople || 'N/A'"></span><span>人口</span></p>
+                </div>
+                <div class="daiici_population_right daiici_population">
+                    <h6>社区入室盗窃率<span></span></h6>
+                    <div ng-class="allValue.safeType"></div>
+                    <p><span ng-bind="allValue.communityData.crimeRate | number:2 || 'N/A'"></span><span>%</span></p>
+                </div>
+            </div>
+            <!--average部分-------------------------------->
+            <div class="daiic_info_average">
+                <!--incomeChart部分--------------------->
+                <div class="daiici_income daiici_average">
+                    <h6>社区家庭平均收入</h6>
+                    <div class="daiici_income_chart"></div>
+                </div>
+                <!--educationChart部分--------------------->
+                <div class="daiici_education daiici_average">
+                    <h6>社区教育程度</h6>
+                    <div class="daiici_education_chart"></div>
+                </div>
+                <!--rateChart部分--------------------->
+                <div class="daiici_rate daiici_average">
+                    <h6>出租率</h6>
+                    <div class="daiici_rate_chart"></div>
+                </div>
+            </div>
+            <!--living部分----------------------------->
+            <div class="daiic_info_living">
+                <!--living rate图表部分---------------->
+                <div class="daiici_living_left daiici_living">
+                    <h6>社区宗教信仰</h6>
+                    <div class="daiicil_left_chart"></div>
+                </div>
+                <!--representation图表部分------------->
+                <div class="daiici_living_right daiici_living">
+                    <h6>人口族裔分布</h6>
+                    <div class="daiicil_right_chart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--note部分-------------------------->
+    <div class="dai_item dai_item_note">
+        <h5 id="note">房屋简介</h5>
+        <p class="daii_note_info" ng-bind-html="allValue.allData.desc || 'no discription'"></p>
+    </div>
+    <!--surrounding部分------------------->
+    <div class="dai_item dai_item_surrounding">
+        <h5 id="surrounding">周边房源信息</h5>
+        <ul class="daii_surrounding_nav">
+            <li class="mapnav" ng-click="allValue.mapNavAdd(0)">周边在售房源</li>
+            <li ng-click="allValue.mapNavAdd(1)">周边成交房源</li>
+        </ul>
+        <div class="daii_surrounding_info daii_showMap">
+            <!--footer map部分--------------------->
+            <!--footer map 左边列表部分------------------->
+            <div class="dfm_left">
+                <ul>
+                    <li ng-repeat="nHouse in allValue.nearbyHouse" ng-click="allValue.nearbyHouseClick(nHouse)">
+                        <div class="dfml_list_img">
+                            <img ng-src="{{imgDomain+nHouse.houseMainImagePath}}" error-src="http://res.tigerz.nz/imgs/scollicon.jpg" alt="">
+                            <div class="dfml_list_dis">
+                                <p class="dfml_title" ng-bind="nHouse.title || 'Unknown'" title="{{nHouse.title}}"></p>
+                                <p class="dfml_price" ng-bind="nHouse.housePrice || 'Unknown'"
+                                   title="{{nHouse.housePrice}}"></p>
+                                <!--+','+ allValue.allData.suburb做中文的时候要加上-->
+                                <p class="dfml_addr" ng-bind="nHouse.streetAddress +','+ allValue.allData.suburb"
+                                   title="{{nHouse.streetAddress}}"></p>
+                                <p class="dfml_info"><span class="dfmli_bed"></span> <span
+                                        ng-bind="nHouse.bedRoom || 'Unknown'"></span> <span class="dfmli_bath"></span>
+                                    <span ng-bind="nHouse.bathRoom || 'Unknown'"></span> <span class="dfmli_num"><i>更新日期：</i><i
+                                            ng-bind="nHouse.houseCreateTime"></i></span></p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!--footer map 右边地图部分-->
+            <div class="dfm_right" id="detail_footer_map"></div>
+        </div>
+        <div class="daii_surrounding_info">
+            <!--footer map部分--------------------->
+            <!--footer map 左边列表部分------------------->
+            <div class="dfm_left">
+                <ul>
+                    <li ng-repeat="nHouse in allValue.dealHouse" ng-click="allValue.dealHouseClick(nHouse)">
+                        <div class="dfml_list_img">
+                            <img ng-src="{{imgDomain+nHouse.coverImgPath}}" error-src="http://res.tigerz.nz/imgs/scollicon.jpg" alt="">
+                            <div class="dfml_list_dis">
+                                <p class="dfml_title" ng-bind="'Sold time : '+nHouse.dealHouseTime"
+                                   title="{{nHouse.dealHouseTime}}"></p>
+                                <p class="dfml_price" ng-bind="(nHouse.price | currency:number:0) || 'N/A'"
+                                   title="{{nHouse.price}}"></p>
+                                <p class="dfml_addr" ng-bind="nHouse.hougardenAddress || 'Unknown'"
+                                   title="{{nHouse.hougardenAddress}}"></p>
+                                <p class="dfml_info"><span class="dfmli_bed"></span> <span
+                                        ng-bind="nHouse.bedrooms || 'Unknown'"></span> <span class="dfmli_bath"></span>
+                                    <span ng-bind="nHouse.bathrooms || 'Unknown'"></span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!--footer map 右边地图部分------------------------------------------->
+            <div class="dfm_right" id="detail_footer_dealmap"></div>
+        </div>
+    </div>
+</section>
+<!--footer部分----------------------->
+<!--footer部分----------------------->
+<div id="house_footer">
+    <city-suburb city-json="cityJson" current-city="allValue.currentSelectCity"></city-suburb>
+    <div class="clearfix"></div>
+    <footer-itemcn></footer-itemcn>
+</div>
+<script type="text/javascript" src="framework/echarts.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?98b74b7f3ddb1c502ca10f723fc80ab1";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-90714030-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script> 
+ 

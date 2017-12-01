@@ -1,0 +1,2 @@
+微信小程序APPID： wxb15b983882c4453d 
+AppSecret(小程序密钥)： c3f3ccd27ccfd54a785b0fa60341b531

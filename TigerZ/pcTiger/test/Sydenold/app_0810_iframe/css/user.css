@@ -1,0 +1,570 @@
+.user_wrap {
+  width: 12.8rem;
+  min-height: 100%;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0px 0px 8px #000;
+  -webkit-box-shadow: 0px 0px 8px #000;
+  background: #F5F5F5;
+}
+.user_wrap .user_header {
+  width: 12.8rem;
+  height: 50px;
+  background: #2b2b2b;
+}
+.user_wrap .user_header nav {
+  width: 1.6rem;
+  height: 100%;
+  float: left;
+  margin-left: .4rem;
+}
+.user_wrap .user_header nav h2 {
+  margin-right: .14rem;
+  width: 1.6rem;
+  height: 50px;
+  background: url("http://res.tigerz.nz/imgs/logo1.png") left center no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+  font-size: 0;
+}
+.user_wrap .user_header .user_nav {
+  float: left;
+  margin-left: .15rem;
+}
+.user_wrap .user_header .user_nav li {
+  float: left;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+.user_wrap .user_header .user_nav li a {
+  display: block;
+  padding: 0 .22rem;
+  font-size: .16rem;
+  height: .3rem;
+  line-height: .45rem;
+  border-radius: .03rem;
+  color: #fff;
+  transition: all linear .2s;
+}
+.user_wrap .user_header .user_nav li a:hover {
+  color: #FFD800;
+}
+.user_wrap .user_header .user_nav li:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.user_wrap .user_header .user_login_language {
+  float: right;
+  margin-right: .2rem;
+}
+.user_wrap .user_header .user_login_language .user_hasLogin {
+  float: left;
+  height: 50px;
+  margin-right: .06rem;
+  cursor: pointer;
+  position: relative;
+}
+.user_wrap .user_header .user_login_language .user_hasLogin .userName {
+  color: #fff;
+  font-size: .14rem;
+  display: inline-block;
+  vertical-align: middle;
+  height: 50px;
+  line-height: 50px;
+}
+.user_wrap .user_header .user_login_language .user_hasLogin .login_tri {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 0;
+  margin: .09rem .16rem 0 .09rem;
+  border: 4px solid #fff;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  -webkit-transition: all linear .2s;
+  -moz-transition: all linear .2s ;
+  -ms-transition: all linear .2s ;
+  -o-transition: all linear .2s ;
+  transition: all linear .2s ;
+}
+.user_wrap .user_header .user_login_language .user_hasLogin .login_tri_open {
+  margin: 0 .16rem 0 .09rem;
+  border: 4px solid #fff;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  -webkit-transition: all linear .2s;
+  -moz-transition: all linear .2s ;
+  -ms-transition: all linear .2s ;
+  -o-transition: all linear .2s ;
+  transition: all linear .2s ;
+}
+.user_wrap .user_header .user_login_language .user_hasLogin .login_icon {
+  width: .3rem;
+  height: .3rem;
+  display: inline-block;
+  vertical-align: middle;
+  background: url("http://res.tigerz.nz/imgs/loginicon.png") no-repeat;
+  background-size: 100%;
+  margin-right: .35rem;
+}
+.user_wrap .user_header .user_login_language .user_hasLogin .userInfo_list {
+  opacity: 0;
+  transition: all linear .2s;
+  position: absolute;
+  z-index: 9999;
+  width: 2.4rem;
+  max-height: 1.45rem;
+  -moz-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.08);
+  background: #FFFFFF;
+  right: 0;
+  top: 55px;
+}
+.user_wrap .user_header .user_login_language .user_hasLogin .userInfo_list .userInfo_tri {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  top: -25px;
+  right: .75rem;
+  border: 15px solid #fff;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-left-color: transparent;
+}
+.user_wrap .user_header .user_login_language .user_hasLogin .userInfo_list .info_list {
+  width: 100%;
+  margin-top: .17rem;
+}
+.user_wrap .user_header .user_login_language .user_hasLogin .userInfo_list .info_list li {
+  height: .22rem;
+  margin-bottom: .05rem;
+}
+.user_wrap .user_header .user_login_language .user_hasLogin .userInfo_list .info_list li a {
+  display: block;
+  text-indent: .25rem;
+  font-size: .14rem;
+  color: #323232;
+}
+.user_wrap .user_header .user_login_language .user_hasLogin .userInfo_list .login_out {
+  width: 100%;
+  height: .45rem;
+  box-sizing: border-box;
+  line-height: .45rem;
+  font-size: .14rem;
+  text-indent: .25rem;
+  border-top: 1px solid #cccccc;
+}
+.user_wrap .user_header .user_login_language .user_language_wrap {
+  float: right;
+}
+.user_wrap .user_header .user_login_language .user_language_wrap .user_language {
+  padding: 0 0.06rem;
+  float: left;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  color: #ffffff;
+  font-size: .14rem;
+  cursor: pointer;
+}
+.user_wrap .user_header .user_login_language .user_language_wrap .user_language a {
+  display: block;
+  color: #ffffff;
+}
+.user_wrap .user_header .user_login_language .user_language_wrap i {
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  color: #ffffff;
+}
+.user_wrap .user_header .user_login_language .user_language_wrap .language_choiced {
+  color: #FFD800;
+}
+.user_wrap .user_main {
+  width: 8.44rem;
+  margin: .25rem auto;
+}
+.user_wrap .user_main .left_side {
+  width: 1.58rem;
+  min-height: 3.23rem;
+  float: left;
+  margin-right: .23rem;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+}
+.user_wrap .user_main .left_side .user_photo {
+  width: 1.43rem;
+  height: 1.55rem;
+  margin: 0 auto;
+  border-bottom: 1px solid #e3e3e3;
+}
+.user_wrap .user_main .left_side figure img {
+  width: .81rem;
+  height: .81rem;
+  margin: .34rem 0 0 .31rem;
+  cursor: pointer;
+}
+.user_wrap .user_main .left_side figure figcaption {
+  text-align: center;
+  height: .4rem;
+  line-height: .4rem;
+  font-size: .14rem;
+  color: #343434;
+}
+.user_wrap .user_main .left_side .user_item {
+  width: 100%;
+  margin-bottom: .05rem;
+}
+.user_wrap .user_main .left_side .user_item li {
+  height: .4rem;
+  line-height: .4rem;
+  text-indent: .08rem;
+  font-size: .14rem;
+  color: #343434;
+  cursor: pointer;
+}
+.user_wrap .user_main .left_side .user_item .current_item {
+  background: #fef000;
+}
+.user_wrap .user_main .left_side .user_item li:hover {
+  background: #fef000;
+}
+.user_wrap .user_main .left_side .user_out {
+  width: 1.43rem;
+  margin: 0 auto;
+  border-top: 1px solid #e3e3e3;
+  height: .4rem;
+  line-height: .4rem;
+  text-align: center;
+  font-size: .14rem;
+  color: #343434;
+  cursor: pointer;
+}
+.user_wrap .user_main .right_side {
+  width: 6.61rem;
+  min-height: 3.09rem;
+  margin-bottom: .8rem;
+  float: left;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+}
+.user_wrap .user_main .right_side .profile_wrap {
+  display: none;
+  width: 100%;
+  min-height: 3.09rem;
+}
+.user_wrap .user_main .right_side .profile_wrap h3 {
+  height: .84rem;
+  line-height: .84rem;
+  text-indent: .39rem;
+  color: #343434;
+  border-bottom: 1px dashed #e3e3e3;
+  font-size: .24rem;
+}
+.user_wrap .user_main .right_side .profile_wrap .profile_item {
+  margin: .25rem 0 .28rem .53rem;
+}
+.user_wrap .user_main .right_side .profile_wrap .profile_item dt {
+  height: .24rem;
+  line-height: .14rem;
+  font-size: .14rem;
+  font-weight: bold;
+  color: #343434;
+  margin-bottom: .07rem;
+}
+.user_wrap .user_main .right_side .profile_wrap .profile_item .user_nickname {
+  display: block;
+  width: 3.6rem;
+  height: .4rem;
+  border: 1px solid #e3e3e3;
+  margin-bottom: .2rem;
+}
+.user_wrap .user_main .right_side .profile_wrap .profile_item .user_nickname input {
+  text-indent: .12rem;
+  height: .15rem;
+  width: 100%;
+  font-size: .15rem;
+  line-height: .15rem;
+  margin-top: .125rem;
+  border: none;
+  out-line: none;
+}
+.user_wrap .user_main .right_side .profile_wrap .profile_item .user_gender .gender_wrap {
+  width: 1.6rem;
+  height: .4rem;
+  line-height: .4rem;
+  border: 1px solid #e3e3e3;
+}
+.user_wrap .user_main .right_side .profile_wrap .profile_item .user_gender .gender_wrap span {
+  float: left;
+  width: 1.3rem;
+  height: .4rem;
+  line-height: .4rem;
+  display: block;
+  text-indent: .12rem;
+  font-size: .15rem;
+  color: #75758a;
+}
+.user_wrap .user_main .right_side .profile_wrap .profile_item .user_gender .gender_wrap .select_wrap {
+  display: block;
+  float: left;
+  width: .28rem;
+  height: .4rem;
+  border-left: 1px solid #e3e3e3;
+}
+.user_wrap .user_main .right_side .profile_wrap .profile_item .user_gender .gender_wrap .select_wrap .gender_tri {
+  display: block;
+  width: 0;
+  height: 0;
+  margin: .18rem 0 0 .1rem;
+  border: .05rem solid #b7b7b7;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  transition: all linear .2s;
+}
+.user_wrap .user_main .right_side .profile_wrap .profile_item .user_gender .gender_wrap .select_wrap .gender_open {
+  margin: .15rem 0 0 .1rem;
+  transition: all linear .2s;
+  border: .05rem solid #b7b7b7;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+.user_wrap .user_main .right_side .profile_wrap .profile_item .user_gender .gender_choice {
+  width: 1.6rem;
+  display: none;
+  border: 1px solid #e3e3e3;
+  border-top-color: transparent;
+}
+.user_wrap .user_main .right_side .profile_wrap .profile_item .user_gender .gender_choice li {
+  width: 100%;
+  height: .4rem;
+  line-height: .4rem;
+  font-size: .15rem;
+  color: #75758a;
+  text-indent: .12rem;
+  cursor: pointer;
+}
+.user_wrap .user_main .right_side .profile_wrap .profile_item .user_gender .gender_choice li:hover {
+  background: #eeeff4;
+}
+.user_wrap .user_main .right_side .profile_wrap .profile_save {
+  width: 3.6rem;
+  height: .4rem;
+  margin: .28rem 0 .3rem .53rem;
+  background: #fef000;
+  text-align: center;
+  line-height: .4rem;
+  border-radius: 4px;
+  color: #343434;
+  font-size: .18rem;
+  transition: all linear .3s;
+  cursor: pointer;
+}
+.user_wrap .user_main .right_side .profile_wrap .profile_save:hover {
+  background: #fdb82c;
+}
+.user_wrap .user_main .right_side .changepsw_wrap {
+  display: none;
+  width: 100%;
+  min-height: 4.29rem;
+}
+.user_wrap .user_main .right_side .changepsw_wrap h3 {
+  height: .84rem;
+  line-height: .84rem;
+  text-indent: .39rem;
+  color: #343434;
+  border-bottom: 1px dashed #e3e3e3;
+  font-size: .24rem;
+}
+.user_wrap .user_main .right_side .changepsw_wrap .password_item {
+  margin: .25rem 0 .28rem .53rem;
+}
+.user_wrap .user_main .right_side .changepsw_wrap .password_item dt {
+  height: .24rem;
+  line-height: .14rem;
+  font-size: .14rem;
+  font-weight: bold;
+  color: #343434;
+  margin-bottom: .07rem;
+}
+.user_wrap .user_main .right_side .changepsw_wrap .password_item dd {
+  display: block;
+  width: 3.6rem;
+  height: .4rem;
+  border: 1px solid #e3e3e3;
+  margin-bottom: .2rem;
+}
+.user_wrap .user_main .right_side .changepsw_wrap .password_item dd input {
+  text-indent: .12rem;
+  width: 100%;
+  height: .15rem;
+  font-size: .15rem;
+  line-height: .15rem;
+  margin-top: .125rem;
+  border: none;
+  out-line: none;
+}
+.user_wrap .user_main .right_side .changepsw_wrap .password_save {
+  width: 3.6rem;
+  height: .4rem;
+  margin: .28rem 0 .3rem .53rem;
+  background: #fef000;
+  text-align: center;
+  line-height: .4rem;
+  border-radius: 4px;
+  color: #343434;
+  font-size: .18rem;
+  transition: all linear .3s;
+  cursor: pointer;
+}
+.user_wrap .user_main .right_side .changepsw_wrap .password_save:hover {
+  background: #fdb82c;
+}
+.user_wrap .user_main .right_side .watchlist_wrap {
+  width: 100%;
+  min-height: 4.29rem;
+}
+.user_wrap .user_main .right_side .watchlist_wrap h3 {
+  height: .84rem;
+  line-height: .84rem;
+  text-indent: .39rem;
+  color: #343434;
+  border-bottom: 1px dashed #e3e3e3;
+  font-size: .24rem;
+}
+.user_wrap .user_main .right_side .watchlist_wrap .watch_list {
+  width: 4.9rem;
+  margin: 0 auto .5rem auto;
+}
+.user_wrap .user_main .right_side .watchlist_wrap .watch_list li {
+  cursor: pointer;
+  width: 100%;
+  height: 1.65rem;
+  overflow: hidden;
+  border-bottom: 1px solid #ebebeb;
+  position: relative;
+  cursor: default;
+}
+.user_wrap .user_main .right_side .watchlist_wrap .watch_list li .list_img {
+  width: 100%;
+  height: 100%;
+  transition: all linear .3s;
+  display: block;
+}
+.user_wrap .user_main .right_side .watchlist_wrap .watch_list li .list_img .user_img_wrap {
+  width: 1.47rem;
+  height: 1.1rem;
+  margin: .25rem .25rem 0 0;
+  float: left;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: .04rem;
+}
+.user_wrap .user_main .right_side .watchlist_wrap .watch_list li .list_img .user_img_wrap img {
+  display: block;
+  width: 1.47rem;
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+}
+.user_wrap .user_main .right_side .watchlist_wrap .watch_list li .list_img .list_dis {
+  float: left;
+  width: 3.04rem;
+  margin-top: .42rem;
+}
+.user_wrap .user_main .right_side .watchlist_wrap .watch_list li .list_img .list_dis .list_title {
+  width: 100%;
+  font-size: .23rem;
+  color: #2b2b2b;
+  height: .27rem;
+  line-height: .27rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.user_wrap .user_main .right_side .watchlist_wrap .watch_list li .list_img .list_dis .list_price {
+  font-size: .23rem;
+  color: #2b2b2b;
+  height: .29rem;
+  line-height: .29rem;
+  margin-bottom: .09rem;
+}
+.user_wrap .user_main .right_side .watchlist_wrap .watch_list li .list_img .list_dis .list_addr {
+  font-size: .16rem;
+  height: .21rem;
+  line-height: .21rem;
+  color: #bbbbbb;
+  padding-bottom: .04rem;
+  border-bottom: 1px solid #ebebeb;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.user_wrap .user_main .right_side .watchlist_wrap .watch_list li .list_img .list_dis .list_info {
+  height: .3rem;
+  line-height: .3rem;
+  padding: 0.1px;
+}
+.user_wrap .user_main .right_side .watchlist_wrap .watch_list li .list_img .list_dis .list_info span {
+  float: left;
+  color: #8b8b8b;
+  font-size: .16rem;
+  height: .37rem;
+  line-height: .37rem;
+}
+.user_wrap .user_main .right_side .watchlist_wrap .watch_list li .list_img .list_dis .list_info .list_bed {
+  width: .18rem;
+  height: .14rem;
+  background: url("http://res.tigerz.nz/imgs/bed.png") no-repeat;
+  background-size: cover;
+  margin: .11rem .1rem 0 0;
+}
+.user_wrap .user_main .right_side .watchlist_wrap .watch_list li .list_img .list_dis .list_info .list_bath {
+  width: .13rem;
+  height: .13rem;
+  background: url("http://res.tigerz.nz/imgs/bath.png") no-repeat;
+  background-size: cover;
+  margin: .11rem .1rem 0 .2rem;
+}
+.user_wrap .user_main .right_side .watchlist_wrap .watch_list li .list_img .list_dis .list_info .list_num {
+  float: right;
+}
+.user_wrap .user_main .right_side .watchlist_wrap .watch_list li .list_img .list_dis .list_info .list_num i {
+  font-style: normal;
+}
+.user_wrap .user_main .right_side .watchlist_wrap .watch_list li .watch_clear {
+  position: absolute;
+  opacity: 0;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 1.28rem;
+  height: .29rem;
+  background: #aaaaaa;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: .29rem;
+  transition: all linear .3s;
+  font-size: .13rem;
+  cursor: pointer;
+}
+.user_wrap .user_main .right_side .watchlist_wrap .watch_list li .watch_clear:hover {
+  color: #fef000;
+}
+.user_wrap .user_main .right_side .watchlist_wrap .watch_list li:hover .watch_clear {
+  opacity: 1;
+}

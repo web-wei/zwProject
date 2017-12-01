@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>游戏下载</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="shortcut icon" href="./data/img/shulan.ico?v=201711161755">
+        <link rel="stylesheet" href="./css/reset(zx).css?v=201711161755">
+        <link rel="stylesheet" href="./css/allGameDownload.css?v=201711161755">
+    </head>
+    <body>
+        <div class="allGameDownload">
+            <div class="allGameDownload_img">
+                <img src="./data/img/allGameDownload.png" alt="要玩就玩老铁棋牌">
+            </div>
+            <h2 class="allGameDownload_hint">您还不是老铁棋牌的玩家，请先下载您本地的游戏：</h2>
+            <div class="allGameDownload_detail"></div>
+            <div class="hint">
+                <span class="hint_close"></span>
+                <img src="./data/img/hint.png" alt="提示页面">
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        // rem设置
+        document.documentElement.style.fontSize = innerWidth / 7.5 + "px";
+        window.onresize = function () {
+          document.documentElement.style.fontSize = innerWidth / 7.5 + "px";
+        }
+    </script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="./libs/jquery-1.11.0.js?v=201711161755"></script>
+    <script src="./js/common.js?v=201711161755"></script>
+    <script src="./js/allGameDownload.js?v=201711161755"></script>
+</html>

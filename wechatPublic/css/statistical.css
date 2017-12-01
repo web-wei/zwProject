@@ -1,0 +1,29 @@
+body {
+  background: #ffffff;
+}
+.statistical {
+  padding: 0.3rem 0.75rem;
+  line-height: 0.4rem;
+  font-size: 0.27rem;
+  color: #000000;
+}
+p {
+  margin-bottom: 0.1rem;
+}
+table {
+  width: 6rem;
+  text-align: center;
+}
+table caption {
+  line-height: 0.5rem;
+  font-size: 0.3rem;
+}
+table tr {
+  width: 50%;
+}
+table td {
+  width: 50%;
+}
+table th {
+  width: 50%;
+}

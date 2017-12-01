@@ -1,0 +1,71 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- home头部 -->
+    <view class="home_header">
+        <view class="home_banner_img">
+            <image src="http://mres.tigerz.nz/img/topbanner@3x.png" />
+        </view>
+        <!-- 导航 -->
+        <view class="nav">
+            <view class="nav_logo"></view>
+            <view class="home_addr">
+                <span class="home_map_icon"></span>
+                <span class="home_current_city">Auckland</span>
+                <ul class="home_addr_choice">
+                    <li>奥克兰</li>
+                    <li>新西兰</li>
+                </ul>
+            </view>
+            <navigator url="#" hover-class="none">
+              <i class="icon_user"></i>
+            </navigator>
+            <view class="home_login_language">
+                <span class="home_language">
+                      <navigator url="./index_cn.html" hover-class="none">中文</navigator>
+                </span>
+                <i> / </i>
+                <span class="home_language">
+                      <navigator url="./index" class="home_language_bs" hover-class="none">English</navigator>
+                </span>
+            </view>
+        </view>
+        <view class="home_nav_title">
+            <text>Let Us Guide You Home</text>
+            <p>Best Property Infomation Search Engine in New Zealand</p>
+        </view>
+        <view class="home_search_bar">
+            <view class="home_search">
+                <navigator url="../search/search" hover-class="none" open-type="navigate">
+                  <view>Enter a City,Suburb or Address</view>
+                  <label for="search_box"><span></span></label>
+                </navigator>
+            </view>
+        </view>
+        <!-- 近十二个月的涨幅 -->
+        <view class="home_last_info">
+            <view class="hld_intro">
+                <p class="hld_title">Price index last 12 months :</p>
+                <span class="hld_line"></span>
+                <view class="hld_wrap">
+                    <view class="hld_wrap_static">
+                        <ul class="hld_static">
+                          <li wx:for="{{houseStatistics}}" wx:key="value"><span>{{item.area}}: </span><span>{{item.value}}%</span></li>
+                        </ul>
+                        <ul class="hld_static">
+                          <li wx:for="{{houseStatistics}}" wx:key="value"><span>{{item.area}}: </span><span>{{item.value}}%</span></li>
+                        </ul>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- footer部分 -->
+    <view class="home_footer">
+        <view class="footer_nav">
+            <view hover-class="none">About us</view>
+            <view hover-class="none">Connect us</view>
+        </view>
+        <text class="footer_dis">Tiger house is dedicated to the latest, the fastest, most authoritative real estate information service people all around the world, looking for the best room source information for the customer.A rich, fast, comprehensive information storage and exchange platform for everyone, Let everyone grasp the property dynamics in time. Our purpose is "Don't go out, But know the world."</text>
+        <view class="footer_phone">email: &nbsp;wjc@tigerz.nz&nbsp;&nbsp;qq: &nbsp;3035240992</view>
+    </view>
+</view>

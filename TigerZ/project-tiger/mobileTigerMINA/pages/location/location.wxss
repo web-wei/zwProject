@@ -1,0 +1,88 @@
+.location_content {
+  width: 100%;
+  height: 100%;
+}
+.header_clear {
+  width: 100%;
+  height: 7.5%;
+  background-color: #fec500;
+  position: relative;
+  display: table;
+}
+.header_clear navigator{
+  position: absolute;
+  width: 12.8%;
+  height: 100%;
+  background: url(http://mres.tigerz.nz/img/fanhuijian@3x.png) no-repeat center;
+  background-size: 40rpx;
+}
+.header_clear view {
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  color: #fff;
+  font-size: 36rpx;
+  font-weight: 400;
+}
+.lcasec {
+  height: 92.5%;
+  background-color: #fff;
+}
+.lcasec .lctitle {
+  background-color: #f4f4f4;
+  font-size: 28rpx;
+  height: 95rpx;
+  line-height: 95rpx;
+  padding-left: 34rpx;
+  color: #c2c9ce;
+  border-top: 1rpx solid #e0e0e0;
+  border-bottom: 1rpx solid #e0e0e0;
+}
+.lcasec .nowCity {
+  height: 95rpx;
+}
+.lcasec .nowCity .curCityLink {
+  float: left;
+  line-height: 95rpx;
+  color: #3c475b;
+  font-size: 28rpx;
+  margin-left: 34rpx;
+}
+.lcasec .nowCity .locbtn {
+  float: right;
+  width: 93rpx;
+  height: 100%;
+  background: url(http://mres.tigerz.nz/img/shuaxin@3x.png) center no-repeat;
+  background-size: 34rpx 37rpx;
+}
+.lcasec .lcul {
+  height: 76.8%;
+  overflow-y: scroll;
+}
+.lcasec .lcul li {
+  height: 95rpx;
+  line-height: 95rpx;
+  padding-left: 34rpx;
+  color: #3c475b;
+  border-bottom: 1rpx solid #e0e0e0;
+}
+.lcasec .lcul li span {
+  font-size: 28rpx;
+}
+.active {
+  color: #fec500 !important;
+  position: relative;
+}
+.active:after {
+  width: 15rpx;
+  height: 23rpx;
+  border-right: 2rpx solid #fed900;
+  border-bottom: 2rpx solid #fed900;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  right: 35rpx;
+  margin-top: -18rpx;
+  content: "";
+}

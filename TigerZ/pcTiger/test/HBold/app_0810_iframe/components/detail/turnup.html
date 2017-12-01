@@ -1,0 +1,29 @@
+<div class="dsie_left">
+    <div class="dsie_left_up">
+        <div class="desiel_up_wrap">
+            <div class="desiel_img_wrap" ng-hide="allValue.showTurnMap">
+                <div class="isDelete">
+                    <span class="al_marker">No Sale</span>
+                </div>
+                <div class="dsiel_up_btn dsiel_up_left" ng-click="allValue.btnStopTurn('minus')"></div>
+                <div class="dsiel_up_btn dsiel_up_right" ng-click="allValue.btnStopTurn('add')"></div>
+                <div class="desiel_scale_img" ng-repeat="imgData in allValue.allImg track by $index" ng-class="{true:'showImage',false:'desiel_scale_img'}[$index==0]" >
+                    <img ng-src="{{imgDomain+imgData}}" error-src="http://res.tigerz.nz/imgs/scollicon.jpg" alt="{{allValue.detailLogotitle}}">
+                </div>
+            </div>
+            <div id="dsie_left_map"></div>
+        </div>
+    </div>
+
+    <div class="dsie_left_ocupy"></div>
+    <div class="dsie_left_down">
+        <div class="dsiel_down_small">
+            <div class="dsiel_down_smallimgs">
+                <img ng-repeat="sm in allValue.allImg track by $index" ng-src="{{imgDomain+sm}}" ng-mousedown="allValue.stopTurn($index)" error-src="http://res.tigerz.nz/imgs/scollicon.jpg" ng-class="{true:'onimg',false:'notimg'}[$index==0]">
+            </div>
+        </div>
+        <div class="dsiel_down_map" ng-click="allValue.turnJpg()">
+            <p>Map looking for room</p>
+        </div>
+    </div>
+</div>

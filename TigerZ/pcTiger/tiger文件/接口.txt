@@ -1,0 +1,153 @@
+--------------------------------------------详情页接口-------------------------------------------
+1、进入详情页 请求接口 
+
+	方式：get请求
+	
+	url：'http://api.tigerz.nz/tigerspring/rest/getHouseBaseInfo/'+房子ID + '/en'（中文cn）
+
+
+	结果：房子的一些基本信息，接下来称‘基本数据’
+
+
+2、详情页学校信息
+	
+	方式：post
+	
+	url：'http://api.tigerz.nz/tigerspring/rest/getSchoolsBaseInfo'
+
+	参数：基本信息中schoolInfo中的学校id放在一个数组中
+
+	结果：拿到所有的学校
+		
+		通过分数显示几颗星（2分一颗星）
+		
+		通过schoolAttribute确定公立和私立学校
+		
+		每一种类型的学校最多显示3个
+
+3、获取社区信息
+	
+	方式：post
+
+	url：'http://api.tigerz.nz/tigerspring/rest/getCommunityInfoBaseInfo/'
+	
+	参数：{
+		"meshNo":基本数据中的meshblockNumber,
+
+		"tiaCode":基本数据中的tlaCode,
+
+		"areaunitCode":基本数据中的areaunitCode,
+	
+		'lang':英文版'en',中文版'cn'
+	      }
+
+	结果：所有社区信息
+
+4、获取附近房源信息
+	
+	方式：post
+
+	url:'http://api.tigerz.nz/tigerspring/rest/getNearbyHouse'
+
+	参数：{'basePoint':基本数据中的basePoint}
+	
+	结果：得到20条附近房源
+
+
+5、附近成交房源信息
+	
+	方式：post
+	
+	url：'http://api.tigerz.nz/tigerspring/rest/getNearbyDealedHouse'
+
+	参数：{'basePoint':基本数据中的basePoint}
+
+	结果：得到20条附近成交房源
+
+--------------------------------------------搜索页接口-------------------------------------------
+
+1、进入搜索也的接口
+
+	方式：post
+
+	url：'http://api.tigerz.nz/tigerspring/rest/searchHouseByArea'
+
+	参数：{
+		bedroom:{all: true, one: false, two: false, three: false, four: false, more: false},
+		
+		fn:"false",//有fn的写相应的name没有的写false
+		
+		isAllHouse:"false",
+		
+		level:2,//进入的时候是level
+		
+		name:"Manukau City",//查询的name
+		
+		page:0,//默认
+		
+		sort:"default"//默认
+	    }
+
+	结果：当前搜索的结果
+
+2、拖动/缩放地图的接口
+	
+	方式：post
+
+	url:'http://api.tigerz.nz/tigerspring/rest/searchHouseByMap'
+
+	参数：{
+                 "zoom":$scope.allValue.c.map.getZoom(),//当前地图的zoom值
+                    
+		"bounds": [$scope.allValue.c.map.getBounds().getNorthEast().lng(),$scope.allValue.c.map.getBounds().getNorthEast().lat(),$scope.allValue.c.map.getBounds().getSouthWest().lng(),$scope.allValue.c.map.getBounds().getSouthWest().lat()],//地图上两个点坐标拿到可视区的坐标
+                   
+		"page":0,
+                    
+		"sort":"default",
+                 
+   		"isAllHouse":false
+               
+		 }
+
+	结果：拖动/缩放后的结果
+
+3、学区房接口
+ 
+	方式：post
+
+	url：'http://api.tigerz.nz/tigerspring/rest/getSchoolHouse',
+
+	参数：{
+		bedroom:{all: true, one: false, two: false, three: false, four: false, more: false}
+
+		id:"5840ea901cab461c20cf583f"//学校id
+
+		sort:"defalut"
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

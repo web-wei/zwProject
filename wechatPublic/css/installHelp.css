@@ -1,0 +1,19 @@
+.installHelp {
+  width: 100%;
+  background: #ffffff;
+}
+p {
+  padding-left: 0.2rem;
+  height: 1rem;
+  line-height: 1rem;
+  font-size: 0.5rem;
+  color: red;
+}
+img {
+  padding: 0 0.2rem;
+  width: 100%;
+  height: 100%;
+}
+.installHelp_android {
+  display: none;
+}

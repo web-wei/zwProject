@@ -1,0 +1,8 @@
+<section class="footer_top">
+    <ul class="footer_citys">
+        <li ng-repeat="item in citys.city"><a href="/search?name={{item}}&level=2&page=0&sort=default&isAllHouse=false&fn=false&ct={{currentCity}}" ng-bind="item" ng-mouseover="overLiEvent($index,item)" title="{{item}}"></a></li>
+    </ul>
+    <ul class="footer_city_wrap">
+        <li ng-repeat="sItem in currentSuburbs"><a href="/search?name={{sItem}}&level=3&page=0&sort=default&isAllHouse=false&fn={{currentFn}}&ct={{currentCity}}" ng-bind="sItem" ng-mouseover="sOverLiEvent($index)" title="{{sItem}}"></a></li>
+    </ul>
+</section>

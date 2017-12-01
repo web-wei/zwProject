@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>代理申请</title>
+  <link rel="shortcut icon" href="./data/img/shulan.ico?v=201711161755">
+  <link rel="stylesheet" type="text/css" href="./css/reset(zx).css?v=201711161755">
+  <link rel="stylesheet" type="text/css" href="./css/register.css?v=201711161755">
+</head>
+
+<body>
+  <div class="register">
+    <div class="register_header">代理注册申请</div>
+    <form class="register_form" name="lzform" >
+      <!-- 提示 -->
+      <div class="register_form_hint">
+        <p>注册成功成为代理，获得好友赠送等特权</p>
+        <p><span>温馨提示</span>：一个手机号只能注册一个地区的合作推广员</p>
+      </div>
+      <!-- 名称 -->
+      <div class="register_form_name register_form_common">
+        <label for="name">名称</label>
+        <p>**</p>
+        <!-- <input id="name" type="text" name="name" value="" placeholder="用户名格式为字母或数字，3-16位" maxlength="16"/> -->
+        <!-- <div class="error_userName error_common">用户名格式不正确</div> -->
+      </div>
+      <!-- wechat -->
+      <!-- <div class="register_form_wechat register_form_common">
+        <label for="wechat">微信</label>
+        <input id="wechat" type="text" name="wechat" placeholder="微信名格式为字母或数字，3-16位" maxlength="16"/>
+        <div class="error_wechat error_common">微信名格式不正确</div>
+      </div> -->
+      <!-- 省份 -->
+      <div class="register_form_provinces register_form_common">
+        <label for="provinces">省份</label>
+        <p>吉林省</p>
+      </div>
+      <!-- 市 -->
+      <!-- <div class="register_form_city register_form_common">
+        <label for="city">市</label>
+        <p class="city_select"><span class="city_shi">市</span><span class="city_jiantou">&#xe601;</span></p>
+        <div class="city_container">
+          <div class="city_container_detail">
+            <p><span class="city_detail_true"></span><span>长春市</span></p>
+            <p><span></span><span>吉林市</span></p>
+            <p><span></span><span>四平市</span></p>
+            <p><span></span><span>辽源市</span></p>
+            <p><span></span><span>通化市</span></p>
+            <p><span></span><span>白山市</span></p>
+            <p><span></span><span>白城市</span></p>
+            <p><span></span><span>松原市</span></p>
+          </div>
+        </div>
+      </div> -->
+      <!-- 手机 -->
+      <div class="register_form_phone register_form_common">
+        <label for="phone">手机</label>
+        <input id="phone" type="number" name="phone" maxlength="11" oninput="if(value.length>11)value=value.slice(0,11)"/>
+        <div class="form_phone_send">发送手机验证码</div>
+        <div class="error_phone error_common">您的手机号码有误</div>
+      </div>
+      <!-- 手机验证码 -->
+      <div class="register_form_phoneCode register_form_common">
+        <label for="phoneCode">手机验证码</label>
+        <input id="phoneCode" type="number" name="phoneCode" maxlength="5" oninput="if(value.length>5)value=value.slice(0,5)"/>
+      </div>
+      <!-- 密码 -->
+      <!-- <div class="register_form_password register_form_common">
+        <label for="password">输入密码</label>
+        <input id="password" type="password" name="password" placeholder="密码格式为字母或数字，6-18位" maxlength="18"/>
+        <div class="error_password error_common"></div>
+      </div> -->
+      <!-- 确认密码 -->
+      <!-- <div class="register_form_confirmPassword register_form_common">
+        <label for="confirmPassword">确认密码</label>
+        <input id="confirmPassword" type="password" placeholder="重新输入密码" name="confirmPassword" maxlength="18"/>
+        <div class="error_confirmPassword error_common"></div>
+      </div> -->
+      <!-- 推荐人ID -->
+      <div class="register_form_referees register_form_common">
+        <label for="referees">推荐人ID</label>
+        <input id="referees" type="number" placeholder="请谨慎输入只有一次机会" name="referees"/>
+      </div>
+      <!-- 验证码 -->
+      <div class="register_form_photoCode register_form_common">
+        <label for="photoCode">验证码</label>
+        <input id="photoCode" type="number" placeholder="验证码" name="photoCode" maxlength="4" oninput="if(value.length>4)value=value.slice(0,4)"/>
+        <img class="photoCode_img" src="" alt="验证码" title="看不清楚，换一张"/>
+        <div class="error_photoCode error_common">验证码不正确</div>
+        <p class="photoCode_huan">看不清？点击图片换一张试试</p>
+      </div>
+      <!-- 协议 -->
+      <div class="register_form_agreement">
+        <label class="form_agreement_confirm" for="agreement_confirm_checked">
+          <input type="checked" id="agreement_confirm_checked" checked/>
+          <span>提交代表您同意用户<a href="http://game.tigerz.nz/manage/register/terms.html">推广协议</a></span>
+        </label>
+      </div>
+      <!-- 提交 -->
+      <div class="register_form_submit">
+        <input class="form_submit" type="submit" name="register" value="提交" title="阅读并同意老铁棋牌的《推广协议》方可注册。"/>
+      </div>
+    </form>
+    <div class="register_errorHint">
+      <div class="register_errorHint_content">
+        <p>提示</p>
+        <div>手机短信验证码已过期，请重新获得验证码</div>
+        <span>知道了</span>
+      </div>
+    </div>
+  </div>
+</body>
+<script type="text/javascript">
+  // rem设置
+  document.documentElement.style.fontSize = innerWidth / 7.5 + "px";
+  window.onresize = function () {
+    document.documentElement.style.fontSize = innerWidth / 7.5 + "px";
+  }
+</script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="./libs/jquery-1.11.0.js?v=201711161755" charset="utf-8"></script>
+<script src="./js/common.js?v=201711161755"></script>
+<script>
+    wx.ready(function(){
+        wx.onMenuShareTimeline({
+            title: '老铁棋牌官方公众号 - 代理注册', // 分享标题
+            link: location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+            imgUrl: 'http://game.tigerz.nz/manage/register/data/img/share.png', // 分享图标
+            success: function () { 
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () { 
+                // 用户取消分享后执行的回调函数
+            }
+        });
+        wx.onMenuShareAppMessage({
+        title: '老铁棋牌官方公众号 - 代理注册', // 分享标题
+        desc: '代理：让观望的继续观望，让赚钱的继续赚钱，付出与回报全在你自己决定！', // 分享描述
+        link: location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        imgUrl: 'http://game.tigerz.nz/manage/register/data/img/share.png', // 分享图标
+        type: 'link', // 分享类型,music、video或link，不填默认为link
+        dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+        success: function () { 
+            // 用户确认分享后执行的回调函数
+        },
+        cancel: function () { 
+            // 用户取消分享后执行的回调函数
+        }
+        });
+    });
+</script>
+<script src="./js/register.js?v=201711161755" charset="utf-8"></script>
+
+</html>

@@ -1,0 +1,542 @@
+.estimate_header {
+  width: 12.8rem;
+  height: 5.6rem;
+  padding: .1px;
+  position: relative;
+}
+.estimate_header .home_banner_advImg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.estimate_header .home_banner_advImg img {
+  width: 100%;
+  height: 100%;
+}
+.estimate_header nav {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 12.8rem;
+  height: 1rem;
+}
+.estimate_header nav h1 {
+  float: left;
+  margin: 0 .14rem 0 .4rem;
+  width: 1.613rem;
+  height: 1rem;
+  font-size: 0;
+  cursor: pointer;
+}
+.estimate_header nav h1 img {
+  width: 100%;
+  height: 100%;
+}
+.estimate_header nav .home_nav {
+  width: 4.45rem;
+  float: left;
+  margin-left: 4.3rem;
+}
+.estimate_header nav .home_nav li {
+  float: left;
+  height: .3rem;
+  text-align: center;
+  line-height: .3rem;
+  margin: .35rem .1rem 0 0;
+}
+.estimate_header nav .home_nav li a {
+  display: block;
+  width: .9rem;
+  font-size: .16rem;
+  background: #FFD800;
+  height: .3rem;
+  line-height: .3rem;
+  border-radius: .03rem;
+  color: #000000;
+}
+.estimate_header nav .home_nav li a:hover {
+  background: #ffb900;
+}
+.estimate_header nav .home_nav li .home_buyicon:before {
+  display: block;
+  float: left;
+  width: .2rem;
+  height: .2rem;
+  content: '';
+  margin: 0.04rem -0.1rem 0 0.15rem;
+  background: url("http://res.tigerz.nz/imgs/home.png") no-repeat;
+  background-size: 100%;
+}
+.estimate_header nav .home_nav li .home_mapicon:before {
+  display: block;
+  float: left;
+  width: .18rem;
+  height: .18rem;
+  content: '';
+  margin: 0.05rem -0.15rem 0 0.15rem;
+  background: url("http://res.tigerz.nz/imgs/map-pin-silhouette.png") no-repeat;
+  background-size: 100%;
+}
+.estimate_header nav .home_nav li .home_estimateicon {
+  width: 1.05rem;
+}
+.estimate_header nav .home_nav li .home_estimateicon:before {
+  display: block;
+  float: left;
+  width: .18rem;
+  height: .18rem;
+  content: '';
+  margin: 0.05rem -0.1rem 0 0.1rem;
+  background: url("http://res.tigerz.nz/imgs/dollar-symbol.png") no-repeat;
+  background-size: 100%;
+}
+.estimate_header nav .home_nav li .home_auction {
+  width: 1.05rem;
+}
+.estimate_header nav .home_nav li .home_auction:before {
+  display: block;
+  float: left;
+  width: .18rem;
+  height: .18rem;
+  content: '';
+  margin: 0.05rem -0.1rem 0 0.1rem;
+  background: url("http://res.tigerz.nz/imgs/auction.png") no-repeat;
+  background-size: 100%;
+}
+.estimate_header nav .home_login_language {
+  float: right;
+  width: 1.8rem;
+}
+.estimate_header nav .home_login_language .home_login {
+  float: left;
+  color: #ffffff;
+  padding: 0 0.1rem;
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  font-size: .18rem;
+}
+.estimate_header nav .home_login_language .home_login span {
+  font-size: .14rem;
+  color: #ffffff;
+  line-height: 1rem;
+  cursor: pointer;
+}
+.estimate_header nav .home_login_language .home_language_wrap .home_language {
+  padding: 0 0.06rem;
+  float: left;
+  text-align: center;
+  height: 1rem;
+  line-height: 1rem;
+  color: #ffffff;
+  font-size: .16rem;
+  cursor: pointer;
+}
+.estimate_header nav .home_login_language .home_language_wrap .home_language a {
+  display: block;
+  color: #ffffff;
+}
+.estimate_header nav .home_login_language .home_language_wrap i {
+  float: left;
+  margin: 0 .1rem;
+  height: 1rem;
+  line-height: 1rem;
+  color: #ffffff;
+}
+.estimate_header nav .home_login_language .home_language_wrap .language_choiced {
+  color: #FFD800;
+}
+.estimate_header .home_nav_title {
+  position: absolute;
+  left: 0;
+  top: 1.5rem;
+  width: 12.8rem;
+  margin-top: .55rem;
+  text-align: center;
+}
+.estimate_header .home_nav_title h2 {
+  font-size: .55rem;
+  height: .55rem;
+  line-height: .55rem;
+  font-weight: normal;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: .1rem;
+}
+.estimate_header .home_nav_title p {
+  font-size: .22rem;
+  height: .25rem;
+  color: #ffffff;
+}
+.estimate_header .home_search_bar {
+  width: 7.98rem;
+  margin: 3.1rem auto .24rem;
+  font-weight: normal;
+  position: relative;
+}
+.estimate_header .home_search_bar .home_search_type {
+  overflow: hidden;
+  margin-bottom: .14rem;
+}
+.estimate_header .home_search_bar .home_search_type li {
+  float: left;
+  cursor: pointer;
+  font-size: .16rem;
+  width: 1.05rem;
+  height: .14rem;
+  line-height: .14rem;
+  color: #ffffff;
+  text-align: center;
+}
+.estimate_header .home_search_bar .home_serach_type_icon {
+  display: block;
+  width: 0;
+  height: 0;
+  border-bottom: 8px solid #ffffff;
+  border-top: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  position: absolute;
+  left: .5rem;
+  top: .14rem;
+}
+.estimate_header .home_search_bar .home_search {
+  width: 100%;
+  height: .52rem;
+}
+.estimate_header .home_search_bar .home_search .home_search_box {
+  float: left;
+  width: 6.68rem;
+  height: .52rem;
+  border-radius: .03rem 0 0 .03rem;
+  background: #FFFFFF;
+}
+.estimate_header .home_search_bar .home_search .home_search_box input {
+  width: 6.4rem;
+  height: .3rem;
+  line-height: .3rem;
+  margin: .11rem 0 0 .26rem;
+  font-size: .16rem;
+  outline: none;
+  border: none;
+}
+.estimate_header .home_search_bar .home_search .home_search_icon {
+  float: left;
+  width: 1.3rem;
+  height: .52rem;
+  background: #FFD800;
+  transition: all linear 0.3s;
+  border-radius: 0 .03rem .03rem 0;
+  cursor: pointer;
+}
+.estimate_header .home_search_bar .home_search .home_search_icon a {
+  display: block;
+  width: 1.3rem;
+  height: .52rem;
+}
+.estimate_header .home_search_bar .home_search .home_search_icon a span {
+  display: inline-block;
+  width: .27rem;
+  height: .27rem;
+  margin: .12rem 0 0 .52rem;
+  background: url("http://res.tigerz.nz/imgs/search.png") no-repeat;
+  background-size: 100%;
+}
+.estimate_header .home_search_bar .home_search .home_search_icon:hover {
+  background: #ffb900;
+}
+.estimate_header .home_search_bar .home_search_sub {
+  position: absolute;
+  left: 0;
+  top: .5rem;
+  width: 6.68rem;
+  max-height: 1.7rem;
+  border-radius: 0 0 .03rem .03rem;
+  background: #ffffff;
+  overflow: scroll;
+  overflow-x: hidden;
+  z-index: 99;
+}
+.estimate_header .home_search_bar .home_search_sub ul {
+  width: 100%;
+}
+.estimate_header .home_search_bar .home_search_sub ul li {
+  width: 100%;
+  height: .33rem;
+  line-height: .33rem;
+  text-indent: .26rem;
+  font-size: .14rem ;
+  color: #000;
+}
+.estimate_header .home_search_bar .home_search_sub ul li a {
+  display: block;
+  line-height: .3rem;
+  text-indent: .26rem;
+  font-size: .16rem ;
+  color: #000;
+  overflow: hidden;
+}
+.estimate_header .home_search_bar .home_search_sub ul li a span:nth-of-type(1) {
+  float: left;
+}
+.estimate_header .home_search_bar .home_search_sub ul li a span:nth-of-type(2) {
+  text-indent: 0;
+  float: left;
+}
+.estimate_header .home_search_bar .home_search_sub ul li a span:nth-of-type(3) {
+  float: right;
+  margin-right: .2rem;
+  font-weight: bold;
+}
+.estimate_header .home_search_bar .home_search_sub ul li:hover {
+  background: #f2f3f5;
+}
+.estimate_header .home_search_bar .home_search_sub ul li:hover a span {
+  font-weight: bold;
+}
+.estimate_header .home_search_bar .home_search_sub .home_search_simple {
+  display: none;
+}
+.estimate_header .home_search_bar .home_search_sub .home_search_error {
+  display: none;
+  color: #ff0000;
+  font-size: .16rem;
+  text-indent: .26rem;
+  line-height: .5rem;
+  height: .5rem;
+  width: 100%;
+  cursor: default;
+}
+.home_last_info {
+  width: 12.8rem;
+}
+.home_last_info .hld_intro {
+  width: 100%;
+  height: .6rem;
+  background: #FFD800;
+}
+.home_last_info .hld_intro .hld_title {
+  float: left;
+  width: 3rem;
+  height: .6rem;
+  line-height: .6rem;
+  margin-left: .4rem;
+  font-size: .16rem;
+  font-weight: bold;
+}
+.home_last_info .hld_intro .hld_line {
+  float: left;
+  width: .12rem;
+  height: .6rem;
+  margin-right: .28rem;
+  background: url("http://res.tigerz.nz/imgs/index_icon.png") no-repeat -10px -60px;
+}
+.home_last_info .hld_intro .hld_wrap {
+  float: left;
+  width: 8.9rem;
+  height: .6rem;
+  overflow: hidden;
+  position: relative;
+}
+.home_last_info .hld_intro .hld_wrap ul {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.home_last_info .hld_intro .hld_wrap ul li {
+  float: left;
+  height: .6rem;
+  line-height: .6rem;
+  margin-right: .56rem;
+}
+.home_last_info .hld_intro .hld_wrap ul li span {
+  font-size: .16rem;
+  font-weight: bold;
+}
+.home_last_info .hld_intro .hld_wrap ul li .hld_data_green {
+  color: green;
+  font-weight: normal;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+.home_last_data {
+  width: 12.8rem;
+  height: 4.4rem;
+}
+.home_last_data .hld_detail {
+  width: 12.8rem;
+  height: 4.4rem;
+  background: url("http://res.tigerz.nz/imgs/index2.jpg");
+  background-size: 100%;
+}
+.home_last_data .hld_detail .hld_detail_word {
+  width: 12rem;
+  height: 2.35rem;
+}
+.home_last_data .hld_detail .hld_detail_word .hld_updata_wrap {
+  width: 9.8rem;
+  height: 2.35rem;
+  margin-left: 1.3rem;
+  overflow: hidden;
+  position: relative;
+}
+.home_last_data .hld_detail .hld_detail_word .hld_updata_wrap .hldu_ul {
+  width: 39.2rem;
+  height: 2.35rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.home_last_data .hld_detail .hld_detail_word .hld_updata_wrap .hldu_ul .hld_updata {
+  float: left;
+  width: 9.8rem;
+  height: 2.35rem;
+}
+.home_last_data .hld_detail .hld_detail_word .hld_updata_wrap .hldu_ul .hld_updata p {
+  float: left;
+  width: 3.4rem;
+  text-align: right;
+  height: 2.35rem;
+  line-height: 2.35rem;
+  font-size: .55rem;
+  color: #ffffff;
+  margin-right: .8rem;
+}
+.home_last_data .hld_detail .hld_detail_word .hld_updata_wrap .hldu_ul .hld_updata .hld_updata_ul {
+  float: left;
+  width: 5.6rem;
+  height: 2.35rem;
+  padding-top: .605rem;
+}
+.home_last_data .hld_detail .hld_detail_word .hld_updata_wrap .hldu_ul .hld_updata .hld_updata_ul li {
+  width: 5.6rem;
+  line-height: .38rem;
+  font-size: .18rem;
+  color: #ffffff;
+}
+.home_last_data .hld_detail .hld_detail_word .hld_updata_wrap .hldu_ul .hld_updata .hld_updata_ul li span {
+  display: inline-block;
+  margin-right: .1rem;
+  width: .08rem;
+  height: .08rem;
+  background: #ffffff;
+  border-radius: 50%;
+}
+.home_last_data .hld_detail .hld_detail_number {
+  width: 12rem;
+  height: 1.4rem;
+  margin: .16rem 0 0 .4rem;
+}
+.home_last_data .hld_detail .hld_detail_number .hld_downdata {
+  width: 100%;
+  height: 100%;
+}
+.home_last_data .hld_detail .hld_detail_number .hld_downdata li {
+  float: left;
+  position: relative;
+  box-sizing: border-box;
+  width: 2.7rem;
+  margin-right: .3rem;
+  height: 1.36rem;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+  transition: all linear .3s;
+}
+.home_last_data .hld_detail .hld_detail_number .hld_downdata li .hld_downdata_icon {
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 1.25rem;
+  top: -20px;
+}
+.home_last_data .hld_detail .hld_detail_number .hld_downdata li .hld_turn_icon {
+  border-bottom: 10px solid #FFD11E;
+  border-top: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+.home_last_data .hld_detail .hld_detail_number .hld_downdata li .down_num {
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-size: .6rem;
+  height: .6rem;
+  line-height: .6rem;
+  margin: .25rem 0 .15rem 0;
+}
+.home_last_data .hld_detail .hld_detail_number .hld_downdata li .down_dis {
+  color: #ffffff;
+  font-size: .16rem;
+  height: .16rem;
+  line-height: .16rem;
+  text-align: center;
+}
+.home_last_data .hld_detail .hld_detail_number .hld_downdata li:hover {
+  background: rgba(255, 185, 0, 0.5);
+  border: 1px solid #FFD11E;
+  color: #FFD11E;
+}
+.home_last_data .hld_detail .hld_detail_number .hld_downdata li:hover .down_num {
+  color: #FFD11E;
+}
+.home_last_data .hld_detail .hld_detail_number .hld_downdata li:hover .down_dis {
+  color: #FFD11E;
+}
+.home_last_data .hld_detail .hld_detail_number .hld_downdata .hld_turn_num {
+  border: 1px solid #FFD11E;
+}
+.home_last_data .hld_detail .hld_detail_number .hld_downdata .hld_turn_num .down_num {
+  color: #FFD11E;
+}
+.home_last_data .hld_detail .hld_detail_number .hld_downdata .hld_turn_num .down_dis {
+  color: #FFD11E;
+}
+.estimate_choose {
+  width: 12.8rem;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: .3rem;
+}
+.estimate_choose .estimate_content {
+  width: 7rem;
+  margin: 0 auto;
+}
+.estimate_choose .estimate_content h2 {
+  font-size: .2rem;
+  text-align: center;
+  height: .4rem;
+  line-height: .4rem;
+  color: #2b2b2b;
+  margin: .3rem auto .2rem auto;
+}
+.estimate_choose .estimate_content p {
+  font-size: .16rem;
+  margin-bottom: .2rem;
+  line-height: .28rem;
+  color: #585858;
+}
+.estimate_choose .estimate_content dt {
+  line-height: .28rem;
+  font-size: .16rem;
+  font-weight: bold;
+  color: #2b2b2b;
+}
+.estimate_choose .estimate_content dd {
+  line-height: .28rem;
+  font-size: .16rem;
+  margin-bottom: .2rem;
+  color: #585858;
+}
+#estimate_footer {
+  width: 12.8rem;
+  min-height: 4.5rem;
+  margin-bottom: .2rem;
+  background: #2b2b2b;
+  padding: .1px;
+  position: relative;
+}

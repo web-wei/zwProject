@@ -1,0 +1,57 @@
+<div class="desie_right">
+    <p class="desie_right_estimate"><span>TigerZ Estimate: </span><span ng-bind="(allValue.estimateValue | currency:number:0) || 'N/A'"></span></p>
+    <div class="desie_right_autioned">
+        <h4 ng-bind="allValue.allData.housePrice" title="{{allValue.allData.housePrice}}">To be auctioned</h4>
+        <p class="desie_right_addr" ng-hide="allValue.auctionAddr"><span>Auction address:</span><span ng-bind="allValue.allData.streetAddress || '-'"></span></p>
+        <p class="desier_autioned_time" ng-hide="allValue.auctionTime">
+            <span class="desiera_time_icon"></span>
+            <span ng-bind="allValue.auctionValue">Mon 31 Oct,1:18 pm</span>
+        </p>
+    </div>
+    <div class="desie_right_info">
+        <p class="desier_info_bed">
+            <span class="desieri_bed_icon"></span>
+            <span ng-bind="(allValue.allData.bedRoom || allValue.allData.bedroom) || '-'"></span>
+            <span class="desieri_bath_icon"></span>
+            <span ng-bind="(allValue.allData.bathRoom || allValue.allData.bathroom) || '-'"></span>
+        </p>
+        <p class="desier_info_type">
+            <span>Property type:</span>
+            <span ng-bind="allValue.allData.type || 'unknown'"></span>
+        </p>
+        <p class="desier_info_location">
+            <span>Capital Value:</span>
+            <span ng-bind="allValue.allData.latestCapitalValue | currency:number:0" title="{{allValue.allData.streetAddress}}"></span>
+        </p>
+        <p class="desier_info_floorArea">
+            <span>Floor Area:</span>
+            <span ng-bind="allValue.allData.floorArea"></span>
+        </p>
+        <p class="desier_info_landArea">
+            <span>Land Area:</span>
+            <span ng-bind="allValue.allData.shareData"></span>
+        </p>
+        <div class="desier_info_openDay"  ng-if="allValue.allData.openDay.length != 0">
+            <span>Open Time:</span>
+            <ul>
+                <li ng-repeat="item in allValue.allData.openDay" ng-bind="item.open_date+' '+item.open_time" ng-if="$index < 4"></li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="expend-agent">
+        <div class="xImgWrap">
+            <img error-src="http://res.tigerz.nz/imgs/defaultagent.png" ng-src="{{allValue.allData.agentList[0].agent_icon}}" alt="">
+        </div>
+        <div class="agent-info">
+            <p class="agent-name" ng-bind="allValue.allData.agentList[0].agent_name">Name Display</p>
+            <div class="agent-btn">
+                <p class="agent-phone">
+                    <span class="iconfont phone-icon">&#xe6c4;</span><span ng-bind="allValue.allData.agentList[0].agent_mobile">021-970-006</span>
+                </p>
+                <p class="agent-contact" scroll-agent>Contact Agent</p>
+            </div>
+        </div>
+        <span class="agent-more" ng-if="allValue.allData.agentList.length > 1" scroll-agent>More Agent</span>
+    </div>
+</div>

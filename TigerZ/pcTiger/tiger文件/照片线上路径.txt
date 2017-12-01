@@ -1,0 +1,10 @@
+/mnt/var/image
+
+
+
+/home/tomcat/apps/static/static-website/html ДњТы
+
+
+/home/tomcat/apps/static/static-website/image
+
+

@@ -1,0 +1,97 @@
+<div class="alert-list">
+    <div class="go-top iconfont" ng-click="goTopFn()" title="回到顶部">&#xe63f;</div>
+    <ul class="mes-list">
+        <li class="iconfont mail" ng-click="showMailFn()" ng-if="agentList.length != 0" title="联系中介">&#xe99b;</li>
+        <li class="iconfont feedback" ng-click="showFeedFn()" title="反馈">&#xe6ec;</li>
+    </ul>
+    <div class="agent-wrap" ng-hide="hideFeedback">
+        <span class="agent-close" ng-click="closeFeed()">
+            <i class="iconfont close">&#xe69a;</i>
+        </span>
+        <div class="agent" ng-show="showMail">
+            <ul class="agent-detail">
+                <li ng-repeat="item in agentList track by $index" ng-click="agentChoice($index,item.agent_id)">
+                    <i class="select-circle" ng-class="{false:'select-circle',true:'select-circled'}[$index == 0]"></i>
+                    <div class="floatImgWrap">
+                        <img error-src="http://res.tigerz.nz/imgs/defaultagent.png" ng-src="{{item.agent_icon}}" alt="{{item.agent_name}}">
+                    </div>
+                    <div class="detail-mes">
+                        <p class="agent-name" ng-bind="item.agent_name"></p>
+                        <p class="agent-tel">
+                            <span class="iconfont tel-icon">&#xe6ac;</span>
+                            <span class="tel-num" ng-bind="item.agent_mobile"></span>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <p class="refresh-agent" ng-if="agentList.length > 3">
+                <i class="iconfont refresh-icon">&#xe600;</i>
+                <span>换一换</span>
+            </p>
+            <div class="send-message">
+                <form name="floatAgentForm" novalidate="novalidate">
+                    <div class="input-wrap">
+                        <span class="require-icon"></span>
+                        <input type="text" placeholder="我的名字" id="floatUserName" ng-model="userName">
+                        <i class="iconfont name-icon">&#xe627;</i>
+                    </div>
+                    <div class="input-wrap">
+                        <input type="text" placeholder="电话" id="floatTel" name="floatTel" ng-model="userFeedTel" ng-pattern="/^[0-9]*$/">
+                        <i class="iconfont phone-icon">&#xe678;</i>
+                    </div>
+                    <p class="err-alert" ng-show="floatAgentForm.floatTel.$error.pattern">请输入正确的电话号码</p>
+
+                    <div class="input-wrap">
+                        <span class="require-icon"></span>
+                        <input type="email" placeholder="邮箱" id="floatEmail" name="floatEmail" ng-model="userFeedEmail" ng-pattern="/^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/" required>
+                        <i class="iconfont email-icon">&#xe7c0;</i>
+                    </div>
+                    <p class="err-alert" ng-show="floatAgentForm.floatEmail.$error.required && floatAgentForm.floatEmail.$dirty">请输入您的邮箱</p>
+                    <p class="err-alert" ng-show="floatAgentForm.floatEmail.$error.email || floatAgentForm.floatEmail.$error.pattern">邮箱格式不正确</p>
+
+                </form>
+                <div class="eContent">
+                    <span class="require-icon"></span>
+                    <textarea ng-model="userContent" id="floatUserContact" placeholder="请输入您的问题。。。"  ng-blur="emailBlur()"></textarea>
+                </div>
+            </div>
+            <safe-codecn right-code="rightCode" md="emailMd" count="emailCount"></safe-codecn>
+            <p class="err-alert" id="floatServerBack"></p>
+            <button class="send-btn" ng-click="contactFn(!((floatAgentForm.floatEmail.$error.required && floatAgentForm.floatEmail.$dirty)||floatAgentForm.floatEmail.$error.email || floatAgentForm.floatEmail.$error.pattern||floatAgentForm.floatTel.$error.pattern))">
+                提交
+            </button>
+        </div>
+        <div class="user-feedback" ng-show="showFeed">
+            <div class="feedback-problem">
+                <h5>反馈的信息</h5>
+                <span class="content-require require-icon"></span>
+                <textarea id="feedContent" placeholder="请输入您的问题..." ng-model="userFeedback" ng-blur="feedBlur()"></textarea>
+            </div>
+            <div class="user-info">
+                <h5>我的信息</h5>
+                <form name="feedForm" novalidate="novalidate">
+                    <div class="input-wrap">
+                        <span class="require-icon email-require"></span>
+                        <!--<span class="require-icon email-require" ng-hide="userFeedEmail.length > 0">{{userFeedEmail.length>0}}</span>-->
+                        <input type="email" placeholder="邮箱" id="feedEmail" name="feedEmail" ng-model="userFeedEmail" ng-pattern="/^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/" required>
+                        <i class="iconfont feedEmail-icon">&#xe7c0;</i>
+                    </div>
+                    <p class="err-alert" ng-show="feedForm.feedEmail.$error.required && feedForm.feedEmail.$dirty">请输入您的邮箱</p>
+                    <p class="err-alert" ng-show="feedForm.feedEmail.$error.email || feedForm.feedEmail.$error.pattern">请输入正确的邮箱</p>
+
+                    <div class="input-wrap">
+                        <input type="text" placeholder="电话" id="feedtel" name="feedtel" ng-model="userFeedTel" ng-pattern="/^[0-9]*$/">
+                        <i class="iconfont feedPhone-icon">&#xe678;</i>
+                    </div>
+                    <p class="err-alert" ng-show="feedForm.feedtel.$error.pattern">请输入正确的电话号码</p>
+
+                    <safe-codecn right-code="feedrightCode" md="feedMd" count="feedCount"></safe-codecn>
+                    <p class="err-alert" id="feedbackServer"></p>
+                    <button class="send-btn" ng-click="sendMes(!(feedForm.feedtel.$error.pattern || (feedForm.feedEmail.$error.required && feedForm.feedEmail.$dirty) || feedForm.feedEmail.$error.email || feedForm.feedEmail.$error.pattern))">
+                        提交
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

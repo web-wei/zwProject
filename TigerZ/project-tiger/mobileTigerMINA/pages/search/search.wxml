@@ -1,0 +1,52 @@
+<!--search.wxml-->
+<view class="container">
+<view class="search_content">
+  <view class="search_header">
+    <view class="search_header_view">
+      <input id="search_box" type="text" name="" value="" placeholder="Enter a City,Suburb or Address" focus="{{focus}}" bindinput="shuru"/>
+    </view>
+    <navigator class="search_header_chahao" open-type="navigateBack" ></navigator>
+  </view>
+  <view class="search_top" hidden="{{searchTop}}">
+    <text>Hot search</text>
+    <view class="serach_top_trending">
+      <ul>
+        <li wx:for="{{hotSearch}}" wx:key="value">
+          <navigator url="../list/list?name={{item}}&level=2&page=0&sort=default&isAllHouse=false&scope={{area}}" hover-class="none" open-type="redirect">{{item}}</navigator>
+        </li>
+      </ul>
+    </view>
+  </view>
+  <view class="search_history" hidden="{{searchHistory}}">
+    <text>Search history</text>
+    <view class="search_history_item">
+      <ul>
+        <li wx:for="{{historyData}}" wx:key="value">
+        <view bindtap="judgePage" data-url="{{item}}">
+          <p>{{item.name}}</p>
+          <p>
+            <span>{{item.fatherName}}</span>
+            <span>{{item.area}}</span>
+          </p>
+        </view>
+      </li>
+      </ul>
+    </view>
+  </view>
+  <view class="search_clearHistory" hidden="{{searchClearHistory}}" bindtap="clearHistory">Clear search history</view>
+  <view class="search_new" hidden="{{searchNew}}">
+    <ul>
+      <view hidden="{{noData}}">Can't find the corresponding data</view>
+       <li wx:for="{{searchInFuzzy}}" wx:key="value">
+        <view bindtap="judgePage" data-url="{{item}}">
+          <p>{{item.name}}</p>
+          <p>
+            <span>{{item.fatherName}}</span>
+            <span>{{item.area}}</span>
+          </p>
+        </view>
+      </li>
+    </ul>
+  </view>
+</view>
+</view>

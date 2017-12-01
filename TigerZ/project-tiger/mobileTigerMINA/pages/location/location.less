@@ -1,0 +1,89 @@
+// out: ./location.wxss, compress: false
+.location_content{
+  width: 100%;
+  height: 100%;
+}
+.header_clear{
+  width: 100%;
+  height: 7.5%;
+  background-color: #fec500;
+  position: relative;
+  display: table;
+}
+.header_clear a{
+  position: absolute;
+  width: 12.8%;
+  height: 100%;
+  background: url(http://mres.tigerz.nz/img/fanhuijian@3x.png) no-repeat center;
+  background-size: .4rem;
+}
+.header_clear h1{
+  height: 100%;
+  display: table-cell;
+  vertical-align:middle;
+  text-align: center;
+  color: #fff;
+  font-size: .36rem;
+  font-weight: 400;
+}
+.lcasec{
+  height: 92.5%;
+  background-color: #fff;
+  .lctitle{
+    background-color: #f4f4f4;
+    font-size: 0.28rem;
+    height: 0.95rem;
+    line-height: 0.95rem;
+    padding-left: 0.34rem;
+    color: #c2c9ce;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .nowCity{
+    height: 0.95rem;
+    .curCityLink{
+      float: left;
+      line-height: 0.95rem;
+      color: #3c475b;
+      font-size: 0.28rem;
+      margin-left: .34rem;
+    }
+    .locbtn{
+      float: right;
+      width: .93rem;
+      height: 100%;
+      background: url(http://mres.tigerz.nz/img/shuaxin@3x.png) center no-repeat;
+      background-size: .34rem .37rem;
+    }
+  }
+  .lcul{
+    height: 76.8%;
+    overflow-y: scroll;
+    li{
+      height: 0.95rem;
+      line-height: 0.95rem;
+      padding-left: .34rem;
+      color: #3c475b;
+      border-bottom: 1px solid #e0e0e0;
+      span{
+        font-size: 0.28rem;
+      }
+    }
+  }
+}
+.active{
+  color: #fec500 !important;
+  position: relative;
+  &:after{
+    width: .15rem;
+    height: .23rem;
+    border-right: 2px solid #fed900;
+    border-bottom: 2px solid #fed900;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 50%;
+    right: 0.35rem;
+    margin-top: -0.18rem;
+    content: "";
+  }
+}

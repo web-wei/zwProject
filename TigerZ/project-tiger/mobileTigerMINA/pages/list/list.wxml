@@ -1,0 +1,147 @@
+<!--list.wxml-->
+<view class="container">
+  <view class="list_content">
+        <view class="list_header">
+            <view class="list_header_allCity" bindtap="sjLocation">
+              <span></span>
+              <view>{{param.scope}}</view>
+            </view>
+            <view class="list_header_search" bindtap="jrSearch">City,Suburb...</view>
+            <view class="list_header_broker">
+              <contact-button type="default-light" size="22" session-from="weapp"></contact-button >
+            </view>
+        </view>
+        <view class="list_main">
+            <!-- 筛选 -->
+            <view class="list_main_filtrate">
+                <ul>
+                    <li bindtap="sjArea">
+                        <p>
+                          <span class="{{listAreaColor ? 'list_common_color' : ''}}">Area</span>
+                          <span class="list_main_triangle {{triangleColor ? 'list_common_color_border' : ''}}"></span>
+                          <span wx:if="{{listFiltrateBall1}}" class="list_filtrate_ball"></span></p>
+                    </li>
+                    <li bindtap="sjSchool">
+                        <p>
+                        <span class="{{listSchool ? 'list_common_color' : ''}}">School</span>
+                        <span class="list_main_triangle {{triangleSchoolColor ? 'list_common_color_border' : ''}}"></span>
+                        <span wx:if="{{listFiltrateBall2}}" class="list_filtrate_ball"></span>
+                        </p>
+                    </li>
+                    <li bindtap="sjBedrooms">
+                        <p>
+                        <span class="{{listBedrooms ? 'list_common_color' : ''}}">Bedrooms</span>
+                        <span class="list_main_triangle {{triangleBedroomsColor ? 'list_common_color_border' : ''}}"></span>
+                        <span wx:if="{{listFiltrateBall3}}" class="list_filtrate_ball"></span>
+                        </p>
+                    </li>
+                    <li bindtap="sjSort">
+                        <p>
+                        <span class="{{listSort ? 'list_common_color' : ''}}">Sort</span>
+                        <span class="list_main_triangle {{triangleSortColor ? 'list_common_color_border' : ''}}"></span>
+                        <span wx:if="{{listFiltrateBall4}}" class="list_filtrate_ball"></span>
+                        </p>
+                    </li>
+                </ul>
+            </view>
+            <view class="list_filtrate_gather">
+                <!-- 区域 -->
+                <view class="list_filtrate_area" wx:if="{{listFiltrateArea}}">
+                    <view class="list_filtrate_areaLeft">
+                        <ul>
+                          <li wx:for="{{citys}}" wx:for-index="idx" bindtap="citysText" data-text="{{item}}" data-idx="{{idx}}" class="{{listFiltrateAreaLeftbackgroundColor1 ? 'listFiltrateAreaLeftbackgroundColor1' : ''}} {{listFiltrateAreaLeftbackgroundColor == idx ? 'listFiltrateAreaLeftbackgroundColor' : ''}}">{{item}}</li>
+                        </ul>
+                    </view>
+                    <view class="list_filtrate_areaRight">
+                        <ul>
+                          <li wx:for="{{citysSuburb}}" wx:for-index="sidx" wx:for-item="item1" wx:key="value" bindtap="sjCitysSuburb" class="{{qwert ? '' : 'list_common_color2'}} {{citysSuburbColor == sidx ? 'list_common_color1':''}} {{qwert1 ? 'list_common_color3' : ''}}" data-sidx="{{sidx}}" data-text="{{item1}}">{{item1}}</li>
+                        </ul>
+                    </view>
+                </view>
+                <!-- 校区 -->
+                <view class="list_filtrate_campus" wx:if="{{listFiltrateCampus}}">
+                    <view class="list_filtrate_areaLeft">
+                        <ul>
+                          <li wx:for="{{citys}}" wx:for-index="scidx" bindtap="campusCitysText" data-text="{{item}}" data-scidx="{{scidx}}" class="{{listFiltrateAreaLeftbackgroundColor2 ? 'listFiltrateAreaLeftbackgroundColor1' : ''}} {{listFiltrateAreaLeftbackgroundColor3 == scidx ? 'listFiltrateAreaLeftbackgroundColor' : ''}}">{{item}}</li>
+                        </ul>
+                    </view>
+                    <view class="list_filtrate_areaRight">
+                        <ul>
+                          <li wx:for="{{campusCity}}" wx:for-index="ccidx" bindtap="sjCampisCityName" class="{{qwert2 ? '' : 'list_common_color4'}} {{citysSuburbColor1 == ccidx ? 'list_common_color5':''}}" data-ccidx="{{ccidx}}" data-id="{{item.id}}">{{item.name}}</li>
+                        </ul>
+                    </view>
+                </view>
+
+
+
+
+                <!-- 房间数 -->
+                <view class="list_filtrate_roomNum" hidden="{{listFiltrateRoomNum}}">
+                    <checkbox-group>
+                      <label class="checkbox" wx:for="{{checkboxItem}}" bindtap="checkboxChange" data-name="{{item.name}}">
+                        {{item.value}}
+                        <checkbox value="{{item.name}}" color="#fbc730" checked="{{item.checked}}"/>
+                      </label>
+                    </checkbox-group>
+                    <view class="list_roomNum_confirm" bindtap="sjRoomNum">
+                      <view>confirm</view>
+                    </view>
+                </view>
+
+                <!-- 房间数 -->
+                <!-- <view class="list_filtrate_roomNum" hidden="{{listFiltrateRoomNum}}">
+                    <checkbox-group bindchange="checkboxChange">
+                      <label class="checkbox" wx:for="{{checkboxItem}}">
+                        {{item.value}}
+                        <checkbox value="{{item.name}}" checked="{{item.checked}}"/>
+                      </label>
+                    </checkbox-group>
+                    <view class="list_roomNum_confirm" bindtap="sjRoomNum">
+                      <view>confirm</view>
+                    </view>
+                </view> -->
+
+
+
+                <!-- 排序 -->
+                <view class="list_filtrate_sort" wx:if="{{listFiltrateSort}}">
+                    <ul>
+                        <li bindtap="HomesforYou" class="{{HomesforYouColor ? 'list_common_color' : ''}}">Homes for You<span class="{{listFiltrateTick1 ? 'list_filtrate_tick' : ''}}"></span></li>
+                        <li bindtap="Newest" class="{{NewestColor ? 'list_common_color' : ''}}">Newest<span class="{{listFiltrateTick2 ? 'list_filtrate_tick' : ''}}"></span></li>
+                        <li bindtap="PriceUp" class="{{PriceUpColor ? 'list_common_color' : ''}}">Price Up<span class="{{listFiltrateTick3 ? 'list_filtrate_tick' : ''}}"></span></li>
+                        <li bindtap="PriceDown" class="{{PriceDownColor ? 'list_common_color' : ''}}">Price Down<span class="{{listFiltrateTick4 ? 'list_filtrate_tick' : ''}}"></span></li>
+                    </ul>
+                </view>
+            </view>
+            <!-- 房屋列表 -->
+            <scroll-view scroll-y lower-threshold scroll-with-animation enable-back-to-top class="list_main_items" bindscrolltolower="pullUpLoad" bindscroll="itemsScroll" scroll-top="{{scrollTop}}">
+              <view class="noHouseRed" wx:if="{{noHouseRed}}">No House</view>
+              <view class="list_item" wx:for="{{searchHouseByArea}}" wx:key="value">
+                <navigator url="{{item.url}}" hover-class="none"></navigator>
+                <image src="{{item.houseMainImagePath}}"></image>
+                <view class="list_item_describe">
+                  <view class="list_item_text">{{item.title}}</view>
+                  <p class="list_item_site">{{item.streetAddress}}</p>
+                  <p class="list_item_price">{{item.housePrice}}</p>
+                  <p class="list_item_gather">
+                    <span class="list_item_bed"></span>
+                    <span>{{item.bedroom > 0 ? item.bedroom : '-'}}</span>
+                    <span class="list_item_bath"></span>
+                    <span>{{item.bathroom > 0 ? item.bathroom : '-'}}</span>
+                    <view class="list_item_date">
+                      <view>Updata Date:</view>
+                      <view>2016/9/15</view>
+                    </view>
+                  </p>
+                </view>
+              </view>
+            </scroll-view>
+            <view class="more_item" wx:if="{{moreItem}}">
+              <view class="more_item_top">There is no more housing data</view>
+            </view>
+            <view class="auction_mask" wx:if="{{auctionMask}}">
+              <image src="http://mres.tigerz.nz/img/default.svg" alt="" />
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>支付结果</title>
+    <link rel="shortcut icon" href="./data/img/shulan.ico?v=201711161755">
+    <link rel="stylesheet" href="./css/reset(zx).css?v=201711161755">
+    <link rel="stylesheet" href="./css/payResult.css?v=201711161755">
+</head>
+
+<body>
+    <div class="payResult">
+        <div class="payResult_result">
+            <span></span>
+            <p>充值成功</p>
+        </div>
+        <div class="payResult_detail">
+            <p><span>姓名:</span><span class="payResult_detail_nickname">**</span></p>
+            <p><span>省份:</span><span class="payResult_detail_area">**</span></p>
+            <p><span>手机号:</span><span class="payResult_detail_mobile">***********</span></p>
+            <p><span>商品:</span><span class="payResult_detail_commodity">老铁棋牌代理并赠送300张房卡</span></p>
+            <p><span>付款金额:</span><span class="payResult_detail_totalFee">300元</span></p>
+            <p><span>下单时间:</span><span class="payResult_detail_time">****-**-** **:**:**</span></p>
+        </div>
+        <div class="payResult_button">完成</div>
+    </div>
+</body>
+<script type="text/javascript">
+    // rem设置
+    document.documentElement.style.fontSize = innerWidth / 7.5 + "px";
+    window.onresize = function() {
+        document.documentElement.style.fontSize = innerWidth / 7.5 + "px";
+    }
+</script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="./libs/jquery-1.11.0.js?v=201711161755"></script>
+<script src="./js/common.js?v=201711161755"></script>
+<script src="./js/payResult.js?v=201711161755"></script>
+
+</html>

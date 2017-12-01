@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>公众号置顶</title>
+  <link rel="shortcut icon" href="./data/img/shulan.ico?v=201711161755">
+  <link rel="stylesheet" type="text/css" href="./css/reset(zx).css?v=201711161755">
+  <link rel="stylesheet" type="text/css" href="./css/wechatPublicTop.css?v=201711161755">
+</head>
+
+<body>
+  <div class="wechatPublicTop">
+    <img src="./data/img/wechatPublicTop.png" alt="公众号置顶">
+  </div>
+</body>
+<script type="text/javascript">
+  // rem设置
+  document.documentElement.style.fontSize = innerWidth / 7.5 + "px";
+  window.onresize = function () {
+    document.documentElement.style.fontSize = innerWidth / 7.5 + "px";
+  }
+</script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="./libs/jquery-1.11.0.js"></script>
+<script src="./js/common.js"></script>
+<script>
+  wx.ready(function(){
+    wx.onMenuShareTimeline({
+        title: '老铁棋牌官方公众号 - 公众号置顶教程', // 分享标题
+        link: location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        imgUrl: 'http://game.tigerz.nz/manage/register/data/img/share.png', // 分享图标
+        success: function () { 
+            // 用户确认分享后执行的回调函数
+        },
+        cancel: function () { 
+            // 用户取消分享后执行的回调函数
+        }
+    });
+    wx.onMenuShareAppMessage({
+      title: '老铁棋牌官方公众号 - 公众号置顶教程', // 分享标题
+      desc: '在为找不到我着急？那就置顶我吧！于万千信息中一眼寻觅。', // 分享描述
+      link: location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+      imgUrl: 'http://game.tigerz.nz/manage/register/data/img/share.png', // 分享图标
+      type: 'link', // 分享类型,music、video或link，不填默认为link
+      dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+      success: function () { 
+          // 用户确认分享后执行的回调函数
+      },
+      cancel: function () { 
+          // 用户取消分享后执行的回调函数
+      }
+    });
+  });
+</script>
+</html>

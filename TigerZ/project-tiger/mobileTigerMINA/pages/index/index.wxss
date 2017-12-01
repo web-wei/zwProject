@@ -1,0 +1,434 @@
+/**index.wxss**/
+.home_header {
+  width: 100%;
+  height: 65%;
+  position: relative;
+  color: #fff
+}
+
+.home_header .home_banner_img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0
+}
+
+.home_header .home_banner_img image {
+  width: 100%;
+  height: 100%
+}
+
+.home_header .nav {
+  width: 100%;
+  height: 55rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.home_header .nav .nav_logo {
+  width: 176rpx;
+  height: 32rpx;
+  background: url("https://m.tigerz.nz/img/logo@3x.png") center no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 23rpx;
+  left: 15rpx
+}
+
+.home_header .nav>navigator:last-of-type {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 200rpx;
+  width: 80rpx;
+  height: 55rpx
+}
+
+.home_header .nav .home_addr {
+  float: left;
+  margin: 28rpx 0 0 210rpx
+}
+
+.home_header .nav .home_addr .home_map_icon {
+  margin-top: 10rpx;
+  float: left;
+  width: 14rpx;
+  height: 16rpx;
+  background: url("https://m.tigerz.nz/img/coordinate@3x.png") center no-repeat;
+  background-size: contain
+}
+
+.home_header .nav .home_addr .home_current_city {
+  float: left;
+  font-size: 22rpx;
+  color: #fff;
+  max-width: 95rpx;
+  height: 26rpx;
+  margin: 4rpx 0 0 7rpx;
+}
+
+.home_header .nav .home_addr .home_addr_choice {
+  display: none
+}
+
+.home_header .nav .home_login_language {
+  display: none;
+  float: right;
+  margin: 16rpx 26rpx 0 0
+}
+
+.home_header .nav .home_login_language i {
+  color: #fff;
+  font-size: 20rpx
+}
+
+.home_header .nav .home_login_language .home_language {
+  font-size: 20rpx;
+  display: inline-block;
+}
+
+.home_header .nav .home_login_language .home_language navigator {
+  font-size: 23rpx;
+  color: #fff;
+  display: inline-block;
+}
+
+.home_header .nav .home_login_language .home_language .home_language_bs {
+  color: #fbc730
+}
+
+.home_header .home_nav_title {
+  width: 100%;
+  position: absolute;
+  top: 202rpx;
+  left: 0;
+  text-align: center
+}
+
+.home_header .home_nav_title text {
+  display: block;
+  font-family: PingFang SC;
+  text-align: center;
+  font-size: 56rpx;
+  font-weight: bold;
+  text-shadow: 2rpx 2rpx 4rpx rgba(0, 0, 0, 0.5);
+  height: 60rpx;
+  line-height: 60rpx
+}
+
+.home_header .home_nav_title p {
+  font-family: PingFang SC;
+  text-align: center;
+  font-size: 22rpx;
+  margin-top: 20rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+.home_header .home_search_bar {
+  width: 88%;
+  position: relative;
+  top: 400rpx;
+  margin: 0 auto
+}
+
+.home_header .home_search_bar .home_search {
+  width: 100%;
+  font-size: 0;
+  position: relative
+}
+
+.home_header .home_search_bar .home_search navigator {
+  width: 100%;
+  height: 77rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.home_header .home_search_bar .home_search view {
+  float: left;
+  width: 88%;
+  height: 77rpx;
+  line-height: 77rpx;
+  border: none;
+  outline: none;
+  border-radius: 5rpx 0 0 5rpx;
+  text-indent: 20rpx;
+  font-size: 21rpx;
+  font-weight: bold;
+  background-color: #fff;
+  color: #bbb;
+}
+
+.home_header .home_search_bar .home_search label {
+  float: right;
+  width: 12%;
+  height: 77rpx;
+  vertical-align: middle;
+  background-color: #fbc730;
+  border-radius: 0 5rpx 5rpx 0;
+  border: none;
+  position: relative
+}
+
+.home_header .home_search_bar .home_search label span {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background: url("https://m.tigerz.nz/img/search@3x.png") center no-repeat;
+  background-size: 40%
+}
+
+.home_header .home_search_bar .home_search_sub {
+  width: 88%;
+  max-height: 180rpx;
+  color: #000;
+  background-color: #fff;
+  text-indent: 20rpx;
+  border-radius: 0 0 5rpx 5rpx;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  top: 70rpx;
+  left: 0;
+  z-index: 999
+}
+
+.home_header .home_search_bar .home_search_sub>p {
+  color: red;
+  font-size: 22rpx;
+  display: none;
+  height: 40rpx;
+  line-height: 40rpx
+}
+
+.home_header .home_search_bar .home_search_sub .home_search_history li, .home_header .home_search_bar .home_search_sub .home_search_simple li {
+  margin-bottom: 10rpx
+}
+
+.home_header .home_search_bar .home_search_sub .home_search_history li:last-of-type, .home_header .home_search_bar .home_search_sub .home_search_simple li:last-of-type {
+  padding-bottom: 10rpx
+}
+
+.home_header .home_search_bar .home_search_sub .home_search_history li a, .home_header .home_search_bar .home_search_sub .home_search_simple li a {
+  display: block;
+  color: #000
+}
+
+.home_header .home_search_bar .home_search_sub .home_search_history li a p:first-of-type, .home_header .home_search_bar .home_search_sub .home_search_simple li a p:first-of-type {
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 18rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #000;
+  word-spacing: 2rpx;
+  letter-spacing: 5rpx
+}
+
+.home_header .home_search_bar .home_search_sub .home_search_history li a p:first-of-type span, .home_header .home_search_bar .home_search_sub .home_search_simple li a p:first-of-type span {
+  margin-right: 10rpx
+}
+
+.home_header .home_search_bar .home_search_sub .home_search_history li a p:last-of-type, .home_header .home_search_bar .home_search_sub .home_search_simple li a p:last-of-type {
+  height: 20rpx;
+  font-size: 16rpx;
+  color: #999;
+  line-height: 20rpx;
+  text-align: left;
+  padding-right: 10rpx
+}
+
+.home_header .home_last_info {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 10
+}
+
+.home_header .home_last_info .hld_intro {
+  width: 100%;
+  height: 104rpx;
+  background-color: rgba(254, 217, 0, 0.2);
+  padding: 20rpx 0
+}
+
+.home_header .home_last_info .hld_intro .hld_title {
+  float: left;
+  width: 45%;
+  height: 64rpx;
+  text-align: center;
+  line-height: 64rpx;
+  font-family: PingFang SC;
+  font-size: 23.8rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+.home_header .home_last_info .hld_intro .hld_line {
+  float: left;
+  width: 2%;
+  height: 100%;
+  background: url("https://m.tigerz.nz/img/index_icon@3x.png") center no-repeat;
+  background-size: contain
+}
+
+.home_header .home_last_info .hld_intro .hld_wrap {
+  width: 53%;
+  height: 100%;
+  text-align: center;
+  overflow: hidden
+}
+
+.home_header .home_last_info .hld_intro .hld_wrap .hld_wrap_static {
+  width: 100000rpx;
+  margin-left: 0;
+  animation: HorizontalScroll 150s linear 1s infinite
+}
+
+.home_header .home_last_info .hld_intro .hld_wrap .hld_wrap_static .hld_static {
+  float: left;
+  font-size: 0
+}
+
+.home_header .home_last_info .hld_intro .hld_wrap .hld_wrap_static .hld_static li {
+  width: 390rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  display: inline-block;
+  font-size: 24rpx
+}
+
+.home_header .home_last_info .hld_intro .hld_wrap .hld_wrap_static .hld_static li span {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold
+}
+
+.home_header .home_last_info .hld_intro .hld_wrap .hld_wrap_static .hld_static li span:last-of-type {
+  color: #41ab14;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  margin-left: 20rpx
+}
+
+@keyframes HorizontalScroll {
+  0% {
+    margin-left: 0
+  }
+  50% {
+    margin-left: -4680rpx
+  }
+  100% {
+    margin-left: -9360rpx
+  }
+}
+
+.home_choose {
+  width: 100%;
+  height: 257rpx;
+  border-top: 2rpx solid #cabc76
+}
+
+.home_choose .home_choose_strip {
+  width: 100%;
+  height: 19rpx;
+  background-color: #ececec
+}
+
+.home_choose ul {
+  width: 100%;
+  height: 238rpx;
+  background-color: #fff;
+  padding: 37rpx 0 30rpx 0
+}
+
+.home_choose ul li {
+  width: 25%;
+  height: 100%;
+  float: left
+}
+
+.home_choose ul li navigator {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #000
+}
+
+.home_choose ul li navigator .choose_strip_img {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: contain
+}
+
+.home_choose ul li navigator p {
+  font-family: Verdana;
+  font-size: 31rpx;
+  color: #666;
+  text-align: center;
+  margin-top: 20rpx
+}
+
+.home_footer {
+  background-color: #eee;
+  padding: 0 40rpx;
+  height: 35%;
+}
+
+.home_footer .footer_nav {
+  display: flex;
+  align-items:flex-end;
+  width: 100%;
+  height: 15%;
+  font-size: 0
+}
+
+.home_footer .footer_nav view {
+  display: inline-block;
+  width: 25%;
+  color: #888;
+  font-size: 28rpx;
+  font-family: PingFang SC
+}
+
+.home_footer .footer_dis {
+  display: block;
+  height: 70%;
+  color: #888;
+  font-family: PingFang SC;
+  font-size: 26rpx;
+  line-height: 44rpx;
+}
+
+.home_footer .footer_phone {
+  height: 15%;
+  display: flex;
+  color: #888;
+  font-family: PingFang SC;
+  font-size: 30rpx;
+  font-weight: normal;
+  align-items: center;
+}
+
+.home_footer .footer_phone span {
+  float: left;
+  background: url("https://m.tigerz.nz/img/phone@3x.png") no-repeat;
+  background-size: contain;
+  width: 27rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+}

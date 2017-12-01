@@ -1,0 +1,28 @@
+<div class="dsie_left">
+    <div class="dsie_left_up">
+        <!--<div class="isDelete">-->
+            <!--<span class="al_marker" ng-bind="lh.status">No Sale</span>-->
+        <!--</div>-->
+        <div class="dsiel_up_btn dsiel_up_left" ng-click="allValue.btnStopTurn('minus')"></div>
+        <div class="dsiel_up_btn dsiel_up_right" ng-click="allValue.btnStopTurn('add')"></div>
+        <div class="desiel_up_wrap">
+            <div class="desiel_img_wrap" ng-repeat="imgData in allValue.allImg track by $index">
+                <div class="desiel_scale_img">
+                    <img ng-src="{{imgDomain}}{{imgData}}" alt="{{allValue.detailLogotitle}}">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="dsie_left_map"></div>
+    <div class="dsie_left_ocupy"></div>
+    <div class="dsie_left_down">
+        <div class="dsiel_down_small">
+            <div class="dsiel_down_smallimgs">
+                <img ng-repeat="sm in allValue.allImg track by $index" ng-src="{{imgDomain}}{{sm}}" ng-mousedown="allValue.stopTurn($index)">
+            </div>
+        </div>
+        <div class="dsiel_down_map" ng-click="allValue.turnJpg()">
+            <p>Map looking for room</p>
+        </div>
+    </div>
+</div>

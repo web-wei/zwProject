@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" id="ng-app">
+<head>
+    <base href="/" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="老虎买房">
+    <meta name="robots" content="all" />
+    <meta name="copyright" content="www.tigerz.nz" />
+    <meta name="renderer" content="webkit" />
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <meta name="keywords" content="新西兰买房,老虎买房,老虎房产,新西兰房产,奥克兰房产,奥克兰买房,奥克兰房价,新西兰投资,新西兰移民,新西兰留学" />
+    <meta name="description" content="老虎买房是新西兰最大的中文房地产买卖信息平台,融合最全面的新西兰投资及新西兰房地产行业在线资讯,为您提供新西兰奥克兰,惠灵顿,基督城等城市最新房屋买卖,农场买卖,商业地产以及新西兰移民等信息。老虎买房,让新西兰买房变得如此简单"/>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>
+        老虎买房|新西兰最专业的房产买卖搜索平台-奥克兰,基督城,皇后镇,惠灵顿,新西兰最大的中文房地产平台,新西兰买房第一搜索引擎,提供最全面的新西兰房产买卖,新西兰房价信息,自住投资,奥克兰,基督城，惠灵顿,皇后镇,房地产资讯
+    </title>
+    <link rel="alternate" media="only screen and (max-width: 640px)" href="http://m.tigerz.nz/index.html">
+    <link rel="shortcut icon" href="http://res.tigerz.nz/imgs/logo.ico"/>
+    <link rel="stylesheet" href="http://res.tigerz.nz/css/reset.css?v=201706200929">
+    <link rel="stylesheet" href="http://res.tigerz.nz/css/index.css?v=201707071806">
+    <link rel="stylesheet" href="http://res.tigerz.nz/css/home.css?v=201707031820">
+    <link rel="stylesheet" href="http://res.tigerz.nz/css/search.css?v=201707031222">
+    <link rel="stylesheet" href="http://res.tigerz.nz/css/detail.css?v=201708071313">
+    <link rel="stylesheet" href="http://res.tigerz.nz/css/house.css?v=201707031222">
+    <link rel="stylesheet" href="http://res.tigerz.nz/css/estimate.css?v=201707031222">
+    <link rel="stylesheet" href="http://res.tigerz.nz/css/auction.css?v=201707031222">
+    <link rel="stylesheet" href="http://res.tigerz.nz/css/user.css?v=201707031222">
+    <!--[if lt IE9]>
+    <script src="http://res.tigerz.nz/framework/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="dataSave"></div>
+<div ng-view class="wrap"></div>
+</body>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?98b74b7f3ddb1c502ca10f723fc80ab1";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-90714030-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<script type="text/javascript" src="http://res.tigerz.nz/framework/jquery-1.12.3.js?v=201708091201"></script>
+<script type="text/javascript" src="http://res.tigerz.nz/framework/angular.min.js?v=201702241133"></script>
+<script type="text/javascript" src="http://res.tigerz.nz/framework/angular-route.js?v=201702241133"></script>
+<script type="text/javascript" src="http://res.tigerz.nz/framework/lazyload.js?v=201702241133"></script>
+
+<script type="text/javascript" src="http://res.tigerz.nz/framework/angular-animate.js?v=201702241133"></script>
+<script type="text/javascript" src="http://res.tigerz.nz/framework/angular-sanitize.min.js?v=201702241133"></script>
+<script src="http://ditu.google.cn/maps/api/js?key=AIzaSyANJd8LvehOZALjsjZnRj8XsK9egZqSNek&sensor=false&libraries=places&language=en" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="http://res.tigerz.nz/framework/markerwithlabel.js?v=201702241133"></script>
+
+<script type="text/javascript" src="http://res.tigerz.nz/js/route.js?v=201708071315"></script>
+<script type="text/javascript" src="http://res.tigerz.nz/js/factory.js?v=201708071315"></script>
+<script type="text/javascript" src="http://res.tigerz.nz/js/directive.js?v=201708071315"></script>
+<script type="text/javascript" src="http://res.tigerz.nz/js/controllers.js?v=201708071315"></script>
+</html>

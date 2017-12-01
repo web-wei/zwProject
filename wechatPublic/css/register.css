@@ -1,0 +1,253 @@
+@font-face {
+  font-family: 'iconfont';
+  /* project id 406657 */
+  src: url('//at.alicdn.com/t/font_406657_bw4fl4ke1hrozuxr.eot');
+  src: url('//at.alicdn.com/t/font_406657_bw4fl4ke1hrozuxr.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_406657_bw4fl4ke1hrozuxr.woff') format('woff'), url('//at.alicdn.com/t/font_406657_bw4fl4ke1hrozuxr.ttf') format('truetype'), url('//at.alicdn.com/t/font_406657_bw4fl4ke1hrozuxr.svg#iconfont') format('svg');
+}
+.register {
+  width: 100%;
+}
+.register .register_header {
+  height: 0.86rem;
+  line-height: 0.86rem;
+  text-align: center;
+  font-size: 0.33rem;
+  color: #354754;
+  background: #E9F3FC;
+}
+.register .register_form {
+  padding: 0 0.42rem 0.38rem 0.42rem;
+  background-color: #ffffff;
+}
+.register .register_form .register_form_hint {
+  height: 0.88rem;
+  padding-top: 0.06rem;
+}
+.register .register_form .register_form_hint p {
+  font-size: 0.26rem;
+  color: #4C5C68;
+}
+.register .register_form .register_form_hint p:first-of-type {
+  line-height: 0.37rem;
+}
+.register .register_form .register_form_hint p:last-of-type {
+  line-height: 0.48rem;
+}
+.register .register_form .register_form_hint p:last-of-type span {
+  font-size: 0.34rem;
+  color: #FF2602;
+}
+.register .register_form .register_form_common {
+  margin-top: 0.27rem;
+  overflow: hidden;
+}
+.register .register_form .register_form_common label {
+  display: block;
+  line-height: 0.37rem;
+  font-size: 0.27rem;
+  color: #4C5C68;
+}
+.register .register_form .register_form_common input {
+  display: block;
+  margin-top: 0.14rem;
+  width: 100%;
+  height: 0.7rem;
+  line-height: 0.7rem;
+  border-radius: 0.02rem;
+  color: #000000;
+  border: 0.02rem solid #D2D9DC;
+  text-indent: 0.2rem;
+}
+.register .register_form .register_form_common input::placeholder {
+  color: #97999b;
+}
+.register .register_form .register_form_common input:focus {
+  outline: none;
+  border-color: #66B6F8;
+}
+.register .register_form .register_form_common .error_common {
+  color: red;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  font-size: 0.2rem;
+  display: none;
+  clear: both;
+}
+.register .register_form .register_form_provinces p,
+.register .register_form .register_form_name p {
+  margin-top: 0.14rem;
+  width: 100%;
+  height: 0.7rem;
+  font-size: 0.27rem;
+  line-height: 0.7rem;
+  border-radius: 0.02rem;
+  color: #000000;
+  border: 0.02rem solid #D2D9DC;
+  text-indent: 0.2rem;
+  background-color: #d8d8d8;
+}
+.register .register_form .register_form_city .city_select {
+  margin-top: 0.14rem;
+  width: 100%;
+  height: 0.7rem;
+  border-radius: 0.02rem;
+  color: #000000;
+  border: 0.02rem solid #D2D9DC;
+  text-indent: 0.2rem;
+}
+.register .register_form .register_form_city .city_select span {
+  line-height: 0.7rem;
+}
+.register .register_form .register_form_city .city_select .city_shi {
+  float: left;
+  font-size: 0.26rem;
+}
+.register .register_form .register_form_city .city_select .city_jiantou {
+  float: right;
+  font-family: 'iconfont';
+  font-size: 0.31rem;
+  margin-right: 0.12rem;
+}
+.register .register_form .register_form_city .city_container {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.register .register_form .register_form_city .city_container .city_container_detail {
+  width: 6.28rem;
+  height: 7.63rem;
+  margin: 2.61rem 0.6rem 0 0.62rem;
+  background-color: #ffffff;
+  padding: 0.66rem 0 0 0.51rem;
+  overflow-y: scroll;
+}
+.register .register_form .register_form_city .city_container .city_container_detail p {
+  margin-bottom: 0.51rem;
+  height: 0.45rem;
+}
+.register .register_form .register_form_city .city_container .city_container_detail p span {
+  float: left;
+  font-size: 0.33rem;
+  height: 0.45rem;
+  line-height: 0.45rem;
+}
+.register .register_form .register_form_city .city_container .city_container_detail p span:first-of-type {
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-right: 0.17rem;
+  border-radius: 50%;
+  border: 0.02rem solid #aaaaaa;
+}
+.register .register_form .register_form_city .city_container .city_container_detail p .city_detail_true {
+  border: none !important;
+  background: url('../data/img/true.png') no-repeat;
+  background-size: contain;
+}
+.register .register_form .register_form_phone input {
+  float: left;
+  width: 63%;
+}
+.register .register_form .register_form_phone .form_phone_send {
+  float: right;
+  width: 35%;
+  margin-top: 0.14rem;
+  height: 0.7rem;
+  line-height: 0.7rem;
+  color: #66B6F8;
+  font-size: 0.25rem;
+  border: 1px solid #D2D9DC;
+  text-align: center;
+}
+.register .register_form .register_form_photoCode {
+  position: relative;
+}
+.register .register_form .register_form_photoCode .photoCode_huan {
+  line-height: 0.37rem;
+  font-size: 0.26rem;
+  color: #4C5C68;
+  margin-top: 0.17rem;
+}
+.register .register_form .register_form_photoCode .photoCode_img {
+  position: absolute;
+  right: 0.2rem;
+  top: 0.61rem;
+  width: 1.45rem;
+  height: 0.45rem;
+}
+.register .register_form .register_form_agreement {
+  margin-top: 0.44rem;
+  font-size: 0.26rem;
+}
+.register .register_form .register_form_agreement .form_agreement_confirm {
+  background: url('../data/img/true.png') left center no-repeat;
+  background-size: 0.28rem;
+}
+.register .register_form .register_form_agreement .form_agreement_confirm #agreement_confirm_checked {
+  display: none;
+}
+.register .register_form .register_form_agreement .form_agreement_confirm span {
+  color: #4C5C68;
+  margin-left: 0.41rem;
+}
+.register .register_form .register_form_agreement .form_agreement_confirm span a {
+  color: #66B6F8;
+  font-size: 0.26rem;
+}
+.register .register_form .register_form_submit {
+  width: 100%;
+  margin-top: 0.37rem;
+}
+.register .register_form .register_form_submit .form_submit {
+  display: block;
+  width: 100%;
+  height: 0.68rem;
+  line-height: 0.68rem;
+  color: #ffffff;
+  background: #66B6F8;
+  border: none;
+}
+.register .register_errorHint {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.register .register_errorHint .register_errorHint_content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  padding: 0.36rem 0.46rem;
+  width: 6.12rem;
+  height: 3.32rem;
+  background-color: #ffffff;
+  border-radius: 0.06rem;
+}
+.register .register_errorHint .register_errorHint_content p {
+  height: 0.56rem;
+  font-size: 0.4rem;
+  color: #000000;
+}
+.register .register_errorHint .register_errorHint_content div {
+  margin-top: 0.21rem;
+  line-height: 0.44rem;
+  font-size: 0.31rem;
+  color: #7B7B7B;
+}
+.register .register_errorHint .register_errorHint_content span {
+  position: absolute;
+  right: 0.65rem;
+  bottom: 0.5rem;
+  font-size: 0.3rem;
+  color: #67B6F7;
+}

@@ -1,0 +1,188 @@
+page {
+  font-family: Arial;
+  background-color: #f0f0f0;
+}
+.search_content {
+  width: 100%;
+}
+.search_content .search_header {
+  height: 100rpx;
+  border-top: 1rpx solid #e0e0e0;
+  border-bottom: 1rpx solid #e0e0e0;
+  background-color: #fff;
+  position: relative;
+}
+.search_content .search_header .search_header_view{
+  position: absolute;
+  top: 50%;
+  left: 30rpx;
+  margin-top: -30rpx;
+  width: 80%;
+  height: 61rpx;
+  background: #f4f4f4 url(https://m.tigerz.nz/img/search@3x.png) 21rpx center no-repeat;
+  background-size: 36rpx;
+  border-radius: 6rpx;
+  padding-left: 80rpx;
+}
+.search_content .search_header .search_header_view input {
+  height: 61rpx;
+  line-height: 61rpx;
+  border: none;
+  outline: none;
+  color: #989898;
+  font-size: 27rpx;
+}
+.search_content .search_header .search_header_chahao {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 16%;
+  height: 100rpx;
+  background: url(https://m.tigerz.nz/img/guanbilist@3x.png) center no-repeat;
+  background-size: 33rpx;
+}
+.search_content .search_top {
+  margin-bottom: 26rpx;
+  height: 382rpx;
+  background-color: #fff;
+  padding: 22rpx 22rpx 33rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+}
+.search_content .search_top text {
+  height: 42rpx;
+  line-height: 42rpx;
+  font-size: 30rpx;
+  color: #3c3c3c;
+}
+.search_content .search_top .serach_top_trending {
+  padding-left: 18rpx;
+}
+.search_content .search_top .serach_top_trending ul li {
+  float: left;
+  width: 210rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  text-align: center;
+  background-color: #f4f4f4;
+  margin: 12rpx 11rpx 0 0;
+  border-radius: 6rpx;
+}
+.search_content .search_top .serach_top_trending ul li navigator {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 26rpx;
+  color: #5a616a;
+}
+.search_content .search_top .serach_top_trending ul li:first-of-type,
+.search_content .search_top .serach_top_trending ul li:nth-of-type(2) {
+  width: 260rpx;
+}
+.search_content .search_top .serach_top_trending ul li:nth-of-type(3) {
+  width: 297rpx;
+}
+.search_content .search_top .serach_top_trending ul li:nth-of-type(4) {
+  width: 268rpx;
+}
+.search_content .search_history {
+  background-color: #fff;
+  border-top: 1rpx solid #e0e0e0;
+  text-indent: 22rpx;
+}
+.search_content .search_history text {
+  display: block;
+  height: 74rpx;
+  line-height: 74rpx;
+  font-size: 30rpx;
+  color: #3c3c3c;
+  border-bottom: 1rpx solid #e0e0e0;
+}
+.search_content .search_history .search_history_item ul {
+  text-indent: 40rpx;
+}
+.search_content .search_history .search_history_item ul li {
+  height: 120rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+  padding: 10rpx 0;
+}
+.search_content .search_history .search_history_item ul li view {
+  display: block;
+  color: #5b616a;
+}
+.search_content .search_history .search_history_item ul li view p:first-of-type {
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  color: #3c3c3c;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.search_content .search_history .search_history_item ul li view p:last-of-type {
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 25rpx;
+  color: #a7a7a7;
+}
+.search_content .search_history .search_history_item ul li view p:last-of-type span:first-of-type {
+  float: left;
+}
+.search_content .search_history .search_history_item ul li view p:last-of-type span:last-of-type {
+  float: right;
+  margin-right: 40rpx;
+}
+.search_content .search_clearHistory {
+  text-align: center;
+  margin-top: 20rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #6a889f;
+  font-size: 30rpx;
+}
+.search_content .search_new {
+  background-color: #fff;
+}
+.search_content .search_new ul {
+  display: block;
+  text-indent: 40rpx;
+}
+.search_content .search_new ul > view {
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  color: #fb5640;
+}
+.search_content .search_new ul li {
+  display: block;
+  height: 120rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+  padding: 10rpx 0;
+}
+.search_content .search_new ul li view {
+  display: block;
+  color: #5b616a;
+  width: 100%;
+  height: 100%;
+}
+.search_content .search_new ul li view p:first-of-type {
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  color: #3c3c3c;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.search_content .search_new ul li view p:last-of-type {
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 25rpx;
+  color: #5b616a;
+}
+.search_content .search_new ul li view p:last-of-type span:first-of-type {
+  float: left;
+}
+.search_content .search_new ul li view p:last-of-type span:last-of-type {
+  float: right;
+  margin-right: 40rpx;
+}

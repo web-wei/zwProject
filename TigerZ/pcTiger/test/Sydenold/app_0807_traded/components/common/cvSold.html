@@ -1,0 +1,17 @@
+<div class="daii_history_info">
+    <table>
+        <tr>
+            <td>Date</td>
+            <td>Event</td>
+            <td>Price</td>
+            <!--<td>Appreciation</td>-->
+        </tr>
+    </table>
+    <table>
+        <tr ng-repeat="x in allValue.cvEventData">
+            <td ng-bind="x.cvTime">Oct,14 2016</td>
+            <td ng-bind="x.type"></td>
+            <td ng-bind="x.price | currency:number:0">$1,876,687</td>
+        </tr>
+    </table>
+</div>

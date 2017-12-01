@@ -1,0 +1,1225 @@
+.search_header {
+  width: 12.8rem;
+  height: 50px;
+  background: #2b2b2b;
+}
+.search_header .search_logo {
+  width: 2.74rem;
+  height: 100%;
+  float: left;
+  margin-left: .4rem;
+}
+.search_header .search_logo h2 {
+  float: left;
+  margin-right: .14rem;
+  width: 1.6rem;
+  height: 50px;
+  background: url("http://res.tigerz.nz/imgs/logo1.png") left center no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+  font-size: 0;
+}
+.search_header .search_logo .search_addr {
+  cursor: pointer;
+  width: 1rem;
+  height: 15px;
+  line-height: 15px;
+  position: relative;
+  float: left;
+  margin-top: 23px;
+}
+.search_header .search_logo .search_addr .search_map_icon {
+  display: inline-block;
+  width: .11rem;
+  height: .14rem;
+  background: url("http://res.tigerz.nz/imgs/addr.png") no-repeat;
+  background-size: cover;
+  margin-right: 3px;
+}
+.search_header .search_logo .search_addr .search_current_city {
+  font-size: .14rem;
+  color: #ffffff;
+}
+.search_header .search_logo .search_addr .search_addr_choice {
+  width: 1rem;
+  position: absolute;
+  left: 0;
+  top: .15rem;
+  text-indent: .1rem;
+  display: none;
+}
+.search_header .search_logo .search_addr .search_addr_choice li {
+  line-height: .3rem;
+  color: #ffffff;
+  cursor: pointer;
+}
+.search_header .search_bar {
+  height: 30px;
+  width: 3.7rem;
+  float: left;
+  margin: 10px 0 0 4.3rem;
+}
+.search_header .search_bar .search_main {
+  float: left;
+  width: 3.7rem;
+  height: 30px;
+  margin-right: .12rem;
+  position: relative;
+}
+.search_header .search_bar .search_main .search_main_box {
+  float: left;
+  width: 3rem;
+  height: 30px;
+  background: #fff;
+  border-radius: .03rem 0 0 .03rem;
+}
+.search_header .search_bar .search_main .search_main_box input {
+  width: 2.8rem;
+  height: 24px;
+  line-height: 24px;
+  margin: 3px 0 0 .1rem;
+  outline: none;
+  border: none;
+  font-size: .12rem;
+}
+.search_header .search_bar .search_main .search_icon_wrap {
+  float: left;
+  width: .6rem;
+  height: 30px;
+  border-radius: 0 .03rem .03rem 0;
+  background: #ffd11c;
+  cursor: pointer;
+  transition: all linear .3s;
+}
+.search_header .search_bar .search_main .search_icon_wrap a {
+  display: block;
+  width: .6rem;
+  height: 30px;
+}
+.search_header .search_bar .search_main .search_icon_wrap a .search_icon {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 6px 0 0 .22rem;
+  background: url("http://res.tigerz.nz/imgs/search.png") no-repeat;
+  background-size: 100%;
+}
+.search_header .search_bar .search_main .search_icon_wrap:hover {
+  background: #ffb900;
+}
+.search_header .search_bar .search_main .search_reminder {
+  position: absolute;
+  left: 0;
+  top: 28px;
+  width: 3.6rem;
+  max-height: 200px;
+  z-index: 99;
+  border-radius: 0 0 .03rem .03rem;
+  background: #ffffff;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.search_header .search_bar .search_main .search_reminder ul {
+  width: 100%;
+}
+.search_header .search_bar .search_main .search_reminder ul li {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  text-indent: .1rem;
+  font-size: .12rem;
+  color: #000;
+}
+.search_header .search_bar .search_main .search_reminder ul li a {
+  display: block;
+  line-height: 30px;
+  text-indent: .1rem;
+  font-size: .12rem;
+  color: #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.search_header .search_bar .search_main .search_reminder ul li a span:nth-of-type(1) {
+  display: block;
+  max-width: 1.55rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  float: left;
+}
+.search_header .search_bar .search_main .search_reminder ul li a span:nth-of-type(2) {
+  text-indent: 0;
+  float: left;
+}
+.search_header .search_bar .search_main .search_reminder ul li a span:nth-of-type(3) {
+  float: right;
+  margin-right: .05rem;
+  font-weight: bold;
+}
+.search_header .search_bar .search_main .search_reminder ul li:hover {
+  background: #f2f3f5;
+}
+.search_header .search_bar .search_main .search_reminder ul li:hover a span {
+  font-weight: bold;
+}
+.search_header .search_bar .search_main .search_reminder .searchPage_simple {
+  display: none;
+}
+.search_header .search_bar .search_main .search_reminder .searchPage_error {
+  display: none;
+  color: #ff0000;
+  font-size: .14rem;
+  text-indent: .1rem;
+  line-height: .3rem;
+  height: .3rem;
+  width: 100%;
+  cursor: default;
+}
+.search_header .search_bar .search_select {
+  width: 4.26rem;
+  float: left;
+  height: 40px;
+}
+.search_header .search_bar .search_select .search_select_item {
+  width: 1.2rem;
+  float: left;
+  height: 40px;
+  position: relative;
+  margin-right: .2rem;
+}
+.search_header .search_bar .search_select .search_select_item .search_select {
+  width: 1.3rem;
+  height: 40px;
+  line-height: 40px;
+  text-indent: .18rem;
+  font-size: .14rem;
+  border-radius: .03rem;
+  background: #ffffff;
+  cursor: pointer;
+}
+.search_header .search_bar .search_select .search_select_item .search_select .search_select_icon {
+  float: right;
+  margin: 15px .2rem 0 0;
+  width: .12rem;
+  height: .09rem;
+  background: url("http://res.tigerz.nz/imgs/select.png") no-repeat;
+  background-size: 100%;
+}
+.search_header .search_bar .search_select .search_select_item .search_select_option {
+  position: absolute;
+  z-index: 999;
+  left: 0;
+  top: 38px;
+  width: 1.3rem;
+  line-height: 36px;
+  font-size: .14rem;
+  text-indent: .18rem;
+  background: #ffffff;
+  display: none;
+}
+.search_header .search_bar .search_select .search_select_item .search_select_option > p:hover {
+  background: #8b8b8b;
+}
+.search_header .search_login {
+  float: left;
+  height: 70px;
+  line-height: 70px;
+  color: #ffffff;
+  font-size: .12rem;
+  cursor: default;
+}
+.search_header .search_login span {
+  cursor: pointer;
+}
+.search_header .search_language_wrap {
+  float: right;
+  margin-right: .4rem;
+  height: 50px;
+  line-height: 50px;
+  color: #ffffff;
+}
+.search_header .search_language_wrap a {
+  color: #ffffff;
+  font-size: .14rem;
+  height: 50px;
+  line-height: 50px;
+}
+.search_header .search_language_wrap i {
+  margin: 0 .1rem;
+}
+.search_main_part {
+  width: 12.8rem;
+  position: relative;
+}
+.search_main_part .search_list_wrap {
+  box-sizing: border-box;
+  width: 4.8rem;
+  height: 100%;
+  float: left;
+  overflow-y: hidden;
+  padding: .1px;
+}
+.search_main_part .search_list_wrap .sl_part {
+  height: 100%;
+  width: 4.8rem;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 9;
+  background: #ffffff;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap {
+  width: 4.8rem;
+  height: 137px;
+  box-sizing: border-box;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul {
+  width: 100%;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_tul_li {
+  width: 100%;
+  height: 87px;
+  border-bottom: 1px solid #ebebeb;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title {
+  width: 4.1rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_city {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  box-sizing: border-box;
+  width: 1.95rem;
+  float: left;
+  height: 34px;
+  margin-top: 5px;
+  border: 1px solid #ebebeb;
+  position: relative;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_city p {
+  text-indent: 10px;
+  font-size: .16rem;
+  line-height: 32px;
+  width: 100%;
+  background: #ffffff;
+  cursor: default;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_city .search_select_cityItem {
+  display: none;
+  width: 1.95rem;
+  box-sizing: border-box;
+  position: absolute;
+  left: -1px;
+  top: 32px;
+  border: 1px solid #ebebeb;
+  z-index: 999;
+  max-height: 256px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_city .search_select_cityItem p:hover {
+  background: #f0a901;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_city .select_city_tri {
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top: 5px solid rgba(43, 43, 43, 0.8);
+  right: 15px;
+  top: 15px;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_city .select_open_tri {
+  border: 5px solid transparent;
+  border-bottom: 5px solid #2b2b2b;
+  top: 10px;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_suburb {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  box-sizing: border-box;
+  width: 1.95rem;
+  float: left;
+  height: 34px;
+  margin: 4px 0 0 .2rem;
+  border: 1px solid #ebebeb;
+  position: relative;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_suburb p {
+  text-indent: 10px;
+  font-size: .16rem;
+  line-height: 32px;
+  width: 100%;
+  background: #ffffff;
+  cursor: default;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_suburb .search_select_suburbItem {
+  display: none;
+  width: 1.95rem;
+  box-sizing: border-box;
+  position: absolute;
+  left: -1px;
+  top: 32px;
+  border: 1px solid #ebebeb;
+  z-index: 999;
+  max-height: 320px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_suburb .search_select_suburbItem p:hover {
+  background: #f0a901;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_suburb .select_suburb_tri {
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top: 5px solid rgba(43, 43, 43, 0.8);
+  right: 15px;
+  top: 15px;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_suburb .select_open_tri {
+  border: 5px solid transparent;
+  border-bottom: 5px solid #2b2b2b;
+  top: 10px;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_rooms {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  box-sizing: border-box;
+  width: 1.95rem;
+  height: 34px;
+  float: left;
+  margin-top: 5px;
+  border: 1px solid #ebebeb;
+  position: relative;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_rooms p {
+  text-indent: 10px;
+  font-size: .16rem;
+  line-height: 32px;
+  width: 100%;
+  background: #ffffff;
+  cursor: default;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_rooms .search_select_roomsItem {
+  display: none;
+  width: 1.95rem;
+  box-sizing: border-box;
+  position: absolute;
+  left: -1px;
+  top: 32px;
+  border: 1px solid #ebebeb;
+  z-index: 999;
+  max-height: 256px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_rooms .search_select_roomsItem p {
+  width: 100%;
+  background-color: #ffffff;
+  background-position: 7px 8px;
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
+  height: 30px;
+  cursor: pointer;
+  text-indent: 33px;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_rooms .search_select_roomsItem .checked {
+  background-image: url("http://res.tigerz.nz/imgs/checked_box.png");
+  -moz-background-image: url("http://res.tigerz.nz/imgs/checked_box.png");
+  -o-background-image: url("http://res.tigerz.nz/imgs/checked_box.png");
+  -webkit-background-image: url("http://res.tigerz.nz/imgs/checked_box.png");
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_rooms .search_select_roomsItem .uncheck {
+  background-image: url("http://res.tigerz.nz/imgs/uncheck_box.png");
+  -moz-background-image: url("http://res.tigerz.nz/imgs/uncheck_box.png");
+  -o-background-image: url("http://res.tigerz.nz/imgs/uncheck_box.png");
+  -webkit-background-image: url("http://res.tigerz.nz/imgs/uncheck_box.png");
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_rooms .search_select_roomsItem p:hover {
+  background-color: #f0a901;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_rooms .select_rooms_tri {
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top: 5px solid rgba(43, 43, 43, 0.8);
+  right: 15px;
+  top: 15px;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_rooms .select_open_tri {
+  border: 5px solid transparent;
+  border-bottom: 5px solid #2b2b2b;
+  top: 10px;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_school {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  box-sizing: border-box;
+  width: 1.95rem;
+  float: left;
+  height: 34px;
+  margin: 4px 0 0 .2rem;
+  border: 1px solid #ebebeb;
+  position: relative;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_school p {
+  text-indent: 10px;
+  font-size: .16rem;
+  line-height: 32px;
+  width: 100%;
+  background: #ffffff;
+  cursor: default;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_school .select_school_show {
+  width: 1.7rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_school .search_select_schoolItem {
+  display: none;
+  width: 1.95rem;
+  box-sizing: border-box;
+  position: absolute;
+  left: -1px;
+  top: 32px;
+  border: 1px solid #ebebeb;
+  z-index: 999;
+  max-height: 320px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_school .search_select_schoolItem p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_school .search_select_schoolItem p:hover {
+  background: #f0a901;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_school .select_school_tri {
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top: 5px solid rgba(43, 43, 43, 0.8);
+  right: 15px;
+  top: 15px;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_title .search_select_school .select_open_tri {
+  border: 5px solid transparent;
+  border-bottom: 5px solid #2b2b2b;
+  top: 10px;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_nav {
+  width: 4.08rem;
+  height: 45px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_nav ol {
+  float: left;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_nav ol li {
+  box-sizing: border-box;
+  float: left;
+  height: 45px;
+  line-height: 45px;
+  margin-right: .18rem;
+  font-size: .14rem;
+  color: #2b2b2b;
+  cursor: pointer;
+  position: relative;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_nav ol li:hover {
+  border-bottom: 2px solid #ffd801;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_nav ol .slp_nav_actived {
+  border-bottom: 2px solid #ffd801;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_nav ol .nav_price i {
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-width: 3px;
+  border-style: solid;
+  right: -9px;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_nav ol .nav_price .priceDown {
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  border-bottom-color: gray;
+  top: 16px;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_nav ol .nav_price .priceUp {
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: gray;
+  top: 24px;
+}
+.search_main_part .search_list_wrap .sl_part .slp_title_wrap .slp_tul .slp_nav span {
+  float: right;
+  height: 45px;
+  line-height: 45px;
+  font-size: .14rem;
+  cursor: default;
+}
+.search_main_part .search_list_wrap .sl_part .slp_list {
+  overflow-x: hidden;
+  width: 4.8rem;
+  background: #ffffff;
+  overflow-y: scroll;
+  padding: .1px;
+  position: relative;
+}
+.search_main_part .search_list_wrap .sl_part .slp_list ul {
+  width: 4rem;
+  margin: 0 auto 40px auto;
+}
+.search_main_part .search_list_wrap .sl_part .slp_list ul li {
+  cursor: pointer;
+  border-bottom: 1px solid #ebebeb;
+  overflow: hidden;
+  transition: all linear .3s;
+  cursor: default;
+}
+.search_main_part .search_list_wrap .sl_part .slp_list ul li .slp_list_img {
+  width: 100%;
+}
+.search_main_part .search_list_wrap .sl_part .slp_list ul li .slp_list_img a {
+  float: left;
+  width: 1.2rem;
+  margin: .14rem .2rem 0 0;
+  border-radius: .04rem;
+  cursor: pointer;
+}
+.search_main_part .search_list_wrap .sl_part .slp_list ul li .slp_list_img a img {
+  float: left;
+  width: 1.2rem;
+  width: 100%;
+  border-radius: .04rem;
+}
+.search_main_part .search_list_wrap .sl_part .slp_list ul li .slp_list_img .slp_list_dis {
+  float: left;
+  width: 2.5rem;
+  margin-top: .14rem;
+}
+.search_main_part .search_list_wrap .sl_part .slp_list ul li .slp_list_img .slp_list_dis .slpld_title {
+  width: 100%;
+  font-size: .18rem;
+  color: #2b2b2b;
+  height: .2rem;
+  line-height: .2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.search_main_part .search_list_wrap .sl_part .slp_list ul li .slp_list_img .slp_list_dis .slpld_title:hover {
+  text-decoration: underline;
+}
+.search_main_part .search_list_wrap .sl_part .slp_list ul li .slp_list_img .slp_list_dis .slpld_price {
+  font-size: .2rem;
+  color: #2b2b2b;
+  line-height: .3rem;
+}
+.search_main_part .search_list_wrap .sl_part .slp_list ul li .slp_list_img .slp_list_dis .slpld_addr {
+  font-size: .12rem;
+  height: .25rem;
+  line-height: .25rem;
+  color: #bbbbbb;
+  border-bottom: 1px solid #ebebeb;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.search_main_part .search_list_wrap .sl_part .slp_list ul li .slp_list_img .slp_list_dis .slpld_info {
+  height: .3rem;
+  line-height: .3rem;
+  padding: 0.1px;
+}
+.search_main_part .search_list_wrap .sl_part .slp_list ul li .slp_list_img .slp_list_dis .slpld_info span {
+  float: left;
+  color: #8b8b8b;
+  font-size: .12rem;
+  height: .3rem;
+  line-height: .3rem;
+}
+.search_main_part .search_list_wrap .sl_part .slp_list ul li .slp_list_img .slp_list_dis .slpld_info .slpldi_bed {
+  width: .18rem;
+  height: .14rem;
+  background: url("http://res.tigerz.nz/imgs/bed.png") no-repeat;
+  background-size: cover;
+  margin: .07rem .1rem 0 0;
+}
+.search_main_part .search_list_wrap .sl_part .slp_list ul li .slp_list_img .slp_list_dis .slpld_info .slpldi_bath {
+  width: .13rem;
+  height: .12rem;
+  background: url("http://res.tigerz.nz/imgs/bath.png") no-repeat;
+  background-size: cover;
+  margin: .08rem .1rem 0 .2rem;
+}
+.search_main_part .search_list_wrap .sl_part .slp_list ul li .slp_list_img .slp_list_dis .slpld_info .slpldi_num {
+  float: right;
+}
+.search_main_part .search_list_wrap .sl_part .slp_list ul li .slp_list_img .slp_list_dis .slpld_info .slpldi_num i {
+  font-style: normal;
+}
+.search_main_part .search_list_wrap .sl_part .slp_list ul li:hover {
+  background: rgba(232, 232, 232, 0.4);
+}
+.search_main_part .search_list_wrap .sl_part .slp_list .slp_list_load {
+  position: fixed;
+  width: 4.8rem;
+  background: rgba(255, 255, 255, 0.7);
+  bottom: 0;
+  z-index: 9999;
+}
+.search_main_part .search_list_wrap .sl_part .slp_list .slp_list_load img {
+  width: .6rem;
+  height: .6rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.search_main_part .search_list_wrap .sl_part .slp_list .slp_more_btn {
+  height: 30px;
+  cursor: pointer;
+  width: 4.7rem;
+  background: #e9e9e9;
+  text-align: center;
+  line-height: .38rem;
+  font-size: .16rem;
+  color: #2b2b2b;
+  position: fixed;
+  bottom: 0;
+  z-index: 99;
+}
+.search_main_part .search_list_wrap .sl_part .slp_list .slp_more_btn .slp_more_page {
+  width: 50%;
+  margin-left: 5%;
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  text-align: left;
+  font-weight: bold;
+}
+.search_main_part .search_list_wrap .sl_part .slp_list .slp_more_btn .slp_more_next {
+  width: 40%;
+  float: right;
+}
+.search_main_part .search_list_wrap .sl_part .slp_list .slp_more_btn .slp_more_next .slp_next {
+  width: 70px;
+  float: right;
+  border: 1px solid #ccc;
+  height: 20px;
+  background: #ffffff;
+  text-align: center;
+  line-height: 20px;
+  font-size: .14rem;
+  margin: 3px 2% 0 0;
+}
+.search_main_part .search_list_wrap .sl_part .slp_list .slp_more_btn .slp_more_next .slp_pre {
+  float: left;
+  margin-top: 3px;
+  width: 70px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  border: 1px solid #ccc;
+  background: #ffffff;
+  display: none;
+}
+.search_main_part .search_list_wrap .sl_part .slp_list .slp_more_btn .slp_more_next .slp_next_pro {
+  width: 70px;
+  float: right;
+  border: 1px solid #ccc;
+  height: 20px;
+  background: #ffffff;
+  text-align: center;
+  line-height: 20px;
+  font-size: .14rem;
+  margin: 3px 2% 0 0;
+  color: #000;
+}
+.search_main_part .search_list_wrap .sl_part .slp_list .slp_more_btn .slp_more_next .slp_pre_pro {
+  float: left;
+  margin-top: 3px;
+  width: 70px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  border: 1px solid #ccc;
+  background: #ffffff;
+  color: #000;
+}
+.search_main_part .search_list_wrap .sl_part .slp_list .showBtns {
+  display: none;
+}
+.search_main_part .search_map {
+  box-sizing: border-box;
+  float: left;
+  width: 8rem;
+  height: 100%;
+}
+.search_main_part .search_loading_wrap {
+  display: none;
+  position: absolute;
+  left: 4.9rem;
+  top: 50px;
+  width: 220px;
+  height: 46px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: .03rem;
+}
+.search_main_part .search_loading_wrap p {
+  text-indent: 10px;
+  margin-top: 5px;
+}
+.search_main_part .search_loading_wrap span {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+.search_main_part .search_loading_wrap span i {
+  font-style: normal;
+}
+.search_main_part .search_loading_wrap .loading_wrap {
+  width: 200px;
+  height: 3px;
+  margin: 7px auto;
+  background: #f8f8f7;
+  border-radius: 3px;
+}
+.search_main_part .search_loading_wrap .loading_wrap .loading_item {
+  width: 40px;
+  height: 3px;
+  border-radius: 3px;
+  background: #f0a901;
+}
+.search_main_part .search_safe_wrap {
+  position: absolute;
+  left: 6.3rem;
+  top: 5px;
+  max-width: 300px;
+  height: 50px;
+}
+.search_main_part .search_safe_wrap .search_safe_icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 320px;
+  height: 50px;
+  font-size: 14px;
+  background: #ffffff;
+  text-align: center;
+  color: #F36320;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.search_main_part .search_safe_wrap .search_safe_icon figure {
+  float: left;
+  width: 80px;
+  height: 50px;
+  transition: all linear 300ms;
+}
+.search_main_part .search_safe_wrap .search_safe_icon figure i {
+  width: 25px;
+  height: 25px;
+  display: block;
+  background: url("http://res.tigerz.nz/imgs/Security.png") no-repeat;
+  background-size: 100%;
+  margin: 4px 0 0 27.5px;
+}
+.search_main_part .search_safe_wrap .search_safe_icon figure .hotel_icon {
+  background: url("http://res.tigerz.nz/imgs/hotel.png") no-repeat;
+  background-size: 100%;
+}
+.search_main_part .search_safe_wrap .search_safe_icon figure .hospital_icon {
+  background: url("http://res.tigerz.nz/imgs/hospital.png") no-repeat;
+  background-size: 100%;
+}
+.search_main_part .search_safe_wrap .search_safe_icon figure .supermarket_icon {
+  background: url("http://res.tigerz.nz/imgs/supermarket.png") no-repeat;
+  background-size: 100%;
+}
+.search_main_part .search_safe_wrap .search_safe_icon figure figcaption {
+  height: 25px;
+  width: 100%;
+  font-size: 12px;
+  color: #2b2b2b;
+  text-align: center;
+  line-height: 25px;
+  margin-top: -3px;
+}
+.search_main_part .search_safe_wrap .search_safe_icon figure:hover {
+  background: rgba(221, 221, 221, 0.5);
+}
+.search_main_part .search_safe_wrap .search_safe_display {
+  background: #ffffff;
+  width: 500px;
+  height: 50px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  border-radius: 3px;
+}
+.search_main_part .search_safe_wrap .search_safe_display .search_safe_close {
+  float: left;
+  width: 50px;
+  height: 50px;
+  border-right: 1px solid #b0afaf;
+  cursor: pointer;
+  position: relative;
+  transition: all linear 300ms;
+}
+.search_main_part .search_safe_wrap .search_safe_display .search_safe_close span {
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 1px;
+  background: #2b2b2b;
+  left: 15px;
+  top: 24px;
+}
+.search_main_part .search_safe_wrap .search_safe_display .search_safe_close span:nth-of-type(1) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.search_main_part .search_safe_wrap .search_safe_display .search_safe_close span:nth-of-type(2) {
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+.search_main_part .search_safe_wrap .search_safe_display .search_safe_close:hover {
+  background: rgba(221, 221, 221, 0.5);
+}
+.search_main_part .search_safe_wrap .search_safe_display .search_safe_dis {
+  float: left;
+  width: 449px;
+}
+.search_main_part .search_safe_wrap .search_safe_display .search_safe_dis .safe_pic {
+  width: 449px;
+  height: 25px;
+}
+.search_main_part .search_safe_wrap .search_safe_display .search_safe_dis .safe_pic i {
+  display: inline-block;
+  width: 60px;
+  height: 10px;
+  background: #20c063;
+}
+.search_main_part .search_safe_wrap .search_safe_display .search_safe_dis .safe_pic i:nth-of-type(1) {
+  margin-left: 12px;
+}
+.search_main_part .search_safe_wrap .search_safe_display .search_safe_dis .safe_pic i:nth-of-type(2) {
+  background: #8fce36;
+}
+.search_main_part .search_safe_wrap .search_safe_display .search_safe_dis .safe_pic i:nth-of-type(3) {
+  background: #ffdc0a;
+}
+.search_main_part .search_safe_wrap .search_safe_display .search_safe_dis .safe_pic i:nth-of-type(4) {
+  background: #fc951e;
+}
+.search_main_part .search_safe_wrap .search_safe_display .search_safe_dis .safe_pic i:nth-of-type(5) {
+  background: #f94e32;
+  margin-right: 12px;
+}
+.search_main_part .search_safe_wrap .search_safe_display .search_safe_dis .safe_pic span {
+  font-size: 13px;
+}
+.search_main_part .search_safe_wrap .search_safe_display .search_safe_dis .safe_pic span:nth-of-type(1) {
+  margin-left: 19px;
+}
+.search_main_part .search_safe_wrap .search_safe_display .search_safe_dis .safe_dis {
+  width: 449px;
+  height: 25px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 25px;
+  text-align: center;
+}
+.search_main_part .search_safe_wrap .search_hotel_display {
+  background: #ffffff;
+  width: 500px;
+  height: 50px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  border-radius: 3px;
+}
+.search_main_part .search_safe_wrap .search_hotel_display .search_hotel_close {
+  float: left;
+  width: 50px;
+  height: 50px;
+  border-right: 1px solid #b0afaf;
+  cursor: pointer;
+  position: relative;
+  transition: all linear 300ms;
+}
+.search_main_part .search_safe_wrap .search_hotel_display .search_hotel_close span {
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 1px;
+  background: #2b2b2b;
+  left: 15px;
+  top: 24px;
+}
+.search_main_part .search_safe_wrap .search_hotel_display .search_hotel_close span:nth-of-type(1) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.search_main_part .search_safe_wrap .search_hotel_display .search_hotel_close span:nth-of-type(2) {
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+.search_main_part .search_safe_wrap .search_hotel_display .search_hotel_close:hover {
+  background: rgba(221, 221, 221, 0.5);
+}
+.search_main_part .search_safe_wrap .search_hotel_display .search_hotel_dis {
+  float: left;
+  width: 449px;
+}
+.search_main_part .search_safe_wrap .search_hotel_display .search_hotel_dis .hotel_dis {
+  width: 449px;
+  height: 25px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 25px;
+  text-align: center;
+}
+.search_main_part .search_safe_wrap .search_hotel_display .search_hotel_dis .hotel_pic {
+  width: 449px;
+  height: 25px;
+  text-align: center;
+}
+.search_main_part .search_safe_wrap .search_hotel_display .search_hotel_dis .hotel_pic i {
+  display: inline-block;
+  margin-right: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #3c8df6;
+}
+.search_main_part .search_safe_wrap .search_hotel_display .search_hotel_dis .hotel_pic span {
+  font-size: 13px;
+}
+.search_main_part .search_safe_wrap .search_hospital_display {
+  background: #ffffff;
+  width: 500px;
+  height: 50px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  border-radius: 3px;
+}
+.search_main_part .search_safe_wrap .search_hospital_display .search_hospital_close {
+  float: left;
+  width: 50px;
+  height: 50px;
+  border-right: 1px solid #b0afaf;
+  cursor: pointer;
+  position: relative;
+  transition: all linear 300ms;
+}
+.search_main_part .search_safe_wrap .search_hospital_display .search_hospital_close span {
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 1px;
+  background: #2b2b2b;
+  left: 15px;
+  top: 24px;
+}
+.search_main_part .search_safe_wrap .search_hospital_display .search_hospital_close span:nth-of-type(1) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.search_main_part .search_safe_wrap .search_hospital_display .search_hospital_close span:nth-of-type(2) {
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+.search_main_part .search_safe_wrap .search_hospital_display .search_hospital_close:hover {
+  background: rgba(221, 221, 221, 0.5);
+}
+.search_main_part .search_safe_wrap .search_hospital_display .search_hospital_dis {
+  float: left;
+  width: 449px;
+}
+.search_main_part .search_safe_wrap .search_hospital_display .search_hospital_dis .hospital_dis {
+  width: 449px;
+  height: 25px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 25px;
+  text-align: center;
+}
+.search_main_part .search_safe_wrap .search_hospital_display .search_hospital_dis .hospital_pic {
+  width: 449px;
+  height: 25px;
+  text-align: center;
+}
+.search_main_part .search_safe_wrap .search_hospital_display .search_hospital_dis .hospital_pic i {
+  display: inline-block;
+  margin-right: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #26cf5c;
+}
+.search_main_part .search_safe_wrap .search_hospital_display .search_hospital_dis .hospital_pic span {
+  font-size: 13px;
+}
+.search_main_part .search_safe_wrap .search_supermarket_display {
+  background: #ffffff;
+  width: 500px;
+  height: 50px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  border-radius: 3px;
+}
+.search_main_part .search_safe_wrap .search_supermarket_display .search_supermarket_close {
+  float: left;
+  width: 50px;
+  height: 50px;
+  border-right: 1px solid #b0afaf;
+  cursor: pointer;
+  position: relative;
+  transition: all linear 300ms;
+}
+.search_main_part .search_safe_wrap .search_supermarket_display .search_supermarket_close span {
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 1px;
+  background: #2b2b2b;
+  left: 15px;
+  top: 24px;
+}
+.search_main_part .search_safe_wrap .search_supermarket_display .search_supermarket_close span:nth-of-type(1) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.search_main_part .search_safe_wrap .search_supermarket_display .search_supermarket_close span:nth-of-type(2) {
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+.search_main_part .search_safe_wrap .search_supermarket_display .search_supermarket_close:hover {
+  background: rgba(221, 221, 221, 0.5);
+}
+.search_main_part .search_safe_wrap .search_supermarket_display .search_supermarket_dis {
+  float: left;
+  width: 449px;
+}
+.search_main_part .search_safe_wrap .search_supermarket_display .search_supermarket_dis .supermarket_dis {
+  width: 449px;
+  height: 25px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 25px;
+  text-align: center;
+}
+.search_main_part .search_safe_wrap .search_supermarket_display .search_supermarket_dis .supermarket_pic {
+  width: 449px;
+  height: 25px;
+  text-align: center;
+}
+.search_main_part .search_safe_wrap .search_supermarket_display .search_supermarket_dis .supermarket_pic i {
+  display: inline-block;
+  margin-right: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #a970ff;
+}
+.search_main_part .search_safe_wrap .search_supermarket_display .search_supermarket_dis .supermarket_pic span {
+  font-size: 13px;
+}
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+  background-color: #F5F5F5;
+}
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #cccccc;
+}
+.noHouse {
+  max-width: 2.5rem;
+  height: 35px;
+  background: rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+  text-align: center;
+  line-height: 35px;
+  color: #ffffff;
+  position: absolute;
+  left: 8.1rem;
+  top: 50px;
+  display: none;
+}
+.nav li:nth-of-type(2) a {
+  color: #EDD813;
+}
+.buy {
+  width: 12.8rem;
+  height: 5rem;
+}
+.buy .buyp {
+  width: 400px;
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid blue;
+}

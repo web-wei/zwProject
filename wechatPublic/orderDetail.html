@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>订单详情</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="./data/img/shulan.ico?v=201711161755">
+    <link rel="stylesheet" href="./css/reset(zx).css?v=201711161755">
+    <link rel="stylesheet" href="./css/orderDetail.css?v=201711161755">
+</head>
+
+<body>
+    <div class="orderDetail">
+        <div class="orderDetail_main">
+            <div class="orderDetail_main_info">
+                <h2>代理申请资料</h2>
+                <p class="orderDetail_info_nickName">姓名：**</p>
+                <p class="orderDetail_info_province">省份：***</p>
+                <p class="orderDetail_info_mobile">手机号：**********</p>
+                <p class="orderDetail_info_referruid">推荐人ID：*****</p>
+            </div>
+            <div class="orderDetail_main_privilege">
+                <img src="./data/img/daili.png" alt="代理">
+                <div>
+                    <p class="orderDetail_privilege_price">￥ 300</p>
+                    <p class="orderDetail_privilege_detail">购买300张房卡</p>
+                    <p class="orderDetail_privilege_detail">赠老铁棋牌代理，享受更多特权
+                        <a href="http://game.tigerz.nz/manage/register/privilege.html"></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="orderDetail_pay">
+            <div class="orderDetail_pay_price">￥ 300</div>
+            <div class="orderDetail_pay_send">去支付</div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    // rem设置
+    document.documentElement.style.fontSize = innerWidth / 7.5 + "px";
+    window.onresize = function() {
+        document.documentElement.style.fontSize = innerWidth / 7.5 + "px";
+    }
+</script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="./libs/jquery-1.11.0.js?v=201711161755"></script>
+<script src="./js/common.js?v=201711161755"></script>
+<script src="./js/orderDetail.js?v=201711161755"></script>
+
+</html>

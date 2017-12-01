@@ -1,0 +1,375 @@
+<section class="login_mask" ng-show="allValue.isLogin">
+    <div class="login_wrapper">
+        <div class="login_title">
+            <h3>Welcome to TigerZ</h3>
+            <div class="close_wrap" ng-click="allValue.loginFn()">
+                <i class="login_close"></i>
+            </div>
+        </div>
+        <ul class="login_regist">
+            <li class="login_active" sign-inup ng-click="allValue.loginRigist()">Log in</li>
+            <li sign-inup ng-click="allValue.loginRigist()">Sign up</li>
+        </ul>
+        <p class="clearfix"></p>
+        <div class="login_tab" ng-show="allValue.loginTemp">
+            <form name="loginForm" novalidate="novalidate">
+                <div class="input_wrap">
+                    <input type="email" placeholder="Enter email" name="loginEmail" ng-model="allValue.lEmail" autocomplete="off" required >
+                </div>
+                <div ng-show="loginForm.loginEmail.$dirty && loginForm.loginEmail.$invalid" class="err_alert">
+                    <span ng-show="loginForm.loginEmail.$error.required">Tell us your email.</span>
+                    <span ng-show="loginForm.loginEmail.$error.email">This is not a valid email.</span>
+                </div>
+                <div class="input_wrap">
+                    <input type="password" placeholder="Password" name="loginPassword" ng-model="allValue.lPassword" autocomplete="off" required>
+                </div>
+                <span class="err_alert" ng-show="loginForm.loginPassword.$error.required&&loginForm.loginPassword.$dirty">Please enter password.</span>
+                <div class="commit_button">
+                    <input type="button" value="Submit" ng-click="allValue.loginBtnFn(loginForm.loginPassword.$error.required || (loginForm.loginEmail.$dirty && loginForm.loginEmail.$invalid))" ng-class="{true:'errBtn',false:'okBtn'}[loginForm.loginPassword.$error.required || (loginForm.loginEmail.$dirty && loginForm.loginEmail.$invalid)]">
+                    <a href="###" class="foget_password">Forget your password?</a>
+                </div>
+                <p class="login_auto"><i class="file_confirm file_confirmed" auto-login></i>Two week automatic landing</p>
+                <p class="login_error" ng-hide="allValue.rightUser">Incorrect email or password.Please try again or click 'Forgot your password?'.</p>
+            </form>
+        </div>
+        <div class="regist_tab" ng-hide="allValue.loginTemp">
+            <form name="registForm" novalidate="novalidate">
+                <div class="input_wrap">
+                    <input type="email" placeholder="Enter email" name="registEmail" ng-model="allValue.rEmail" autocomplete="off" required>
+                </div>
+                <div ng-show="registForm.registEmail.$dirty && registForm.registEmail.$invalid" class="err_alert">
+                    <span ng-show="registForm.registEmail.$error.required">Tell us your email.</span>
+                    <span ng-show="registForm.registEmail.$error.email">This is not a valid email.</span>
+                </div>
+                <span ng-show="allValue.exitEmail" class="err_alert">The email already exist.</span>
+
+
+                <!--<span class="err_alert" ng-show="registForm.loginEmail.$error.email">Please enter the correct email.</span>-->
+                <div class="input_wrap">
+                    <input type="password" placeholder="Please enter password" required ng-model="allValue.registPassword" minlength="6" maxlength="18" name="registPassword" autocomplete="off">
+                </div>
+                <div ng-show="registForm.registPassword.$dirty" class="err_alert">
+                    <span ng-show="registForm.registPassword.$error.minlength || registForm.registPassword.$error.maxlength">Password length between 6 to 18</span>
+                </div>
+                <!--<span class="err_alert" ng-show="registForm.registPassword.$error.required">Please enter the correct email.</span>-->
+                <div class="input_wrap">
+                    <input type="password" placeholder="Please re-enter password" ng-model="allValue.registRePassword" ng-blur="allValue.jugePassword()" requried>
+                </div>
+                <span class="err_alert" ng-show="allValue.jugeRePassword">The password is not the same.</span>
+
+                <p class="regist_file"><i class="file_confirm file_confirmed" file-confirm></i>I accept Tigerz's <a href="###">Terms of Use</a></p>
+                <div class="regist_button">
+                    <input type="button" value="Submit">
+                </div>
+            </form>
+        </div>
+        <div class="other_login">
+            <span>Or connect with:</span>
+            <a href="" class="facebook_login" title="Facebook"></a>
+            <a href="" class="google_login" title="Google"></a>
+            <a href="" class="wechat_login" title="Wechat"></a>
+        </div>
+    </div>
+</section>
+<!-------------------------------------------------------home页头部---------------------------------------------------->
+<section class="home_header">
+    <div class="home_banner_advImg">
+        <img src="http://res.tigerz.nz/imgs/top_banner9.jpg" alt="Houses For Sale in New Zealand">
+    </div>
+    <!--首页导航栏-->
+    <nav>
+        <a href="/home" title="Houses For Sale in New Zealand">
+            <h1 title="Houses For Sale in New Zealand">Houses For Sale in New Zealand <img src="http://res.tigerz.nz/imgs/logo2.png" alt="Houses For Sale in New Zealand" title="Houses For Sale in New Zealand"></h1></a>
+        <div class="home_addr">
+            <span class="home_map_icon"></span>
+            <span class="home_current_city" addr-select-show>Auckland</span>
+            <!--<addr-choice></addr-choice>-->
+            <ul class="home_addr_choice">
+                <li ng-repeat="item in cityJson.all" ng-bind="item.en" ng-click="allValue.changCityFn(item)"></li>
+            </ul>
+        </div>
+        <nav-item class="home_nav" city="allValue.currentSelectCity"></nav-item>
+        <div class="home_login_language">
+            <p class="home_login" ng-click="allValue.loginFn()" ng-hide="true">Sign in/up</p>
+            <div class="home_hasLogin" ng-hide="true">
+
+                <!--做登陆使用的-->
+            <!--<p class="home_login" ng-click="allValue.loginFn()" ng-hide="allValue.hasLogin">Sign in/up</p>-->
+            <!--<div class="home_hasLogin" ng-show="allValue.hasLogin">-->
+
+                <span class="userName" login-tri>My TigerZ</span>
+                <i class="login_tri" login-tri></i>
+                <i class="login_icon" login-tri></i>
+                <div class="userInfo_list">
+                    <i class="userInfo_tri"></i>
+                    <ul class="info_list">
+                        <li><a href="/user?watchlist">My Watchlists</a></li>
+                        <li><a href="/user?profile">Edit Profile</a></li>
+                        <li><a href="/user?password">Change The Password</a></li>
+                    </ul>
+                    <p class="login_out">Sign Out</p>
+                </div>
+            </div>
+            <p class="home_language_wrap">
+                <span class="home_language"><a href="/home_cn">中文</a></span>
+                <i> / </i>
+                <span class="home_language"><a href="/home" style="color:#FFD800;">English</a></span>
+            </p>
+            <div class="clearfix"></div>
+        </div>
+        </nav>
+    <!--收索框上的介绍-->
+    <section class="home_nav_title">
+        <h2>Let Us Guide You Home</h2>
+        <P>Best Property Search Engine in New Zealand</P>
+    </section>
+    <!--搜索框的div-->
+    <div class="home_search_bar">
+        <!--<ul class="home_search_type" style="display: none;">-->
+            <!--<li>Find a home</li>-->
+            <!--<li>School Zone</li>-->
+        <!--</ul>-->
+        <!--<span class="home_serach_type_icon" style="display: none"></span>-->
+        <div class="home_search">
+            <div class="home_search_bar_box">
+                <input type="text" placeholder="Enter a City,Suburb or Address" ng-change="allValue.searchBar()" ng-model="allValue.currentValue" ng-focus="allValue.focusEvent()" ng-blur="allValue.blurEvent()">
+            </div>
+            <span class="home_search_icon"><a ng-href="{{allValue.searchBtn()}}"><span></span></a></span>
+        </div>
+        <div class="home_search_sub" ng-hide="allValue.subFlag">
+            <!----------------------------没有找到相应的房源----------------------------->
+            <p class="home_search_error">Can't find the corresponding data</p>
+            <!---------------------------模糊查询房源----------------------------------->
+            <ul class="home_search_simple" ng-mouseover="allValue.overEvent()" ng-mouseleave="allValue.leaveEvent()">
+                <li ng-repeat="item in allValue.searchData"><a ng-href="{{allValue.jugePage(item)}}" ng-mousedown="allValue.historyClick(item)"  title="{{item.name}},{{item.fatherName}},{{allValue.jugeLevel(item.level,item.isSale)}}"><span ng-bind-html="(item.name +',') | highlight:allValue.currentValue:false"></span><span ng-bind="item.fatherName"></span><span ng-bind="allValue.jugeLevel(item.level,item.isSale)"></span></a></li>
+
+                <!--<li ng-repeat="item in allValue.searchData"><a ng-href="{{allValue.jugePage(item)}}" ng-mousedown="allValue.historyClick(item)"  title="{{item.name}},{{item.fatherName}},{{allValue.jugeLevel(item.level,item.isSale)}}"><span ng-bind="item.name+','"></span><span ng-bind="item.fatherName"></span><span ng-bind="allValue.jugeLevel(item.level,item.isSale)"></span></a></li>-->
+                <!--<li ng-repeat="item in allValue.searchData"><a ng-href="javascript:void(0)" ng-mousedown="allValue.historyClick(item)"><span ng-bind="item.name+'  ,  '"></span><span ng-bind="item.fatherName"></span><span ng-bind="allValue.jugeLevel({{item.level}})"></span></a></li>-->
+            </ul>
+            <!--------------------------搜索历史纪录------------------------------------->
+            <ul class="home_search_history" ng-mouseover="allValue.overEvent()" ng-mouseleave="allValue.leaveEvent()">
+                <li ng-repeat="item in allValue.searchHistoryData track by $index"><a ng-href="{{allValue.jugePage(item)}}"  title="{{item.name}},{{item.fatherName}},{{allValue.jugeLevel(item.level,item.isSale)}}"><span ng-bind="item.name+','"></span><span ng-bind="item.fatherName"></span><span ng-bind="allValue.jugeLevel(item.level,item.isSale)"></span></a></li>
+            </ul>
+        </div>
+    </div>
+    <section id="footer_top">
+        <ul class="nav_citys">
+            <li ng-repeat="item in allValue.citysNav.city"><a href="/search?name={{item.en}}&level=2&page=0&sort=default&isAllHouse=false&fn=false&ct={{allValue.currentSelectCity}}" ng-bind="item.en" ng-mouseover="allValue.overNavLiEvent($index,item.en)" title="{{item.en}}"></a></li>
+        </ul>
+        <ul class="nav_city_wrap">
+            <li ng-repeat="sItem in allValue.currentNavSuburbs"><a href="/search?name={{sItem}}&level=3&page=0&sort=default&isAllHouse=false&fn={{allValue.currentNavFn}}&ct={{allValue.currentSelectCity}}" ng-bind="sItem" ng-mouseover="allValue.sOverNavLiEvent($index)" title="{{sItem}}"></a></li>
+        </ul>
+    </section>
+</section>
+<!-----------------------------------------------------近十二个月的涨幅-------------------------------------------------->
+<section class="home_last_info">
+    <div class="hld_intro">
+        <p class="hld_title">Price index last 12 months:</p>
+        <span class="hld_line"></span>
+        <div class="hld_wrap">
+            <ul class="hld_static">
+                <li ng-repeat="item in allValue.statics.priceIncreaseList track by $index"><span ng-bind="item.area + ': '"></span><span class="hld_data_green" ng-bind="item.value"></span><span class="hld_data_green">%</span></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!------------------------------------------------------Why Choose TIGERZ--------------------------------------------->
+<section class="home_choose">
+    <h4 class="hc_title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Why TigerZ&nbsp;&nbsp;<b>&#8482;</b>&nbsp;?</h4>
+    <ul>
+        <li>
+            <p class="hc_img"></p>
+            <h4>Property Reports</h4>
+            <!--<p class="hc_dis"><span>Daily update,100% true listings</span><span>Global exclusive.only Chinese platform</span></p>-->
+        </li>
+        <li>
+            <p class="hc_img"></p>
+            <h4>School Zone Search</h4>
+            <!--<p class="hc_dis"><span>Public school district room</span><span>Top private high school</span></p>-->
+        </li>
+        <li>
+            <p class="hc_img"></p>
+            <h4>Instant Valuations</h4>
+            <!--<p class="hc_dis"><span>The best interest rate</span><span>easy loan</span></p>-->
+        </li>
+        <li>
+            <p class="hc_img"></p>
+            <h4>Free Local Information</h4>
+            <!--<p class="hc_dis"><span>House reservation</span><span>Purcharse without warry</span></p>-->
+        </li>
+    </ul>
+</section>
+<!------------------------------------------------------dataInformation部分-------------------------------------------->
+<section class="home_last_data">
+    <div class="hld_detail">
+        <div class="hld_detail_word">
+            <div class="hld_updata_wrap">
+                <ul class="hldu_ul">
+                    <li class="hld_updata"><p>Real Estate</p>
+                        <ul class="hld_updata_ul">
+                            <li><span></span>Provide comprehensive, professional house information</li>
+                            <li><span></span>Updated in real time about the infomation of selling houses</li>
+                            <li><span></span>House-price trends, real estate information</li>
+                        </ul>
+                    </li>
+                </ul>
+                <!--<ul class="hldu_ul">-->
+                    <!--<li class="hld_updata">-->
+                        <!--<p>Real Estate</p>-->
+                        <!--<ul class="hld_updata_ul">-->
+                            <!--<li><span></span>New Zealand professional database</li>-->
+                            <!--<li><span></span>Detailed housing,community,and safety information</li>-->
+                            <!--<li><span></span>Housing desiged for Chinese custom</li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
+                    <!--<li class="hld_updata">-->
+                        <!--<p>Real Estate</p>-->
+                        <!--<ul class="hld_updata_ul">-->
+                            <!--<li><span></span>New Zealand professional database</li>-->
+                            <!--<li><span></span>Detailed housing,community,and safety information</li>-->
+                            <!--<li><span></span>Housing desiged for Chinese custom</li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
+                    <!--<li class="hld_updata">-->
+                        <!--<p>Real Estate</p>-->
+                        <!--<ul class="hld_updata_ul">-->
+                            <!--<li><span></span>New Zealand professional database</li>-->
+                            <!--<li><span></span>Detailed housing,community,and safety information</li>-->
+                            <!--<li><span></span>Housing desiged for Chinese custom</li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
+                    <!--<li class="hld_updata">-->
+                        <!--<p>Real Estate</p>-->
+                        <!--<ul class="hld_updata_ul">-->
+                            <!--<li><span></span>New Zealand professional database</li>-->
+                            <!--<li><span></span>Detailed housing,community,and safety information</li>-->
+                            <!--<li><span></span>Housing desiged for Chinese custom</li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            </div>
+        </div>
+        <div class="hld_detail_number">
+            <ul class="hld_downdata">
+                <li>
+                    <span class="hld_downdata_icon"></span>
+                    <p class="down_num" ng-bind="allValue.statics.totalSellingHouse"></p>
+                    <p class="down_dis">Total Homes</p>
+                </li>
+                <li>
+                    <span class="hld_downdata_icon"></span>
+                    <p class="down_num" ng-bind="allValue.statics.updateHouseByDay"></p>
+                    <p class="down_dis">Newly Added</p>
+                </li>
+                <li>
+                    <span class="hld_downdata_icon"></span>
+                    <p class="down_num" ng-bind="allValue.statics.saleLastWeek"></p>
+                    <p class="down_dis">Last Week Sold</p>
+                </li>
+                <li>
+                    <span class="hld_downdata_icon"></span>
+                    <p class="down_num" ng-bind="allValue.statics.midPriceByWeek"></p>
+                    <p class="down_dis">Median Price</p>
+                </li>
+            </ul>
+            <!--<ul class="hld_downdata">-->
+                <!--<li class="hld_turn_num" ng-click="allValue.dataInfo(0)">-->
+                    <!--<span class="hld_downdata_icon hld_turn_icon"></span>-->
+                    <!--<p class="down_num" ng-bind="allValue.statics.totalSellingHouse"></p>-->
+                    <!--<p class="down_dis">Total Homes</p>-->
+                <!--</li>-->
+                <!--<li ng-click="allValue.dataInfo(1)">-->
+                    <!--<span class="hld_downdata_icon"></span>-->
+                    <!--<p class="down_num" ng-bind="allValue.statics.updateHouseByDay"></p>-->
+                    <!--<p class="down_dis">Newly Added</p>-->
+                <!--</li>-->
+                <!--<li ng-click="allValue.dataInfo(2)">-->
+                    <!--<span class="hld_downdata_icon"></span>-->
+                    <!--<p class="down_num" ng-bind="allValue.statics.saleLastWeek"></p>-->
+                    <!--<p class="down_dis">Last Week Sold</p>-->
+                <!--</li>-->
+                <!--<li ng-click="allValue.dataInfo(3)">-->
+                    <!--<span class="hld_downdata_icon"></span>-->
+                    <!--<p class="down_num" ng-bind="allValue.statics.midPriceByWeek"></p>-->
+                    <!--<p class="down_dis">Median Price</p>-->
+                <!--</li>-->
+            <!--</ul>-->
+        </div>
+    </div>
+</section>
+<!------------------------------------------------------five steps---------------------------------------------------->
+<five-step></five-step>
+<!-----------------------------------------------------footer search-------------------------------------------------->
+<section class="home_fsearch_bar">
+    <h4 ng-bind="allValue.seoWord">Start Your Search Today</h4>
+    <div class="hf_search_con">
+        <div class="hf_search_box">
+            <input type="text" placeholder="Enter a City,Suburb or Address" ng-change="allValue.footSearchBar()" ng-model="allValue.footValue" ng-focus="allValue.footFocusEvent()" ng-blur="allValue.footBlurEvent()">
+        </div>
+        <span class="hf_search_icon"><a ng-href="{{allValue.footSearchBtn()}}"><span></span></a></span>
+        <div class="home_search_reminder" ng-hide="allValue.footSubFlag">
+            <!----------------------------没有找到相应的房源----------------------------->
+            <p class="hf_search_error">Can't find the corresponding data</p>
+            <!---------------------------模糊查询房源----------------------------------->
+            <ul class="hf_search_simple" ng-mouseover="allValue.footOverEvent()" ng-mouseleave="allValue.footLeaveEvent()">
+                <li ng-repeat="item in allValue.footSearchData"><a ng-href="{{allValue.jugePage(item)}}" ng-mousedown="allValue.historyClick(item)" title="{{item.name}},{{item.fatherName}},{{allValue.jugeLevel(item.level,item.isSale)}}"><span ng-bind="item.name+','"></span><span ng-bind="item.fatherName"></span><span ng-bind="allValue.jugeLevel(item.level,item.isSale)"></span></a></li>
+                <!--<li ng-repeat="item in allValue.searchData"><a ng-href="javascript:void(0)" ng-mousedown="allValue.historyClick(item)"><span ng-bind="item.name+'  ,  '"></span><span ng-bind="item.fatherName"></span><span ng-bind="allValue.jugeLevel({{item.level}})"></span></a></li>-->
+            </ul>
+            <!--------------------------搜索历史纪录------------------------------------->
+            <ul class="hf_search_history" ng-mouseover="allValue.footOverEvent()" ng-mouseleave="allValue.footLeaveEvent()">
+                <li ng-repeat="item in allValue.searchHistoryData track by $index"><a ng-href="{{allValue.jugePage(item)}}" title="{{item.name}},{{item.fatherName}},{{allValue.jugeLevel(item.level,item.isSale)}}"><span ng-bind="item.name+','"></span><span ng-bind="item.fatherName"></span><span ng-bind="allValue.jugeLevel(item.level,item.isSale)"></span></a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!------------------------------------------------------footer部分----------------------------------------------------->
+<div id="home_footer">
+    <city-suburb city-json="cityJson" current-city="allValue.currentSelectCity"></city-suburb city-json="cityJson" current-city="allValue.currentSelectCity">
+    <div class="clearfix"></div>
+    <footer-item></footer-item>
+
+</div>
+<!------------------------------------------------------解决报错-------------------------------------------------------->
+<div>
+    <div class="dai_item"></div>
+    <div class="dai_item"></div>
+    <div class="dai_item"></div>
+    <div class="dai_item"></div>
+    <div class="dai_item"></div>
+    <div class="dai_item"></div>
+    <div class="dai_item"></div>
+    <div class="dai_item"></div>
+</div>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?98b74b7f3ddb1c502ca10f723fc80ab1";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-90714030-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https'){
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else{
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
